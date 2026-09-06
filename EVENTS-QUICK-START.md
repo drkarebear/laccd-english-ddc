@@ -12,7 +12,7 @@ You do not need to hand-edit events in HTML.
 
 ```js
 window.LACCD_ENGLISH_EVENTS = {
-  feedUrl: "PASTE_WEB_APP_URL_HERE",
+  feedUrl: "https://script.google.com/macros/s/AKfycbw1wV-_fdW_6MTQKEnhHCUX3FnlLG5ESFCBq-hiCSLqDmVIu-8jaTCtI6oWlAk1ozFy/exec",
   submitUrl: "PASTE_PUBLIC_GOOGLE_FORM_URL_HERE"
 };
 ```
