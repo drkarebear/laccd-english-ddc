@@ -1,233 +1,717 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="LACCD English District Discipline Committee hub for faculty, meetings, events, resources, and districtwide collaboration.">
-  <title>LACCD English DDC</title>
-  <link rel="icon" type="image/png" href="EnglishDDCfavicon.png">
+
+  <title>LACCD English District Discipline Committee</title>
+
   <style>
     :root {
-      --navy: #0b3a6e;
-      --navy-dark: #082a50;
-      --gold: #f2b632;
-      --gold-soft: #fff3cf;
-      --cream: #fffdf8;
+      --vellum: #fbfaf7;
       --paper: #ffffff;
-      --ink: #172433;
-      --muted: #5d6975;
-      --line: #d9e0e7;
-      --focus: #7c3aed;
-      --max: 1180px;
-      --radius: 20px;
-      --shadow: 0 12px 30px rgba(8, 42, 80, 0.08);
+
+      --ink: #202b33;
+      --ink-soft: #52606a;
+
+      --blue: #174a70;
+      --blue-dark: #10364f;
+
+      --sage: #66785c;
+      --sage-pale: #edf1e9;
+
+      --rust: #a45138;
+      --rust-pale: #f7ece7;
+
+      --gold: #b68a45;
+
+      --border: #d8d5ca;
+
+      --focus: #005fcc;
+
+      --radius: 14px;
+
+      --shadow:
+        0 2px 6px rgb(32 43 51 / 0.07),
+        0 10px 28px rgb(32 43 51 / 0.04);
+
+      /*
+        Replace these with locally hosted font files later
+        if desired. No external font service is required.
+      */
+      --font-body:
+        "Atkinson Hyperlegible Next",
+        "Atkinson Hyperlegible",
+        Arial,
+        sans-serif;
+
+      --font-display:
+        "Fraunces",
+        Georgia,
+        "Times New Roman",
+        serif;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--cream); line-height: 1.6; }
-    img { max-width: 100%; height: auto; }
-    a { color: var(--navy); }
-    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 6px; }
-    .skip-link { position: absolute; left: 1rem; top: -100px; z-index: 9999; background: #fff; color: #000; border: 2px solid #000; padding: .75rem 1rem; font-weight: 700; }
-    .skip-link:focus { top: 1rem; }
-    .site-header { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
-    .header-inner { max-width: var(--max); margin: 0 auto; min-height: 74px; padding: .7rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .brand { display: inline-flex; align-items: center; gap: .8rem; text-decoration: none; color: var(--navy-dark); font-weight: 850; letter-spacing: -.02em; }
-    .brand img { width: 48px; height: 48px; object-fit: contain; }
-    .brand-text small { display: block; color: var(--muted); font-size: .76rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
-    nav ul { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .15rem; list-style: none; margin: 0; padding: 0; }
-    nav a { display: inline-block; padding: .6rem .72rem; border-radius: 999px; text-decoration: none; color: var(--ink); font-weight: 700; font-size: .92rem; }
-    nav a:hover { background: #eef4fa; color: var(--navy-dark); }
-    .hero { overflow: hidden; border-bottom: 1px solid var(--line); background: radial-gradient(circle at 86% 18%, rgba(242,182,50,.22), transparent 22rem), linear-gradient(135deg, #f7fbff 0%, #fffdf8 64%, #fff6da 100%); }
-    .hero-inner { max-width: var(--max); margin: 0 auto; padding: clamp(3.25rem, 7vw, 6.5rem) 1.25rem; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(250px, .6fr); align-items: center; gap: clamp(2rem, 5vw, 4.5rem); }
-    .eyebrow { display: inline-flex; align-items: center; gap: .5rem; margin-bottom: 1rem; padding: .4rem .7rem; border-radius: 999px; color: var(--navy-dark); background: var(--gold-soft); border: 1px solid #f0d681; font-weight: 800; font-size: .82rem; letter-spacing: .03em; text-transform: uppercase; }
-    .hero h1 { max-width: 760px; margin: 0; color: var(--navy-dark); font-size: clamp(2.55rem, 6vw, 5.4rem); line-height: .98; letter-spacing: -.055em; }
-    .hero h1 span { color: var(--navy); }
-    .hero p { max-width: 720px; margin: 1.4rem 0 0; font-size: clamp(1.08rem, 2vw, 1.3rem); color: #42505e; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.7rem; }
-    .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: .45rem; padding: .75rem 1rem; border-radius: 12px; text-decoration: none; font-weight: 800; border: 2px solid transparent; }
-    .button-primary { background: var(--navy); color: #fff; }
-    .button-primary:hover { background: var(--navy-dark); }
-    .button-secondary { background: #fff; color: var(--navy-dark); border-color: #c9d7e6; }
-    .button-secondary:hover { border-color: var(--navy); }
-    .hero-mark { width: min(100%, 300px); aspect-ratio: 1; justify-self: center; display: grid; place-items: center; border-radius: 50%; background: #fff; border: 1px solid #e7edf3; box-shadow: var(--shadow); padding: 2.2rem; }
-    .hero-mark img { width: 100%; }
-    .section { max-width: var(--max); margin: 0 auto; padding: 4.5rem 1.25rem; }
-    .section + .section { border-top: 1px solid var(--line); }
-    .section-heading { max-width: 760px; margin-bottom: 2rem; }
-    .section-heading h2 { margin: 0 0 .5rem; color: var(--navy-dark); font-size: clamp(2rem, 4vw, 3.1rem); letter-spacing: -.035em; line-height: 1.08; }
-    .section-heading p { margin: 0; color: var(--muted); font-size: 1.05rem; }
-    .quick-grid, .resource-grid, .college-grid, .connect-grid { display: grid; gap: 1rem; }
-    .quick-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .resource-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .college-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .connect-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.35rem; box-shadow: 0 1px 0 rgba(8,42,80,.02); }
-    .card:hover { border-color: #b9cce0; box-shadow: var(--shadow); transform: translateY(-1px); }
-    @media (prefers-reduced-motion: no-preference) { .card { transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease; } }
-    .icon-tile { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 13px; background: var(--gold-soft); color: var(--navy-dark); font-size: 1.1rem; font-weight: 900; margin-bottom: .9rem; }
-    .card h3 { margin: 0 0 .35rem; color: var(--navy-dark); font-size: 1.12rem; }
-    .card p { margin: 0; color: var(--muted); }
-    .card a { font-weight: 800; text-underline-offset: 3px; }
-    .status-strip { margin-top: 1.15rem; padding: 1rem 1.1rem; border-left: 5px solid var(--gold); border-radius: 12px; background: #fff9e8; }
-    .status-strip strong { color: var(--navy-dark); }
-    .meeting-panel { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: 1rem; align-items: stretch; }
-    .meeting-main { background: var(--navy-dark); color: #fff; border-radius: var(--radius); padding: 1.75rem; }
-    .meeting-main .kicker { color: #ffd66f; font-weight: 850; text-transform: uppercase; letter-spacing: .05em; font-size: .8rem; }
-    .meeting-main h3 { margin: .3rem 0 .4rem; font-size: 1.75rem; }
-    .meeting-main p { color: #e8f0f8; margin: 0 0 1rem; }
-    .meeting-main .button-secondary { background: #fff; color: var(--navy-dark); border-color: #fff; }
-    .meeting-side { border: 1px solid var(--line); background: #fff; border-radius: var(--radius); padding: 1.5rem; }
-    .meeting-side h3 { margin-top: 0; color: var(--navy-dark); }
-    .meeting-side ul { margin: .5rem 0 0; padding-left: 1.2rem; }
-    .college-card .college-name { display: flex; align-items: flex-start; gap: .7rem; }
-    .college-card .college-dot { width: 13px; height: 13px; border-radius: 50%; margin-top: .35rem; flex: 0 0 13px; background: var(--gold); border: 3px solid var(--gold-soft); }
-    .college-card h3 { margin: 0; }
-    .college-card .role { margin-top: .65rem; font-size: .94rem; color: var(--muted); }
-    .resource-card ul { padding-left: 1.1rem; margin: .8rem 0 0; }
-    .resource-card li + li { margin-top: .35rem; }
-    .work-list { display: grid; gap: .75rem; margin-top: 1.4rem; }
-    .work-item { display: grid; grid-template-columns: 110px 1fr; gap: 1rem; align-items: start; padding: 1rem; background: #fff; border: 1px solid var(--line); border-radius: 14px; }
-    .badge { display: inline-flex; justify-content: center; align-items: center; min-height: 32px; border-radius: 999px; padding: .25rem .6rem; font-size: .78rem; font-weight: 900; text-transform: uppercase; letter-spacing: .04em; }
-    .badge-active { background: #e7f7ee; color: #146c43; }
-    .badge-discussion { background: #fff4cc; color: #7b5700; }
-    .badge-complete { background: #edf1f5; color: #405264; }
-    .connect-card { border-top: 5px solid var(--gold); }
-    .about-band { background: var(--navy-dark); color: #fff; }
-    .about-band .section { border-top: 0; }
-    .about-band .section-heading h2 { color: #fff; }
-    .about-band .section-heading p { color: #d8e4ef; }
-    .about-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
-    .about-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); border-radius: 16px; padding: 1.15rem; }
-    .about-card h3 { margin: 0 0 .4rem; color: #fff; }
-    .about-card p { margin: 0; color: #d8e4ef; }
-    footer { background: #061e38; color: #cbd8e4; border-top: 1px solid rgba(255,255,255,.12); }
-    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 2rem 1.25rem; display: flex; justify-content: space-between; gap: 1.5rem; align-items: flex-start; }
-    footer a { color: #fff; }
-    footer p { margin: 0; max-width: 720px; font-size: .94rem; }
-    @media (max-width: 980px) {
-      .header-inner { align-items: flex-start; flex-direction: column; }
-      nav ul { justify-content: flex-start; }
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-mark { width: 220px; justify-self: start; }
-      .quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .resource-grid, .college-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .about-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    * {
+      box-sizing: border-box;
     }
-    @media (max-width: 680px) {
-      .site-header { position: static; }
-      .header-inner { padding-inline: 1rem; }
-      nav ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
-      nav a { border-radius: 10px; background: #f4f7fa; }
-      .hero-inner, .section { padding-inline: 1rem; }
-      .quick-grid, .resource-grid, .college-grid, .connect-grid, .about-grid, .meeting-panel { grid-template-columns: 1fr; }
-      .work-item { grid-template-columns: 1fr; }
-      .footer-inner { flex-direction: column; }
+
+    html {
+      scroll-behavior: smooth;
     }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+    body {
+      margin: 0;
+
+      color: var(--ink);
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgb(182 138 69 / 0.025),
+          transparent 24rem
+        ),
+        radial-gradient(
+          circle at 85% 65%,
+          rgb(102 120 92 / 0.025),
+          transparent 28rem
+        ),
+        var(--vellum);
+
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration-thickness: 0.12em;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      color: var(--blue-dark);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+
+      padding: 0.75rem 1rem;
+
+      color: white;
+      background: var(--blue-dark);
+
+      border-radius: 0 0 8px 8px;
+
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    .site-header {
+      background: rgb(255 255 255 / 0.94);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      width: min(1180px, calc(100% - 2rem));
+      margin-inline: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+
+      padding-block: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+
+      display: grid;
+      place-items: center;
+
+      color: var(--blue);
+
+      border: 1px solid var(--border);
+      border-radius: 50%;
+
+      background: var(--vellum);
+
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-weight: 650;
+      line-height: 1.15;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 0.18rem;
+
+      color: var(--ink-soft);
+
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+
+      list-style: none;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      display: inline-block;
+
+      padding: 0.65rem 0.8rem;
+
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 650;
+
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      color: var(--blue-dark);
+      background: var(--sage-pale);
+    }
+
+    main {
+      width: min(1180px, calc(100% - 2rem));
+      margin-inline: auto;
+    }
+
+    .hero {
+      position: relative;
+
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(250px, 0.7fr);
+      gap: clamp(2rem, 6vw, 5rem);
+
+      align-items: center;
+
+      padding-block: clamp(3rem, 8vw, 6.5rem);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.7rem;
+
+      color: var(--sage);
+
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--font-display);
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 13ch;
+
+      margin: 0;
+
+      font-size: clamp(2.6rem, 7vw, 5.4rem);
+      font-weight: 650;
+      letter-spacing: -0.025em;
+    }
+
+    .hero-copy {
+      max-width: 65ch;
+
+      margin-top: 1.4rem;
+
+      color: var(--ink-soft);
+
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+
+      margin-top: 1.8rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 46px;
+      padding: 0.72rem 1rem;
+
+      border: 2px solid var(--blue);
+      border-radius: 9px;
+
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .button-primary {
+      color: white;
+      background: var(--blue);
+    }
+
+    .button-primary:hover {
+      color: white;
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+    }
+
+    .button-secondary {
+      color: var(--blue);
+      background: white;
+    }
+
+    .marginalia-space {
+      min-height: 260px;
+
+      display: grid;
+      place-items: center;
+
+      position: relative;
+    }
+
+    /*
+      Temporary stand-in for one of our real marginalia SVGs.
+      The final art would be an SVG with aria-hidden="true".
+    */
+
+    .marginalia-placeholder {
+      width: min(230px, 80%);
+      aspect-ratio: 1;
+
+      display: grid;
+      place-items: center;
+
+      color: var(--sage);
+
+      border: 1px dashed rgb(102 120 92 / 0.45);
+      border-radius: 50%;
+
+      font-family: var(--font-display);
+      font-style: italic;
+
+      transform: rotate(-2deg);
+    }
+
+    .manuscript-rule {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+
+      margin-block: 1.5rem 3rem;
+
+      color: var(--rust);
+    }
+
+    .manuscript-rule::before,
+    .manuscript-rule::after {
+      content: "";
+
+      height: 1px;
+      flex: 1;
+
+      background: var(--border);
+    }
+
+    .manuscript-rule span {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+    }
+
+    .section {
+      padding-block: 2rem 5rem;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .section-heading p {
+      color: var(--ink-soft);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      position: relative;
+
+      padding: 1.4rem;
+
+      background: var(--paper);
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
+    }
+
+    .card::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 1.25rem;
+
+      width: 44px;
+      height: 4px;
+
+      background: var(--sage);
+
+      border-radius: 0 0 4px 4px;
+    }
+
+    .card:nth-child(2)::before {
+      background: var(--rust);
+    }
+
+    .card:nth-child(3)::before {
+      background: var(--blue);
+    }
+
+    .card-label {
+      margin-bottom: 0.45rem;
+
+      color: var(--sage);
+
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      margin: 0;
+
+      font-size: 1.45rem;
+    }
+
+    .card p {
+      color: var(--ink-soft);
+    }
+
+    .margin-note {
+      margin-top: 1rem;
+      padding-left: 0.85rem;
+
+      color: var(--rust);
+
+      border-left: 3px solid var(--rust-pale);
+
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    .welcome {
+      margin-block: 2rem 5rem;
+      padding: clamp(1.5rem, 5vw, 3rem);
+
+      background: var(--sage-pale);
+
+      border: 1px solid #ccd5c5;
+      border-radius: var(--radius);
+    }
+
+    .welcome h2 {
+      margin-top: 0;
+    }
+
+    footer {
+      margin-top: 4rem;
+
+      border-top: 1px solid var(--border);
+
+      background: white;
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 2rem));
+      margin-inline: auto;
+
+      padding-block: 2.5rem;
+    }
+
+    @media (max-width: 800px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .marginalia-space {
+        min-height: 160px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="#top" aria-label="LACCD English DDC home">
-        <img src="EnglishDDCfavicon.png" alt="">
-        <span class="brand-text">LACCD English DDC<small>English District Discipline Committee</small></span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <ul>
-          <li><a href="#people">People</a></li>
-          <li><a href="#meetings">Meetings &amp; Events</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#district-work">District Work</a></li>
-          <li><a href="#connect">Connect</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
-      </nav>
+
+<a class="skip-link" href="#main">
+  Skip to main content
+</a>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">E</span>
+
+      <span>
+        <span class="brand-name">
+          LACCD English
+        </span>
+
+        <span class="brand-subtitle">
+          District Discipline Committee
+        </span>
+      </span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#people">People</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#teaching">Teaching Resources</a></li>
+        <li><a href="#governance">DDC Work</a></li>
+        <li><a href="#involved">Get Involved</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+
+    <div>
+      <p class="eyebrow">
+        Nine colleges · One English community
+      </p>
+
+      <h1>
+        A place for people who teach English.
+      </h1>
+
+      <p class="hero-copy">
+        Find colleagues, teaching ideas, district updates,
+        events, and useful things people across LACCD have made.
+        Whether you are teaching your first section or have been
+        here for decades, you belong in the conversation.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="#people">
+          Find Your People
+        </a>
+
+        <a class="button button-secondary" href="#teaching">
+          Browse Teaching Resources
+        </a>
+      </div>
     </div>
-  </header>
-  <main id="main-content">
-    <section class="hero" id="top" aria-labelledby="page-title">
-      <div class="hero-inner">
-        <div>
-          <div class="eyebrow">Nine colleges • One English community</div>
-          <h1 id="page-title">LACCD <span>English DDC</span></h1>
-          <p>The districtwide hub for English faculty: people, meetings, curriculum work, teaching resources, events, and opportunities to connect across LACCD.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#meetings">See upcoming meetings</a>
-            <a class="button button-secondary" href="#resources">Browse faculty resources</a>
-          </div>
-        </div>
-        <div class="hero-mark" aria-hidden="true"><img src="EnglishDDCfavicon.png" alt=""></div>
+
+    <div class="marginalia-space" aria-hidden="true">
+      <div class="marginalia-placeholder">
+        marginalia creature goes here
       </div>
-    </section>
-    <section class="section" aria-labelledby="start-heading">
-      <div class="section-heading"><h2 id="start-heading">Start Here</h2><p>Four quick paths for the things English faculty are most likely to need.</p></div>
-      <div class="quick-grid">
-        <article class="card"><div class="icon-tile" aria-hidden="true">01</div><h3>Find Your Representative</h3><p>Meet English DDC representatives from each LACCD college.</p><p><a href="#people">View representatives</a></p></article>
-        <article class="card"><div class="icon-tile" aria-hidden="true">02</div><h3>Meetings &amp; Events</h3><p>Find upcoming DDC meetings, discipline events, and professional learning.</p><p><a href="#meetings">View meetings and events</a></p></article>
-        <article class="card"><div class="icon-tile" aria-hidden="true">03</div><h3>Faculty Resources</h3><p>Go straight to teaching, curriculum, OER, transfer, and district resources.</p><p><a href="#resources">Browse faculty resources</a></p></article>
-        <article class="card"><div class="icon-tile" aria-hidden="true">04</div><h3>Connect Across Colleges</h3><p>Share a resource, suggest a topic, or invite colleagues to an event.</p><p><a href="#connect">Ways to connect</a></p></article>
-      </div>
-      <div class="status-strip"><strong>What’s happening now:</strong> Use this space for one timely districtwide update, deadline, or English faculty announcement.</div>
-    </section>
-    <section class="section" id="meetings" aria-labelledby="meetings-heading">
-      <div class="section-heading"><h2 id="meetings-heading">Meetings &amp; Events</h2><p>Keep the next thing visible. Archive the rest so the page never feels crowded.</p></div>
-      <div class="meeting-panel">
-        <article class="meeting-main"><div class="kicker">Next English DDC meeting</div><h3>Add meeting date and time</h3><p>Add location or Zoom information, a short purpose statement, and anything faculty should review before the meeting.</p><a class="button button-secondary" href="#">View meeting details</a></article>
-        <aside class="meeting-side" aria-labelledby="event-shortcuts-heading"><h3 id="event-shortcuts-heading">Meeting Shortcuts</h3><ul><li><a href="#">Current agenda</a></li><li><a href="#">Previous minutes</a></li><li><a href="#">Annual meeting calendar</a></li><li><a href="#">Past events archive</a></li></ul></aside>
-      </div>
-    </section>
-    <section class="section" id="people" aria-labelledby="people-heading">
-      <div class="section-heading"><h2 id="people-heading">English Across LACCD</h2><p>One simple card for each college makes the district feel like a network instead of a list.</p></div>
-      <div class="college-grid">
-        <article class="card college-card"><div class="college-name"><span class="college-dot" aria-hidden="true"></span><div><h3>East Los Angeles College</h3><p class="role">English DDC representative • Add name and contact</p></div></div></article>
-        <article class="card college-card"><div class="college-name"><span class="college-dot" aria-hidden="true"></span><div><h3>Los Angeles City College</h3><p class="role">English DDC representative • Add name and contact</p></div></div></article>
-        <article class="card college-card"><div class="college-name"><span class="college-dot" aria-hidden="true"></span><div><h3>Los Angeles Harbor College</h3><p class="role">English DDC representative • Add name and contact</p></div></div></article>
-        <article class="card college-card"><div class="college-name"><span class="college-dot" aria-hidden="true"></span><div><h3>Los Angeles Mission College</h3><p class="role">English DDC representative • Add name and contact</p></div></div></article>
-        <article class="card college-card"><div class="college-name"><span class="college-dot" aria-hidden="true"></span><div><h3>Los Angeles Pierce College</h3><p class="role">English DDC representative • Add name and contact</p></div></div></article>
-        <article class="card college-card"><div class="college-name"><span class="college-dot" aria-hidden="true"></span><div><h3>Los Angeles Southwest College</h3><p class="role">English DDC representative • Add name and contact</p></div></div></article>
-        <article class="card college-card"><div class="college-name"><span class="college-dot" aria-hidden="true"></span><div><h3>Los Angeles Trade-Technical College</h3><p class="role">English DDC representative • Add name and contact</p></div></div></article>
-        <article class="card college-card"><div class="college-name"><span class="college-dot" aria-hidden="true"></span><div><h3>Los Angeles Valley College</h3><p class="role">English DDC representative • Add name and contact</p></div></div></article>
-        <article class="card college-card"><div class="college-name"><span class="college-dot" aria-hidden="true"></span><div><h3>West Los Angeles College</h3><p class="role">English DDC representative • Add name and contact</p></div></div></article>
-      </div>
-    </section>
-    <section class="section" id="resources" aria-labelledby="resources-heading">
-      <div class="section-heading"><h2 id="resources-heading">Faculty Resources</h2><p>Organize resources by what faculty are trying to do—not by which office happens to own the document.</p></div>
-      <div class="resource-grid">
-        <article class="card resource-card"><div class="icon-tile" aria-hidden="true">A</div><h3>Teaching &amp; Learning</h3><ul><li><a href="#">First-year composition</a></li><li><a href="#">Literature and creative writing</a></li><li><a href="#">Online teaching and accessibility</a></li><li><a href="#">AI and writing instruction</a></li></ul></article>
-        <article class="card resource-card"><div class="icon-tile" aria-hidden="true">B</div><h3>OER &amp; Course Materials</h3><ul><li><a href="#">OER and ZTC resources</a></li><li><a href="#">Library-supported materials</a></li><li><a href="#">Course materials guidance</a></li></ul></article>
-        <article class="card resource-card"><div class="icon-tile" aria-hidden="true">C</div><h3>Transfer &amp; Articulation</h3><ul><li><a href="#">C-ID</a></li><li><a href="#">Common Course Numbering</a></li><li><a href="#">Cal-GETC and ASSIST</a></li></ul></article>
-        <article class="card resource-card"><div class="icon-tile" aria-hidden="true">D</div><h3>Curriculum</h3><ul><li><a href="#">District curriculum resources</a></li><li><a href="#">Course outline guidance</a></li><li><a href="#">English discipline updates</a></li></ul></article>
-        <article class="card resource-card"><div class="icon-tile" aria-hidden="true">E</div><h3>Professional Learning</h3><ul><li><a href="#">District workshops</a></li><li><a href="#">Statewide English events</a></li><li><a href="#">Calls for proposals</a></li></ul></article>
-        <article class="card resource-card"><div class="icon-tile" aria-hidden="true">F</div><h3>Student Success</h3><ul><li><a href="#">Belonging and persistence</a></li><li><a href="#">Equity-minded teaching</a></li><li><a href="#">Support services across LACCD</a></li></ul></article>
-      </div>
-    </section>
-    <section class="section" id="district-work" aria-labelledby="district-work-heading">
-      <div class="section-heading"><h2 id="district-work-heading">District Work</h2><p>A simple status view helps faculty see what the English DDC is discussing, developing, and completing.</p></div>
-      <div class="work-list">
-        <article class="work-item"><div><span class="badge badge-active">Active</span></div><div><h3>Common Course Numbering</h3><p>Add a brief, plain-language update on current English CCN implementation work.</p></div></article>
-        <article class="work-item"><div><span class="badge badge-discussion">Discussion</span></div><div><h3>Districtwide English Priorities</h3><p>Use this space for items the committee is discussing but has not yet acted on.</p></div></article>
-        <article class="work-item"><div><span class="badge badge-complete">Completed</span></div><div><h3>Completed Review or Recommendation</h3><p>Archive completed work here with a short summary and link to the final document.</p></div></article>
-      </div>
-    </section>
-    <section class="section" id="connect" aria-labelledby="connect-heading">
-      <div class="section-heading"><h2 id="connect-heading">Share &amp; Connect</h2><p>Make the site participatory. Faculty should have an obvious way to contribute without joining another platform.</p></div>
-      <div class="connect-grid">
-        <article class="card connect-card"><h3>Share a Resource</h3><p>Contribute an assignment, OER, teaching strategy, event, or resource that may help English faculty elsewhere in the district.</p><p><a href="#">Submit a faculty resource</a></p></article>
-        <article class="card connect-card"><h3>Share an Event</h3><p>Invite colleagues across LACCD to a reading, workshop, conference session, or professional learning event.</p><p><a href="#">Submit an event</a></p></article>
-        <article class="card connect-card"><h3>Suggest a DDC Topic</h3><p>Raise an English issue that would benefit from districtwide faculty discussion.</p><p><a href="#">Suggest a discussion topic</a></p></article>
-      </div>
-    </section>
-    <section class="about-band" id="about" aria-labelledby="about-heading">
-      <div class="section">
-        <div class="section-heading"><h2 id="about-heading">About the English DDC</h2><p>The LACCD English District Discipline Committee connects English faculty representatives across the district to share expertise, collaborate on discipline matters, and support districtwide work.</p></div>
-        <div class="about-grid"><article class="about-card"><h3>Connect</h3><p>Bring faculty together across nine colleges.</p></article><article class="about-card"><h3>Collaborate</h3><p>Share discipline expertise on curriculum and common issues.</p></article><article class="about-card"><h3>Support</h3><p>Make useful resources and district processes easier to find.</p></article><article class="about-card"><h3>Share</h3><p>Surface ideas, events, and promising practices across LACCD.</p></article></div>
-      </div>
-    </section>
-  </main>
-  <footer><div class="footer-inner"><p><strong>LACCD English DDC faculty hub.</strong> This site can supplement official district governance records; official policies, agendas, minutes, and formal actions should remain linked to the appropriate LACCD source.</p><p><a href="#top">Back to top</a></p></div></footer>
+    </div>
+
+  </section>
+
+  <div class="manuscript-rule" aria-hidden="true">
+    <span>✦</span>
+  </div>
+
+  <section class="section" aria-labelledby="start-heading">
+
+    <div class="section-heading">
+      <p class="eyebrow">Start somewhere useful</p>
+
+      <h2 id="start-heading">
+        What brought you here?
+      </h2>
+
+      <p>
+        You do not need to know how the district works
+        before you can find what you need.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <p class="card-label">New to LACCD</p>
+
+        <h3>
+          I teach English here now. What should I know?
+        </h3>
+
+        <p>
+          A human-sized introduction to the people, systems,
+          acronyms, and resources you are most likely to need.
+        </p>
+
+        <a href="#new">
+          Start the new-faculty guide
+        </a>
+
+        <p class="margin-note">
+          No secret handshake required.
+        </p>
+      </article>
+
+      <article class="card">
+        <p class="card-label">Teaching</p>
+
+        <h3>
+          Show me what other faculty are trying.
+        </h3>
+
+        <p>
+          Assignments, OER, activities, course ideas, and things
+          colleagues across the district think are worth sharing.
+        </p>
+
+        <a href="#teaching">
+          Explore teaching ideas
+        </a>
+
+        <p class="margin-note">
+          Things worth stealing. Politely.
+        </p>
+      </article>
+
+      <article class="card">
+        <p class="card-label">Community</p>
+
+        <h3>
+          I want to find other English people.
+        </h3>
+
+        <p>
+          Find colleagues by college, course, interest,
+          project, or area of expertise.
+        </p>
+
+        <a href="#people">
+          Meet English faculty
+        </a>
+
+        <p class="margin-note">
+          Yes, someone else has thoughts about the curtains.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="welcome" aria-labelledby="welcome-heading">
+
+    <p class="eyebrow">
+      Especially if you are adjunct faculty
+    </p>
+
+    <h2 id="welcome-heading">
+      You are part of this community.
+    </h2>
+
+    <p>
+      District English events, conversations, shared resources,
+      and opportunities to participate are for adjunct and
+      full-time faculty alike. If something is unclear about
+      whether you may participate, ask us—we would rather make
+      the invitation clearer than leave someone wondering.
+    </p>
+
+    <a href="#involved">
+      See ways to participate
+    </a>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>
+      <strong>LACCD English District Discipline Committee</strong>
+    </p>
+
+    <p>
+      Nine colleges. Many bookshelves. One district.
+    </p>
+  </div>
+</footer>
+
 </body>
 </html>
