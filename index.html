@@ -4,7 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LACCD English District Discipline Committee</title>
+<meta name="description" content="A welcoming districtwide commons for LACCD English faculty: people, teaching ideas, events, district answers, and shared work.">
+<link rel="icon" type="image/png" href="Englishfavicon.png">
+
+<!--
+  Typography is intentionally layered:
+  Atkinson Hyperlegible = highly readable body/interface text
+  Fraunces = warm literary headings
+  IM FELL English = old-book marginal notes and small flourishes
+  UnifrakturCook = rare medieval initials/labels only
+  The site remains readable through the fallback stacks if web fonts do not load.
+-->
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:opsz,wght@9..144,400..900&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=UnifrakturCook:wght@700&display=swap');
 :root {
   --vellum: #fbfaf6;
   --paper: #ffffff;
@@ -19,9 +31,12 @@
   --gold: #aa813d;
   --line: #d9d6cc;
   --focus: #005fcc;
-  --body: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", Arial, sans-serif;
-  --literary: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Atkinson Hyperlegible", "Aptos", "Segoe UI", Arial, sans-serif;
+  --literary: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --oldbook: "IM FELL English", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --oldbook-sc: "IM FELL English SC", "Iowan Old Style", Georgia, serif;
   --medieval: "UnifrakturCook", "Old English Text MT", Georgia, serif;
+  --welcome-initial: "IM Fell English SC", Georgia, serif;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -48,14 +63,16 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
 .brand { color: var(--ink); text-decoration: none; }
 .brand-main { display: block; font-family: var(--literary); font-size: 1.45rem; font-weight: 750; }
 .brand-main span { color: var(--blue); }
-.brand-small { display: block; margin-top: .05rem; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .075em; text-transform: uppercase; }
+.brand-small { display: block; margin-top: .05rem; color: var(--muted); font-family: var(--oldbook-sc); font-size: .9rem; font-weight: 400; letter-spacing: .035em; }
 nav ul { display: flex; flex-wrap: wrap; gap: .2rem; margin: 0; padding: 0; list-style: none; }
 nav a { display: block; padding: .65rem .72rem; color: var(--ink); border-radius: 7px; font-weight: 750; text-decoration: none; }
 nav a:hover { background: var(--green-soft); }
 
 .hero { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(235px, .65fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; padding-block: clamp(4rem, 9vw, 7rem); }
-.eyebrow { margin: 0 0 .65rem; color: var(--green); font-size: .82rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+.eyebrow { margin: 0 0 .65rem; color: var(--green); font-family: var(--oldbook-sc); font-size: 1rem; font-weight: 400; letter-spacing: .035em; }
 h1,h2,h3 { font-family: var(--literary); line-height: 1.08; text-wrap: balance; }
+.section-intro h2::after { content: "  ❦"; color: var(--gold); font-family: var(--oldbook); font-size: .52em; font-weight: 400; vertical-align: .18em; }
+.hero h1 em { color: var(--blue); font-family: var(--oldbook); font-style: normal; font-weight: 400; }
 h1 { max-width: 12ch; margin: 0; font-size: clamp(3rem, 7vw, 5.7rem); letter-spacing: -.035em; }
 .hero-lead { max-width: 63ch; margin-block: 1.4rem; color: var(--muted); font-size: clamp(1.1rem, 2vw, 1.28rem); }
 .hero-belong { max-width: 62ch; font-weight: 800; }
@@ -64,13 +81,13 @@ h1 { max-width: 12ch; margin: 0; font-size: clamp(3rem, 7vw, 5.7rem); letter-spa
 .button.primary { color: white; background: var(--blue); }
 .button.primary:hover { color: white; background: var(--blue-dark); }
 .button.secondary { background: white; }
-.marginal-note { margin-top: 1.2rem; color: var(--rust); font-family: var(--literary); font-size: .96rem; font-style: italic; }
+.marginal-note { margin-top: 1.2rem; color: var(--rust); font-family: var(--oldbook); font-size: 1.02rem; font-style: italic; line-height: 1.5; }
 .hero-art { display: grid; place-items: center; min-height: 290px; }
 .hero-art img { width: min(260px, 90%); height: auto; filter: saturate(.88) contrast(.96); }
 
 .manuscript-rule { display: flex; align-items: center; gap: .85rem; margin-block: 0 3rem; color: var(--rust); }
 .manuscript-rule::before,.manuscript-rule::after { content: ""; height: 1px; flex: 1; background: var(--line); }
-.manuscript-rule span { font-family: var(--literary); font-size: 1.2rem; }
+.manuscript-rule span { font-family: var(--medieval); font-size: 1.35rem; }
 
 .section { padding-block: 2.5rem 5rem; }
 .section-intro { max-width: 740px; margin-bottom: 2rem; }
@@ -85,7 +102,7 @@ h1 { max-width: 12ch; margin: 0; font-size: clamp(3rem, 7vw, 5.7rem); letter-spa
 .need-card h3 { margin: .1rem 0 .65rem; padding-right: 84px; font-size: 1.42rem; }
 .need-card p { color: var(--muted); }
 .card-art { position: absolute; top: .9rem; right: .8rem; width: 78px; height: 78px; object-fit: contain; opacity: .9; filter: saturate(.82) contrast(.96); }
-.card-note { margin-top: .9rem; color: var(--rust) !important; font-family: var(--literary); font-size: .9rem; font-style: italic; }
+.card-note { margin-top: .9rem; color: var(--rust) !important; font-family: var(--oldbook); font-size: .98rem; font-style: italic; line-height: 1.45; }
 
 .belonging-panel { position: relative; margin-block: 1rem 5rem; padding: clamp(1.7rem, 5vw, 3.3rem); background: var(--green-soft); border: 1px solid #ccd6c7; border-radius: 16px; overflow: hidden; }
 .belonging-panel h2 { max-width: 18ch; margin: 0 0 1rem; font-size: clamp(2.05rem, 4vw, 3.25rem); }
@@ -95,7 +112,8 @@ h1 { max-width: 12ch; margin: 0; font-size: clamp(3rem, 7vw, 5.7rem); letter-spa
 .belonging-panel .text-wrap { padding-right: clamp(0px, 22vw, 250px); }
 
 .illuminated::first-letter { float: left; margin: .08em .12em 0 0; color: var(--blue); font-family: var(--medieval); font-size: 3.2em; line-height: .72; text-shadow: 1px 1px 0 rgb(170 129 61 / .22); }
-.medieval-label { display: inline-block; margin-bottom: .3rem; color: var(--rust); font-family: var(--medieval); font-size: 1.08rem; }
+.welcome-initial::first-letter { font-family: var(--welcome-initial); font-size: 3.35em; font-weight: 400; margin-right: .10em; color: var(--rust); text-shadow: 1px 1px 0 rgb(170 129 61 / .16); }
+.medieval-label { display: inline-block; margin-bottom: .25rem; color: var(--rust); font-family: var(--medieval); font-size: 1.18rem; letter-spacing: .01em; }
 
 .feature-row { display: grid; grid-template-columns: minmax(0, 1fr) 170px; gap: 2rem; align-items: center; padding: 1.4rem; background: white; border: 1px solid var(--line); border-radius: 14px; }
 .feature-row + .feature-row { margin-top: 1rem; }
@@ -109,7 +127,7 @@ h1 { max-width: 12ch; margin: 0; font-size: clamp(3rem, 7vw, 5.7rem); letter-spa
 
 footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line); }
 .footer-inner { padding-block: 2.5rem; }
-.footer-joke { color: var(--muted); font-family: var(--literary); font-style: italic; }
+.footer-joke { color: var(--muted); font-family: var(--oldbook); font-size: 1.02rem; font-style: italic; }
 
 @media (max-width: 850px) {
   .header-inner { align-items: flex-start; flex-direction: column; padding-block: 1rem; }
@@ -122,6 +140,11 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
   .feature-row img { width: 125px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Decorative type is never used for navigation, buttons, instructions, or long passages. */
+.oldbook { font-family: var(--oldbook); }
+.oldbook-sc { font-family: var(--oldbook-sc); letter-spacing: .02em; }
+.medieval-word { font-family: var(--medieval); font-weight: 700; }
 </style>
 </head>
 <body>
@@ -150,7 +173,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <div>
       <p class="eyebrow">Nine colleges · One English community</p>
       <h1 id="welcome-title">You teach English here. You're one of us.</h1>
-      <p class="hero-lead illuminated">Welcome to a shared space for English faculty across LACCD—a place to find people, teaching ideas, district answers, events, opportunities, and work our colleagues think is worth sharing.</p>
+      <p class="hero-lead illuminated welcome-initial">Welcome to a shared space for English faculty across LACCD: a place to find people, teaching ideas, district answers, events, opportunities, and work our colleagues think is worth sharing.</p>
       <p class="hero-belong">Adjunct, full-time, brand-new, longtime faculty: you belong here.</p>
       <div class="actions">
         <a class="button primary" href="#start">Find What You Need</a>
@@ -169,7 +192,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <div class="section-intro">
       <p class="eyebrow">Start somewhere useful</p>
       <h2 id="need-title">What do you need today?</h2>
-      <p>You should not need to understand district governance before you can find an answer—or know which acronym to whisper into which ancient doorway.</p>
+      <p>You should not need to understand district governance before you can find an answer. You also should not need to know which acronym to whisper into which ancient doorway.</p>
     </div>
 
     <div class="need-grid">
