@@ -206,6 +206,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
 .oldbook-sc { font-family: var(--oldbook-sc); letter-spacing: .02em; }
 .medieval-word { font-family: var(--medieval); font-weight: 700; }
 </style>
+<link rel="stylesheet" href="assets/css/events.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -220,7 +221,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
         <li><a href="#start">Start Here</a></li>
         <li><a href="#the-nine">The 9</a></li>
         <li><a href="#teaching">Teaching</a></li>
-        <li><a href="#events">Events</a></li>
+        <li><a href="events.html">Events</a></li>
         <li><a href="#district">DDC Work</a></li>
         <li><a href="#share">Share Something</a></li>
       </ul>
@@ -288,12 +289,12 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
         <p class="card-note">Someone else has thoughts about the curtains. We promise.</p>
       </article>
 
-      <article class="need-card" id="events">
+      <article class="need-card">
         <img class="card-art" src="assets/marginalia/storyteller-bird.png" alt="" aria-hidden="true">
         <h3>What's Happening?</h3>
         <p>Readings, workshops, meetings, literary events, professional learning, and opportunities across all nine colleges.</p>
-        <a href="#">See district English events</a>
-        <p class="card-note">One calendar. Nine colleges. Miracles happen.</p>
+        <a href="events.html">See district English events</a>
+        <p class="card-note">One noticeboard. Nine colleges. Miracles happen.</p>
       </article>
 
       <article class="need-card" id="share">
@@ -346,6 +347,32 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <p class="map-joke">Nine colleges. Nine castles. No moat around the committee.</p>
   </section>
 
+  <section id="around-district" class="events-section" aria-labelledby="around-district-title">
+    <div class="events-heading-row">
+      <div class="section-intro">
+        <p class="eyebrow">Around the district</p>
+        <h2 id="around-district-title">You shouldn't have to hear about it by accident.</h2>
+        <p>Readings, workshops, meetings, professional learning, deadlines, and other reasons to look up from the grading pile. The homepage shows the next three approved events from across the district.</p>
+      </div>
+      <div aria-hidden="true">
+        <img class="event-bird" src="assets/marginalia/storyteller-bird.png" alt="">
+        <p class="event-bird-note">The bird has news. For once, it is relevant.</p>
+      </div>
+    </div>
+
+    <div class="events-list" data-events-list data-limit="3" aria-live="polite">
+      <div class="event-empty">
+        <h3>Loading upcoming events...</h3>
+        <p>The bird is checking the noticeboard.</p>
+      </div>
+    </div>
+
+    <div class="events-heading-actions event-more">
+      <a class="button secondary" href="events.html">See All Upcoming Events</a>
+      <a class="button primary" data-event-submit-link data-hide-when-unconfigured="true" href="#" hidden>Share an Event</a>
+    </div>
+  </section>
+
   <section class="section" aria-labelledby="commons-title">
     <div class="section-intro">
       <p class="eyebrow">The English commons</p>
@@ -391,12 +418,13 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <section class="footer-notes" aria-labelledby="about-site-heading">
       <h2 id="about-site-heading">About This Site</h2>
       <p><strong>Maintained by Karen Crozer, Ph.D., on a volunteer basis.</strong> This is an independent faculty-created resource. It is not an official LACCD website and is not sponsored, endorsed, or maintained by the Los Angeles Community College District or its colleges. References to LACCD, its colleges, and the English DDC are provided for informational and collegial purposes.</p>
-      <p><strong>Accessibility matters here.</strong> This site is designed with accessibility as a core priority and aims to follow WCAG 2.2 AA guidance, including keyboard access, readable text, strong contrast, responsive reflow, descriptive links, and reduced-motion support. If you encounter an accessibility barrier, please let Karen know so it can be corrected.</p>
+      <p><strong>Accessibility matters here.</strong> This site is designed with accessibility as a core priority and aims to follow WCAG 2.2 AA guidance, including keyboard access, readable text, strong contrast, responsive reflow, descriptive links, and reduced-motion support. If you encounter an accessibility barrier, please <a href="mailto:crozerkj@laccd.edu">email Karen Crozer about the accessibility issue</a> so it can be corrected.</p>
     </section>
   </div>
 </footer>
 
 <script src="config.js"></script>
+<script src="assets/js/events.js"></script>
 <script>
 const colleges = [
   { id: "elac", short: "ELAC", name: "East Los Angeles College", rep: "Patricia Godinez", email: "GODINEP@ELAC.EDU", address: "1301 Avenida Cesar Chavez, Monterey Park, CA 91754", lat: 34.0327, lng: -118.1483 },

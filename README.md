@@ -25,3 +25,26 @@ Navigation note: the district college map is labeled **The 9** in the primary na
 This independent faculty-created resource is maintained by Karen Crozer, Ph.D., on a volunteer basis. It is not an official LACCD website and is not sponsored, endorsed, or maintained by the Los Angeles Community College District or its colleges.
 
 Accessibility is a core design priority. The site aims to follow WCAG 2.2 AA guidance, including keyboard access, readable text, strong contrast, responsive reflow, descriptive links, and reduced-motion support.
+
+## Around the District events
+
+This version also includes the first dynamic participation system: a moderated public event feed.
+
+Files:
+
+- `events.html` is the full public upcoming-events page.
+- `assets/js/events.js` loads approved future events and builds accessible event cards.
+- `assets/css/events.css` contains the shared event-card and filter styles.
+- `apps-script/Code.gs` creates the Google Form, private response Sheet, moderation columns, and public read-only event feed.
+- `apps-script/SETUP.md` has the setup steps.
+- `config.js` has blank `feedUrl` and `submitUrl` fields to fill in after the Google Apps Script is deployed.
+
+The homepage shows the next three approved events. `events.html` shows all upcoming approved events and includes college, event-type, and keyword filters.
+
+Past events do not need to be deleted. The feed automatically stops returning them after their end date, while the private Sheet keeps the historical row.
+
+### Moderation and privacy
+
+Nothing submitted through the Google Form publishes automatically. Karen reviews each row and sets `Approved` to `Yes` before it appears publicly.
+
+The public feed does not return the submitter name, verification email, timestamp, consent response, approval status, featured flag, or moderator notes. The response Sheet should remain private.
