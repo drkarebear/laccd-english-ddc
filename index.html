@@ -129,6 +129,61 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
 .footer-inner { padding-block: 2.5rem; }
 .footer-joke { color: var(--muted); font-family: var(--oldbook); font-size: 1.02rem; font-style: italic; }
 
+
+
+/* The Nine Colleges map and representative directory */
+.map-section { padding-block: 1rem 5rem; }
+.map-shell { position: relative; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #fbfaf6; box-shadow: 0 12px 34px rgb(32 42 48 / .07); }
+.map-stage { position: relative; min-height: 610px; background: #fbfaf6 url("assets/map/la-old-map.svg") center / cover no-repeat; }
+.google-map { position: absolute; inset: 0; z-index: 1; display: none; }
+.google-map.is-ready { display: block; }
+.story-map { position: absolute; inset: 0; z-index: 2; }
+.google-map.is-ready + .story-map { pointer-events: none; }
+.google-map.is-ready + .story-map .castle-point { display: none; }
+.map-frame { position: absolute; inset: 16px; z-index: 3; pointer-events: none; border: 1px solid rgb(170 129 61 / .32); border-radius: 12px; box-shadow: inset 0 0 0 5px rgb(251 250 246 / .55); }
+.map-frame::before,.map-frame::after { content: "❦"; position: absolute; color: var(--gold); font-family: var(--oldbook); font-size: 1.3rem; opacity: .72; }
+.map-frame::before { top: 6px; left: 10px; }
+.map-frame::after { right: 10px; bottom: 6px; transform: rotate(180deg); }
+.map-note { position: absolute; z-index: 4; left: 1.1rem; bottom: 1rem; max-width: min(580px, calc(100% - 2.2rem)); margin: 0; padding: .6rem .8rem; color: #4f5a60; background: rgb(255 255 255 / .92); border: 1px solid var(--line); border-radius: 10px; font-size: .88rem; box-shadow: 0 3px 10px rgb(32 42 48 / .08); }
+.castle-point { position: absolute; transform: translate(-50%, -50%); width: 84px; min-height: 98px; padding: 0; border: 0; background: transparent; color: var(--ink); cursor: pointer; text-align: center; }
+.castle-point img { display: block; width: 58px; height: 68px; margin: 0 auto -2px; filter: drop-shadow(0 2px 2px rgb(32 42 48 / .16)) saturate(.82); transition: transform .16s ease; }
+.castle-point span { display: inline-block; padding: .06rem .34rem; color: var(--blue-dark); background: rgb(255 255 255 / .92); border: 1px solid rgb(217 214 204 / .9); border-radius: 6px; font-family: var(--oldbook-sc); font-size: .78rem; line-height: 1.25; box-shadow: 0 1px 4px rgb(32 42 48 / .08); }
+.castle-point:hover img,.castle-point:focus-visible img { transform: translateY(-4px) scale(1.05); }
+.castle-point:focus-visible { outline: 3px solid var(--focus); outline-offset: 5px; border-radius: 9px; }
+.map-popover { position: absolute; z-index: 6; width: min(330px, calc(100% - 2rem)); padding: 1rem; background: white; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 14px 34px rgb(32 42 48 / .18); }
+.map-popover[hidden] { display: none; }
+.map-popover h3 { margin: 0 0 .35rem; font-size: 1.2rem; }
+.map-popover p { margin: .25rem 0; color: var(--muted); }
+.map-popover .close-popover { position: absolute; top: .45rem; right: .5rem; width: 36px; height: 36px; border: 0; border-radius: 50%; background: #f3f3ef; color: var(--ink); font: inherit; font-size: 1.2rem; cursor: pointer; }
+.map-popover .close-popover:hover { background: var(--green-soft); }
+
+.rep-intro { margin-top: 1.35rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.rep-intro p { max-width: 760px; margin: 0; color: var(--muted); }
+.rep-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+.rep-card { position: relative; padding: 1.25rem; background: white; border: 1px solid var(--line); border-radius: 14px; }
+.rep-card::before { content: ""; position: absolute; top: 0; left: 1.2rem; width: 42px; height: 4px; background: var(--gold); }
+.rep-card h3 { margin: .15rem 0 .25rem; font-size: 1.3rem; }
+.rep-card .college-short { margin: 0 0 .65rem; color: var(--green); font-family: var(--oldbook-sc); font-size: .9rem; }
+.rep-card .rep-name { margin: 0; color: var(--ink); font-weight: 800; }
+.rep-card .rep-role { margin: .1rem 0 .7rem; color: var(--muted); font-size: .92rem; }
+.rep-card .rep-actions { display: flex; flex-wrap: wrap; gap: .55rem .8rem; align-items: center; }
+.rep-card button { padding: 0; border: 0; background: none; color: var(--blue); font: inherit; font-weight: 700; text-decoration: underline; text-decoration-thickness: .11em; text-underline-offset: .18em; cursor: pointer; }
+.rep-card button:hover { color: var(--blue-dark); }
+.rep-card .no-email { color: var(--muted); font-size: .9rem; }
+.map-joke { margin-top: .9rem; color: var(--rust); font-family: var(--oldbook); font-style: italic; }
+
+@media (max-width: 900px) {
+  .map-stage { min-height: 560px; }
+  .rep-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .map-stage { min-height: 720px; }
+  .castle-point { width: 72px; }
+  .castle-point img { width: 50px; height: 59px; }
+  .castle-point span { font-size: .7rem; }
+  .rep-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 850px) {
   .header-inner { align-items: flex-start; flex-direction: column; padding-block: 1rem; }
   .hero { grid-template-columns: 1fr; }
@@ -220,11 +275,11 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
         <p class="card-note">The curriculum snail asks that we respect his process.</p>
       </article>
 
-      <article class="need-card" id="people">
+      <article class="need-card">
         <img class="card-art" src="assets/marginalia/reader-fox.png" alt="" aria-hidden="true">
         <h3>I Want to Find Someone</h3>
         <p>Find colleagues by college, course, teaching interest, project, or expertise.</p>
-        <a href="#">Find English faculty</a>
+        <a href="#people">Find English faculty</a>
         <p class="card-note">Someone else has thoughts about the curtains. We promise.</p>
       </article>
 
@@ -256,6 +311,34 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
       <p class="marginal-note">Adjunct faculty are faculty. Conveniently, the noun was already right there.</p>
     </div>
     <img class="panel-art" src="assets/marginalia/carrier-deer.png" alt="" aria-hidden="true">
+  </section>
+
+  <section id="people" class="map-section" aria-labelledby="map-title">
+    <div class="section-intro">
+      <p class="eyebrow">Explore the district</p>
+      <h2 id="map-title">The Nine Colleges of LACCD English</h2>
+      <p>Each castle marks a college community and the chair who represents it in our districtwide English conversation. Use the map for fun, or use the directory below for the fastest path.</p>
+    </div>
+
+    <div class="map-shell">
+      <div class="map-stage" id="map-stage">
+        <div id="google-map" class="google-map" aria-label="Interactive map showing the nine LACCD colleges"></div>
+        <div class="story-map" id="story-map" aria-label="Illustrated map showing the nine LACCD colleges"></div>
+        <div class="map-frame" aria-hidden="true"></div>
+        <div class="map-popover" id="map-popover" hidden>
+          <button class="close-popover" type="button" aria-label="Close college details">×</button>
+          <div id="map-popover-content"></div>
+        </div>
+        <p class="map-note">The illustrated map works without an account or API key. Each college also has a direct Google Maps link in the directory below.</p>
+      </div>
+    </div>
+
+    <div class="rep-intro">
+      <p><strong>Who represents your college?</strong> These colleagues are points of connection, not gatekeepers. You do not have to be a DDC representative to attend, contribute, ask a question, or share something useful.</p>
+    </div>
+
+    <div class="rep-grid" id="representative-directory" aria-label="English DDC representatives by college"></div>
+    <p class="map-joke">Nine colleges. Nine castles. No moat around the committee.</p>
   </section>
 
   <section class="section" aria-labelledby="commons-title">
@@ -301,5 +384,204 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <p class="footer-joke">Nine colleges. One district. Several hundred opinions about commas.</p>
   </div>
 </footer>
+
+<script src="config.js"></script>
+<script>
+const colleges = [
+  { id: "elac", short: "ELAC", name: "East Los Angeles College", rep: "Patricia Godinez", email: "GODINEP@ELAC.EDU", lat: 34.0327, lng: -118.1483 },
+  { id: "lacc", short: "LACC", name: "Los Angeles City College", rep: "Jeffrey M. Nishimura", email: "NISHIMJM@LACITYCOLLEGE.EDU", lat: 34.0889, lng: -118.2921 },
+  { id: "lahc", short: "LAHC", name: "Los Angeles Harbor College", rep: "Hale E. Savard", email: "SAVARDHE@LAHC.EDU", lat: 33.7828, lng: -118.2636 },
+  { id: "lamc", short: "LAMC", name: "Los Angeles Mission College", rep: "Karen Crozer", email: "", lat: 34.3146, lng: -118.4320 },
+  { id: "pierce", short: "Pierce", name: "Los Angeles Pierce College", rep: "Christopher W. Corning", email: "CORNINC@PIERCECOLLEGE.EDU", lat: 34.1842, lng: -118.5785 },
+  { id: "lasc", short: "LASC", name: "Los Angeles Southwest College", rep: "Stephanie Arms", email: "ARMSS@LASC.EDU", lat: 33.9281, lng: -118.3090 },
+  { id: "lattc", short: "LATTC", name: "Los Angeles Trade-Technical College", rep: "Lisa M. Moreno", email: "MORENOLM@LATTC.EDU", lat: 34.0284, lng: -118.2694 },
+  { id: "lavc", short: "LAVC", name: "Los Angeles Valley College", rep: "Holly K. Batty", email: "BATTYHK@LAVC.EDU", lat: 34.1780, lng: -118.4486 },
+  { id: "wlac", short: "WLAC", name: "West Los Angeles College", rep: "Clare T. Norris-Bell", email: "NORRISCT@WLAC.EDU", lat: 34.0058, lng: -118.3877 }
+];
+
+const storyMap = document.getElementById("story-map");
+const popover = document.getElementById("map-popover");
+const popoverContent = document.getElementById("map-popover-content");
+const repDirectory = document.getElementById("representative-directory");
+const latMin = 33.75, latMax = 34.35, lngMin = -118.64, lngMax = -118.10;
+let googleMap = null;
+let googleMarkers = new Map();
+let activeInfoWindow = null;
+let lastMapTrigger = null;
+
+function googleMapsUrl(college) {
+  return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(college.name);
+}
+
+function mapPosition(college) {
+  const x = ((college.lng - lngMin) / (lngMax - lngMin)) * 100;
+  const y = (1 - ((college.lat - latMin) / (latMax - latMin))) * 100;
+  return { x: Math.min(94, Math.max(6, x)), y: Math.min(91, Math.max(8, y)) };
+}
+
+function collegeDetailsHtml(college) {
+  const email = college.email
+    ? `<p><a href="mailto:${college.email}">Email ${college.rep}</a></p>`
+    : "";
+  return `
+    <h3>${college.name}</h3>
+    <p><strong>English chair and DDC representative:</strong> ${college.rep}</p>
+    ${email}
+    <p><a href="${googleMapsUrl(college)}" target="_blank" rel="noopener">Open ${college.name} in Google Maps</a></p>`;
+}
+
+function showStoryPopover(college, button) {
+  lastMapTrigger = button;
+  popoverContent.innerHTML = collegeDetailsHtml(college);
+  popover.hidden = false;
+  const stage = document.getElementById("map-stage");
+  const stageRect = stage.getBoundingClientRect();
+  const buttonRect = button.getBoundingClientRect();
+  const popWidth = Math.min(330, stageRect.width - 32);
+  let left = buttonRect.left - stageRect.left + (buttonRect.width / 2) - (popWidth / 2);
+  left = Math.max(16, Math.min(stageRect.width - popWidth - 16, left));
+  let top = buttonRect.bottom - stageRect.top + 8;
+  if (top + 225 > stageRect.height) top = Math.max(16, buttonRect.top - stageRect.top - 215);
+  popover.style.left = left + "px";
+  popover.style.top = top + "px";
+  popover.querySelector(".close-popover").focus();
+}
+
+function renderStoryMap() {
+  storyMap.innerHTML = "";
+  colleges.forEach(college => {
+    const pos = mapPosition(college);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "castle-point";
+    button.style.left = pos.x + "%";
+    button.style.top = pos.y + "%";
+    button.setAttribute("aria-label", `${college.name}. Representative: ${college.rep}. Show details.`);
+    button.innerHTML = `<img src="assets/map/castle-marker.svg" alt=""><span>${college.short}</span>`;
+    button.addEventListener("click", () => showStoryPopover(college, button));
+    storyMap.appendChild(button);
+  });
+}
+
+function renderDirectory() {
+  repDirectory.innerHTML = colleges.map(college => {
+    const emailLine = college.email
+      ? `<a href="mailto:${college.email}">Email ${college.rep}</a>`
+      : `<span class="no-email">Contact link coming soon</span>`;
+    return `
+      <article class="rep-card" id="rep-${college.id}">
+        <p class="college-short">${college.short}</p>
+        <h3>${college.name}</h3>
+        <p class="rep-name">${college.rep}</p>
+        <p class="rep-role">English chair and DDC representative</p>
+        <div class="rep-actions">
+          ${emailLine}
+          <button type="button" data-show-college="${college.id}">Show on map</button>
+          <a href="${googleMapsUrl(college)}" target="_blank" rel="noopener">Open campus in Google Maps</a>
+        </div>
+      </article>`;
+  }).join("");
+
+  repDirectory.querySelectorAll("[data-show-college]").forEach(button => {
+    button.addEventListener("click", () => focusCollege(button.dataset.showCollege));
+  });
+}
+
+function focusCollege(id) {
+  const college = colleges.find(item => item.id === id);
+  if (!college) return;
+  if (googleMap && googleMarkers.has(id)) {
+    const marker = googleMarkers.get(id);
+    googleMap.panTo(marker.getPosition());
+    googleMap.setZoom(12);
+    if (activeInfoWindow) activeInfoWindow.close();
+    activeInfoWindow = new google.maps.InfoWindow({ content: `<div style="max-width:280px">${collegeDetailsHtml(college)}</div>` });
+    activeInfoWindow.open(googleMap, marker);
+    document.getElementById("google-map").scrollIntoView({ behavior: "smooth", block: "center" });
+  } else {
+    const buttons = [...document.querySelectorAll(".castle-point")];
+    const index = colleges.findIndex(item => item.id === id);
+    const mapButton = buttons[index];
+    if (mapButton) {
+      mapButton.scrollIntoView({ behavior: "smooth", block: "center" });
+      showStoryPopover(college, mapButton);
+    }
+  }
+}
+
+popover.querySelector(".close-popover").addEventListener("click", () => {
+  popover.hidden = true;
+  if (lastMapTrigger) lastMapTrigger.focus();
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && !popover.hidden) {
+    popover.hidden = true;
+    if (lastMapTrigger) lastMapTrigger.focus();
+  }
+});
+
+function initGoogleMap() {
+  const mapEl = document.getElementById("google-map");
+  googleMap = new google.maps.Map(mapEl, {
+    center: { lat: 34.06, lng: -118.36 },
+    zoom: 10,
+    gestureHandling: "cooperative",
+    mapTypeControl: false,
+    streetViewControl: false,
+    fullscreenControl: true,
+    styles: [
+      { elementType: "geometry", stylers: [{ color: "#f7f3e9" }] },
+      { elementType: "labels.text.fill", stylers: [{ color: "#4c5961" }] },
+      { elementType: "labels.text.stroke", stylers: [{ color: "#fbfaf6" }] },
+      { featureType: "administrative", elementType: "geometry.stroke", stylers: [{ color: "#d4cbbb" }] },
+      { featureType: "landscape", elementType: "geometry", stylers: [{ color: "#f8f5ed" }] },
+      { featureType: "poi", stylers: [{ visibility: "off" }] },
+      { featureType: "road", elementType: "geometry", stylers: [{ color: "#ded7c8" }] },
+      { featureType: "road", elementType: "geometry.stroke", stylers: [{ color: "#c9bfad" }] },
+      { featureType: "road.highway", elementType: "geometry", stylers: [{ color: "#d5c9b4" }] },
+      { featureType: "transit", stylers: [{ visibility: "off" }] },
+      { featureType: "water", elementType: "geometry", stylers: [{ color: "#e4efed" }] }
+    ]
+  });
+
+  const bounds = new google.maps.LatLngBounds();
+  colleges.forEach(college => {
+    const marker = new google.maps.Marker({
+      position: { lat: college.lat, lng: college.lng },
+      map: googleMap,
+      title: college.name,
+      icon: { url: "assets/map/castle-marker.svg", scaledSize: new google.maps.Size(52, 61) },
+      label: { text: college.short, color: "#10364f", fontSize: "11px", fontWeight: "700", className: "google-castle-label" }
+    });
+    marker.addListener("click", () => {
+      if (activeInfoWindow) activeInfoWindow.close();
+      activeInfoWindow = new google.maps.InfoWindow({ content: `<div style="max-width:280px">${collegeDetailsHtml(college)}</div>` });
+      activeInfoWindow.open(googleMap, marker);
+    });
+    googleMarkers.set(college.id, marker);
+    bounds.extend(marker.getPosition());
+  });
+  googleMap.fitBounds(bounds, 60);
+  mapEl.classList.add("is-ready");
+}
+
+function loadGoogleMapsIfConfigured() {
+  const key = (window.LACCD_GOOGLE_MAPS_API_KEY || "").trim();
+  if (!key) return;
+  window.initLaccdEnglishMap = initGoogleMap;
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(key)}&callback=initLaccdEnglishMap`;
+  script.async = true;
+  script.defer = true;
+  script.onerror = () => console.warn("Google Maps did not load. The built-in college map remains available.");
+  document.head.appendChild(script);
+}
+
+renderStoryMap();
+renderDirectory();
+loadGoogleMapsIfConfigured();
+</script>
+
 </body>
 </html>
