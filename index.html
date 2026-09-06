@@ -128,6 +128,10 @@ h1 { max-width: 12ch; margin: 0; font-size: clamp(3rem, 7vw, 5.7rem); letter-spa
 footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line); }
 .footer-inner { padding-block: 2.5rem; }
 .footer-joke { color: var(--muted); font-family: var(--oldbook); font-size: 1.02rem; font-style: italic; }
+.footer-notes { margin-top: 1.5rem; padding-top: 1.35rem; border-top: 1px solid var(--line); max-width: 78ch; }
+.footer-notes h2 { margin: 0 0 .55rem; color: var(--ink); font-family: var(--literary); font-size: 1.2rem; }
+.footer-notes p { margin: .45rem 0 0; color: var(--muted); font-size: .92rem; line-height: 1.6; }
+.footer-notes strong { color: var(--ink); }
 
 
 
@@ -382,6 +386,12 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <p><strong>LACCD English District Discipline Committee</strong></p>
     <p>Faculty · Teaching · Events · District Work · Community</p>
     <p class="footer-joke">Nine colleges. One district. Several hundred opinions about commas.</p>
+
+    <section class="footer-notes" aria-labelledby="about-site-heading">
+      <h2 id="about-site-heading">About This Site</h2>
+      <p><strong>Maintained by Karen Crozer, Ph.D., on a volunteer basis.</strong> This is an independent faculty-created resource. It is not an official LACCD website and is not sponsored, endorsed, or maintained by the Los Angeles Community College District or its colleges. References to LACCD, its colleges, and the English DDC are provided for informational and collegial purposes.</p>
+      <p><strong>Accessibility matters here.</strong> This site is designed with accessibility as a core priority and aims to follow WCAG 2.2 AA guidance, including keyboard access, readable text, strong contrast, responsive reflow, descriptive links, and reduced-motion support. If you encounter an accessibility barrier, please let Karen know so it can be corrected.</p>
+    </section>
   </div>
 </footer>
 
@@ -391,8 +401,8 @@ const colleges = [
   { id: "elac", short: "ELAC", name: "East Los Angeles College", rep: "Patricia Godinez", email: "GODINEP@ELAC.EDU", lat: 34.0327, lng: -118.1483 },
   { id: "lacc", short: "LACC", name: "Los Angeles City College", rep: "Jeffrey M. Nishimura", email: "NISHIMJM@LACITYCOLLEGE.EDU", lat: 34.0889, lng: -118.2921 },
   { id: "lahc", short: "LAHC", name: "Los Angeles Harbor College", rep: "Hale E. Savard", email: "SAVARDHE@LAHC.EDU", lat: 33.7828, lng: -118.2636 },
-  { id: "lamc", short: "LAMC", name: "Los Angeles Mission College", rep: "Karen Crozer", email: "", lat: 34.3146, lng: -118.4320 },
-  { id: "pierce", short: "Pierce", name: "Los Angeles Pierce College", rep: "Christopher W. Corning", email: "CORNINC@PIERCECOLLEGE.EDU", lat: 34.1842, lng: -118.5785 },
+  { id: "lamc", short: "LAMC", name: "Los Angeles Mission College", rep: "Karen Crozer, Ph.D.", email: "", lat: 34.3146, lng: -118.4320 },
+  { id: "pierce", short: "Pierce", name: "Los Angeles Pierce College", rep: "Christopher W. Corning, Ed.D.", email: "CORNINC@PIERCECOLLEGE.EDU", lat: 34.1842, lng: -118.5785 },
   { id: "lasc", short: "LASC", name: "Los Angeles Southwest College", rep: "Stephanie Arms", email: "ARMSS@LASC.EDU", lat: 33.9281, lng: -118.3090 },
   { id: "lattc", short: "LATTC", name: "Los Angeles Trade-Technical College", rep: "Lisa M. Moreno", email: "MORENOLM@LATTC.EDU", lat: 34.0284, lng: -118.2694 },
   { id: "lavc", short: "LAVC", name: "Los Angeles Valley College", rep: "Holly K. Batty", email: "BATTYHK@LAVC.EDU", lat: 34.1780, lng: -118.4486 },

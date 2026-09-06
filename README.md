@@ -19,3 +19,9 @@ The interactive map is optional. All nine colleges, DDC representatives, email l
 
 
 Navigation note: the district college map is labeled **The 9** in the primary navigation.
+
+## Site status and accessibility
+
+This independent faculty-created resource is maintained by Karen Crozer, Ph.D., on a volunteer basis. It is not an official LACCD website and is not sponsored, endorsed, or maintained by the Los Angeles Community College District or its colleges.
+
+Accessibility is a core design priority. The site aims to follow WCAG 2.2 AA guidance, including keyboard access, readable text, strong contrast, responsive reflow, descriptive links, and reduced-motion support.
