@@ -1,54 +1,282 @@
-<section class="hero" aria-labelledby="welcome-title">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LACCD English District Discipline Committee</title>
+<style>
+:root {
+  --vellum: #fbfaf6;
+  --paper: #ffffff;
+  --ink: #202a30;
+  --muted: #58656d;
+  --blue: #174c72;
+  --blue-dark: #10364f;
+  --green: #60745a;
+  --green-soft: #edf2e9;
+  --rust: #9e513a;
+  --rust-soft: #f8eee9;
+  --gold: #aa813d;
+  --line: #d9d6cc;
+  --focus: #005fcc;
+  --body: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", Arial, sans-serif;
+  --literary: "Fraunces", Georgia, "Times New Roman", serif;
+  --medieval: "UnifrakturCook", "Old English Text MT", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 10%, rgb(170 129 61 / .025), transparent 25rem),
+    radial-gradient(circle at 87% 45%, rgb(96 116 90 / .025), transparent 30rem),
+    var(--vellum);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+a { color: var(--blue); text-decoration-thickness: .11em; text-underline-offset: .18em; }
+a:hover { color: var(--blue-dark); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 5px; }
+.skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 1000; padding: .75rem 1rem; color: white; background: var(--blue-dark); }
+.skip-link:focus { top: 0; }
+.wrap { width: min(1180px, calc(100% - 2rem)); margin-inline: auto; }
 
-  <div class="hero-copy">
+.site-header { background: rgb(255 255 255 / .96); border-bottom: 1px solid var(--line); }
+.header-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.brand { color: var(--ink); text-decoration: none; }
+.brand-main { display: block; font-family: var(--literary); font-size: 1.45rem; font-weight: 750; }
+.brand-main span { color: var(--blue); }
+.brand-small { display: block; margin-top: .05rem; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .075em; text-transform: uppercase; }
+nav ul { display: flex; flex-wrap: wrap; gap: .2rem; margin: 0; padding: 0; list-style: none; }
+nav a { display: block; padding: .65rem .72rem; color: var(--ink); border-radius: 7px; font-weight: 750; text-decoration: none; }
+nav a:hover { background: var(--green-soft); }
 
-    <p class="eyebrow">
-      LACCD English District Discipline Committee
-    </p>
+.hero { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(235px, .65fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; padding-block: clamp(4rem, 9vw, 7rem); }
+.eyebrow { margin: 0 0 .65rem; color: var(--green); font-size: .82rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+h1,h2,h3 { font-family: var(--literary); line-height: 1.08; text-wrap: balance; }
+h1 { max-width: 12ch; margin: 0; font-size: clamp(3rem, 7vw, 5.7rem); letter-spacing: -.035em; }
+.hero-lead { max-width: 63ch; margin-block: 1.4rem; color: var(--muted); font-size: clamp(1.1rem, 2vw, 1.28rem); }
+.hero-belong { max-width: 62ch; font-weight: 800; }
+.actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.7rem; }
+.button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; padding: .72rem 1rem; border: 2px solid var(--blue); border-radius: 9px; font-weight: 800; text-decoration: none; }
+.button.primary { color: white; background: var(--blue); }
+.button.primary:hover { color: white; background: var(--blue-dark); }
+.button.secondary { background: white; }
+.marginal-note { margin-top: 1.2rem; color: var(--rust); font-family: var(--literary); font-size: .96rem; font-style: italic; }
+.hero-art { display: grid; place-items: center; min-height: 290px; }
+.hero-art img { width: min(260px, 90%); height: auto; filter: saturate(.88) contrast(.96); }
 
-    <h1 id="welcome-title">
-      You teach English here.
-      You're one of us.
-    </h1>
+.manuscript-rule { display: flex; align-items: center; gap: .85rem; margin-block: 0 3rem; color: var(--rust); }
+.manuscript-rule::before,.manuscript-rule::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+.manuscript-rule span { font-family: var(--literary); font-size: 1.2rem; }
 
-    <p class="hero-lead">
-      Welcome to a shared space for English faculty across all
-      nine LACCD colleges—a place to find people, teaching ideas,
-      events, answers, opportunities, and work our colleagues
-      think is worth sharing.
-    </p>
+.section { padding-block: 2.5rem 5rem; }
+.section-intro { max-width: 740px; margin-bottom: 2rem; }
+.section-intro h2 { margin: 0 0 .65rem; font-size: clamp(2rem, 4vw, 3rem); }
+.section-intro p { color: var(--muted); }
 
-    <p class="belonging-line">
-      <strong>
-        Adjunct, full-time, brand-new, longtime faculty:
-        you belong here.
-      </strong>
-    </p>
+.need-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.need-card { position: relative; min-height: 260px; padding: 1.4rem 1.4rem 1.25rem; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 2px 7px rgb(32 42 48 / .05), 0 12px 30px rgb(32 42 48 / .035); overflow: hidden; }
+.need-card::before { content: ""; position: absolute; top: 0; left: 1.35rem; width: 46px; height: 4px; background: var(--green); }
+.need-card:nth-child(3n+2)::before { background: var(--rust); }
+.need-card:nth-child(3n+3)::before { background: var(--blue); }
+.need-card h3 { margin: .1rem 0 .65rem; padding-right: 84px; font-size: 1.42rem; }
+.need-card p { color: var(--muted); }
+.card-art { position: absolute; top: .9rem; right: .8rem; width: 78px; height: 78px; object-fit: contain; opacity: .9; filter: saturate(.82) contrast(.96); }
+.card-note { margin-top: .9rem; color: var(--rust) !important; font-family: var(--literary); font-size: .9rem; font-style: italic; }
 
-    <div class="hero-actions">
-      <a class="button primary" href="#need">
-        Find What You Need
-      </a>
+.belonging-panel { position: relative; margin-block: 1rem 5rem; padding: clamp(1.7rem, 5vw, 3.3rem); background: var(--green-soft); border: 1px solid #ccd6c7; border-radius: 16px; overflow: hidden; }
+.belonging-panel h2 { max-width: 18ch; margin: 0 0 1rem; font-size: clamp(2.05rem, 4vw, 3.25rem); }
+.belonging-panel p { max-width: 70ch; }
+.belonging-panel .warm-line { font-weight: 800; }
+.belonging-panel .panel-art { position: absolute; right: clamp(1rem, 4vw, 3rem); bottom: -12px; width: clamp(125px, 18vw, 210px); opacity: .78; filter: saturate(.74) contrast(.95); }
+.belonging-panel .text-wrap { padding-right: clamp(0px, 22vw, 250px); }
 
-      <a class="button secondary" href="people.html">
-        Find Your People
-      </a>
+.illuminated::first-letter { float: left; margin: .08em .12em 0 0; color: var(--blue); font-family: var(--medieval); font-size: 3.2em; line-height: .72; text-shadow: 1px 1px 0 rgb(170 129 61 / .22); }
+.medieval-label { display: inline-block; margin-bottom: .3rem; color: var(--rust); font-family: var(--medieval); font-size: 1.08rem; }
+
+.feature-row { display: grid; grid-template-columns: minmax(0, 1fr) 170px; gap: 2rem; align-items: center; padding: 1.4rem; background: white; border: 1px solid var(--line); border-radius: 14px; }
+.feature-row + .feature-row { margin-top: 1rem; }
+.feature-row img { width: 150px; max-height: 150px; object-fit: contain; opacity: .9; filter: saturate(.8) contrast(.96); }
+.feature-row h3 { margin: 0 0 .5rem; font-size: 1.55rem; }
+.feature-row p { color: var(--muted); }
+
+.nota { display: flex; gap: 1rem; align-items: flex-start; margin-block: 3rem; padding: 1.2rem 1.4rem; background: white; border-left: 4px solid var(--gold); }
+.nota-mark { flex: 0 0 auto; color: var(--rust); font-family: var(--medieval); font-size: 2rem; line-height: 1; }
+.nota p { margin: 0; }
+
+footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line); }
+.footer-inner { padding-block: 2.5rem; }
+.footer-joke { color: var(--muted); font-family: var(--literary); font-style: italic; }
+
+@media (max-width: 850px) {
+  .header-inner { align-items: flex-start; flex-direction: column; padding-block: 1rem; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-art { min-height: 190px; }
+  .need-grid { grid-template-columns: 1fr; }
+  .belonging-panel .panel-art { position: static; display: block; width: 135px; margin: 1rem auto 0; }
+  .belonging-panel .text-wrap { padding-right: 0; }
+  .feature-row { grid-template-columns: 1fr; }
+  .feature-row img { width: 125px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#">
+      <span class="brand-main">LACCD <span>English</span></span>
+      <span class="brand-small">District Discipline Committee</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#start">Start Here</a></li>
+        <li><a href="#people">People</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#district">DDC Work</a></li>
+        <li><a href="#share">Share Something</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section class="hero" aria-labelledby="welcome-title">
+    <div>
+      <p class="eyebrow">Nine colleges · One English community</p>
+      <h1 id="welcome-title">You teach English here. You're one of us.</h1>
+      <p class="hero-lead illuminated">Welcome to a shared space for English faculty across LACCD—a place to find people, teaching ideas, district answers, events, opportunities, and work our colleagues think is worth sharing.</p>
+      <p class="hero-belong">Adjunct, full-time, brand-new, longtime faculty: you belong here.</p>
+      <div class="actions">
+        <a class="button primary" href="#start">Find What You Need</a>
+        <a class="button secondary" href="#people">Find Your People</a>
+      </div>
+      <p class="marginal-note">Welcome to the inner circle. Plot twist: there is no outer circle.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <img src="assets/marginalia/herald-rabbit.png" alt="">
+    </div>
+  </section>
+
+  <div class="manuscript-rule" aria-hidden="true"><span>✦</span></div>
+
+  <section id="start" class="section" aria-labelledby="need-title">
+    <div class="section-intro">
+      <p class="eyebrow">Start somewhere useful</p>
+      <h2 id="need-title">What do you need today?</h2>
+      <p>You should not need to understand district governance before you can find an answer—or know which acronym to whisper into which ancient doorway.</p>
     </div>
 
-    <p class="marginal-note">
-      Welcome to the inner circle.
-      Plot twist: there is no outer circle.
-    </p>
+    <div class="need-grid">
+      <article class="need-card">
+        <img class="card-art" src="assets/marginalia/scholar-mouse.png" alt="" aria-hidden="true">
+        <h3>I'm New Here</h3>
+        <p>Meet the people, decode the acronyms, and find the handful of things you actually need first.</p>
+        <a href="#">Start the new-faculty guide</a>
+        <p class="card-note">Yes, you can ask that question. Someone else is also pretending they already know.</p>
+      </article>
 
+      <article class="need-card" id="teaching">
+        <img class="card-art" src="assets/marginalia/keeper-dragon.png" alt="" aria-hidden="true">
+        <h3>I Need a Teaching Idea</h3>
+        <p>Browse assignments, activities, OER, course ideas, and resources shared by LACCD English faculty.</p>
+        <a href="#">Browse teaching resources</a>
+        <p class="card-note">Someone already built this. Let us save you three hours.</p>
+      </article>
+
+      <article class="need-card" id="district">
+        <img class="card-art" src="assets/marginalia/messenger-snail.png" alt="" aria-hidden="true">
+        <h3>I Need a District Answer</h3>
+        <p>Curriculum, governance, minutes, policies, forms, and the shortest path to the thing you actually came for.</p>
+        <a href="#">Find district information</a>
+        <p class="card-note">The curriculum snail asks that we respect his process.</p>
+      </article>
+
+      <article class="need-card" id="people">
+        <img class="card-art" src="assets/marginalia/reader-fox.png" alt="" aria-hidden="true">
+        <h3>I Want to Find Someone</h3>
+        <p>Find colleagues by college, course, teaching interest, project, or expertise.</p>
+        <a href="#">Find English faculty</a>
+        <p class="card-note">Someone else has thoughts about the curtains. We promise.</p>
+      </article>
+
+      <article class="need-card" id="events">
+        <img class="card-art" src="assets/marginalia/storyteller-bird.png" alt="" aria-hidden="true">
+        <h3>What's Happening?</h3>
+        <p>Readings, workshops, meetings, literary events, professional learning, and opportunities across all nine colleges.</p>
+        <a href="#">See district English events</a>
+        <p class="card-note">One calendar. Nine colleges. Miracles happen.</p>
+      </article>
+
+      <article class="need-card" id="share">
+        <img class="card-art" src="assets/marginalia/scribe-dog.png" alt="" aria-hidden="true">
+        <h3>I Made Something</h3>
+        <p>Share an assignment, publication, event, opportunity, project, resource, or idea with colleagues.</p>
+        <a href="#">Share with the district</a>
+        <p class="card-note">Modesty has been temporarily suspended. Proper attribution still applies.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="belonging-panel" aria-labelledby="belong-title">
+    <div class="text-wrap">
+      <p class="eyebrow">A particular welcome to adjunct faculty</p>
+      <h2 id="belong-title">You are not visiting. Pull up a chair.</h2>
+      <p class="illuminated">If you teach even one English class in LACCD, the work you do matters here. Your experience matters. Your questions matter. Your ideas matter. We want you in the conversation.</p>
+      <p>You do not need to be full-time, tenured, serving on a committee, or already fluent in district acronyms. Come to an event. Share something you made. Find someone teaching the same course. Ask how something works. Participate at the level your time allows.</p>
+      <p class="warm-line">We're glad you're here, and we love what you bring to our students and to one another.</p>
+      <p class="marginal-note">Adjunct faculty are faculty. Conveniently, the noun was already right there.</p>
+    </div>
+    <img class="panel-art" src="assets/marginalia/carrier-deer.png" alt="" aria-hidden="true">
+  </section>
+
+  <section class="section" aria-labelledby="commons-title">
+    <div class="section-intro">
+      <p class="eyebrow">The English commons</p>
+      <h2 id="commons-title">You have colleagues you haven't met yet.</h2>
+      <p>Teaching can get weirdly solitary for a job involving this many humans. The district should make it easier to find someone who teaches what you teach, cares about what you care about, or already survived the thing you're trying to figure out.</p>
+    </div>
+
+    <div class="feature-row">
+      <div>
+        <span class="medieval-label" aria-hidden="true">Hark!</span>
+        <h3>Look what our people made.</h3>
+        <p>Publications, assignments, OER, conference work, literary projects, teaching experiments, and the occasional Canvas page so good someone should probably frame it.</p>
+        <a href="#">See faculty work</a>
+        <p class="marginal-note">Bragging is permitted when properly cited.</p>
+      </div>
+      <img src="assets/marginalia/scribe-dog.png" alt="" aria-hidden="true">
+    </div>
+
+    <div class="feature-row">
+      <div>
+        <span class="medieval-label" aria-hidden="true">Nota Bene</span>
+        <h3>You are allowed to ask.</h3>
+        <p>Don't know who handles something? Don't recognize an acronym? Need the form everyone else apparently received telepathically? Ask. Nobody should have to learn a nine-college district through folklore.</p>
+        <a href="#">Help me find the right person</a>
+        <p class="marginal-note">The snail has the form. Unfortunately, he is the snail.</p>
+      </div>
+      <img src="assets/marginalia/messenger-snail.png" alt="" aria-hidden="true">
+    </div>
+  </section>
+
+  <aside class="nota" aria-label="A note about acronyms">
+    <span class="nota-mark" aria-hidden="true">N</span>
+    <p><strong>Nota bene:</strong> You do not need to know what every LACCD acronym means. No one does. Some of them may be reproducing.</p>
+  </aside>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p><strong>LACCD English District Discipline Committee</strong></p>
+    <p>Faculty · Teaching · Events · District Work · Community</p>
+    <p class="footer-joke">Nine colleges. One district. Several hundred opinions about commas.</p>
   </div>
-
-  <div class="hero-marginalia" aria-hidden="true">
-    <img
-      src="images/herald-rabbit.svg"
-      alt=""
-      width="240"
-      height="260"
-    >
-  </div>
-
-</section>
+</footer>
+</body>
+</html>
