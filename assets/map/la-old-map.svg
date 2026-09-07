@@ -1,130 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" aria-hidden="true" preserveAspectRatio="none">
   <defs>
     <pattern id="vellum-speckle" width="44" height="44" patternUnits="userSpaceOnUse">
       <circle cx="8" cy="12" r=".9" fill="#aa813d" opacity=".08"/>
       <circle cx="31" cy="29" r=".7" fill="#60745a" opacity=".07"/>
       <circle cx="20" cy="39" r=".5" fill="#9e513a" opacity=".05"/>
     </pattern>
-    <filter id="soft">
-      <feGaussianBlur stdDeviation=".35"/>
-    </filter>
+    <radialGradient id="edge-wash" cx="50%" cy="45%" r="70%">
+      <stop offset="0" stop-color="#fffdf8" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ad8d55" stop-opacity=".10"/>
+    </radialGradient>
   </defs>
 
-  <!-- Bright vellum ground -->
-  <rect width="1200" height="680" fill="#fbfaf6"/>
-  <rect width="1200" height="680" fill="url(#vellum-speckle)"/>
+  <rect width="1200" height="760" fill="#f5edda"/>
+    <polygon points="21.4,12.1 728.6,12.1 792.9,108.6 685.7,168.9 514.3,253.3 235.7,265.4 21.4,217.1" fill="#c9d2aa" opacity=".62" stroke="#8e7c5c" stroke-width="1.4"/>
+  <polygon points="771.4,132.7 1200.0,96.5 1200.0,349.8 1050.0,386.0 878.6,313.7" fill="#c3cca3" opacity=".62" stroke="#8e7c5c" stroke-width="1.4"/>
+  <polygon points="300.0,289.5 578.6,289.5 728.6,398.1 642.9,482.5 407.1,530.8 278.6,446.3" fill="#d7bf91" opacity=".62" stroke="#8e7c5c" stroke-width="1.4"/>
+  <polygon points="642.9,289.5 942.9,313.7 1071.4,410.2 900.0,470.5 621.4,470.5 557.1,398.1" fill="#cfaa68" opacity=".62" stroke="#8e7c5c" stroke-width="1.4"/>
+  <polygon points="578.6,446.3 921.4,458.4 985.7,554.9 878.6,627.3 578.6,615.2 471.4,542.9" fill="#c7a978" opacity=".62" stroke="#8e7c5c" stroke-width="1.4"/>
+  <polygon points="685.7,591.1 1028.6,579.0 1114.3,760.0 685.7,760.0" fill="#c8c49b" opacity=".62" stroke="#8e7c5c" stroke-width="1.4"/>
 
-  <!-- Pacific Ocean and a simplified Los Angeles coastline -->
-  <path d="M0 0H40V152
-           C112 168 181 187 243 216
-           C313 249 364 290 398 342
-           C420 376 424 409 441 442
-           C470 497 525 535 584 571
-           C630 599 665 634 686 680
-           H0Z"
-        fill="#e8f0ef"/>
-  <path d="M40 152
-           C112 168 181 187 243 216
-           C313 249 364 290 398 342
-           C420 376 424 409 441 442
-           C470 497 525 535 584 571
-           C630 599 665 634 686 680"
-        fill="none" stroke="#8ba9a4" stroke-width="6" opacity=".75"/>
+  <!-- Pacific coastline, projected to the same latitude/longitude frame used by the college markers. -->
+  <path d="M0,0 L0,386.0 0.0,386.0 L107.1,392.1 L214.3,404.1 L342.9,422.2 L407.1,452.4 L450.0,488.6 L492.9,524.8 L525.0,561.0 L557.1,597.1 L578.6,627.3 L546.4,657.5 L514.3,693.7 L546.4,729.8 L642.9,754.0 L792.9,760.0 L878.6,741.9 L985.7,735.9 L1200.0,735.9 L1200,760 L0,760 Z" fill="#9fb9b2" opacity=".92"/>
+  <path d="M0.0,386.0 L107.1,392.1 L214.3,404.1 L342.9,422.2 L407.1,452.4 L450.0,488.6 L492.9,524.8 L525.0,561.0 L557.1,597.1 L578.6,627.3 L546.4,657.5 L514.3,693.7 L546.4,729.8 L642.9,754.0 L792.9,760.0 L878.6,741.9 L985.7,735.9 L1200.0,735.9" fill="none" stroke="#446b68" stroke-width="4" opacity=".88"/>
+  <path d="M0.0,386.0 L107.1,392.1 L214.3,404.1 L342.9,422.2 L407.1,452.4 L450.0,488.6 L492.9,524.8 L525.0,561.0 L557.1,597.1 L578.6,627.3 L546.4,657.5 L514.3,693.7 L546.4,729.8 L642.9,754.0 L792.9,760.0 L878.6,741.9 L985.7,735.9 L1200.0,735.9" fill="none" stroke="#e8dfc8" stroke-width="1.2" opacity=".85" transform="translate(5 -3)"/>
 
-  <!-- Small harbor indentation -->
-  <path d="M686 680 C705 650 733 632 768 630 C792 630 812 641 823 660 C830 671 834 677 836 680Z"
-        fill="#e8f0ef"/>
-  <path d="M686 680 C705 650 733 632 768 630 C792 630 812 641 823 660"
-        fill="none" stroke="#8ba9a4" stroke-width="4" opacity=".72"/>
-
-  <!-- Mountains and hills, schematic rather than literal -->
-  <g fill="none" stroke="#9b8d74" stroke-width="3" opacity=".48" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M245 74l28-22 25 21 31-26 29 25 31-21 35 24 28-18 31 18"/>
-    <path d="M478 64l29-22 23 22 25-20 31 21 28-17 31 19"/>
-    <path d="M828 120l25-17 26 18 29-20 28 19 30-18 33 20 26-17 27 17"/>
-    <path d="M1040 172l21-15 23 16 25-18 24 17 25-13"/>
+  <!-- Mountain ranges: geographic cues, not legal or municipal boundaries. -->
+  <g fill="none" stroke="#776b52" stroke-width="2.4" opacity=".54" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M240 286 l24 -19 20 18 25 -22 24 20 28 -17 25 18 29 -23 25 20 28 -17 24 17 27 -19 28 20 27 -16 26 17"/>
+    <path d="M760 112 l28 -22 24 20 31 -25 28 23 31 -20 31 23 33 -25 29 24 31 -21 33 24 31 -18 34 20"/>
+    <path d="M920 188 l20 -13 20 15 22 -17 20 15 22 -14 22 14 23 -16 20 15"/>
   </g>
+  <g fill="#6b674f" opacity=".64" font-family="Georgia,serif" font-size="13" font-style="italic">
+    <text x="365" y="313">Santa Monica Mountains</text>
+    <text x="890" y="92">San Gabriel Mountains</text>
+  </g>
+
+  <!-- Major freeways, simplified but placed from geographic anchor points. -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21.4,144.8 L171.4,144.8 L321.4,132.7 L471.4,90.5 L642.9,84.4 L814.3,96.5" stroke="#eadfca" stroke-width="12" opacity=".9"/>
+  <path d="M21.4,144.8 L171.4,144.8 L321.4,132.7 L471.4,90.5 L642.9,84.4 L814.3,96.5" stroke="#9f8051" stroke-width="3.2" opacity=".72"/>
+  <path d="M21.4,144.8 L171.4,144.8 L321.4,132.7 L471.4,90.5 L642.9,84.4 L814.3,96.5" stroke="#fffdf7" stroke-width="1.5" stroke-dasharray="2 11" opacity=".92"/>
+  <path d="M364.3,24.1 L385.7,96.5 L407.1,168.9 L364.3,229.2 L407.1,301.6 L471.4,386.0 L535.7,470.5 L621.4,554.9 L685.7,627.3" stroke="#eadfca" stroke-width="12" opacity=".9"/>
+  <path d="M364.3,24.1 L385.7,96.5 L407.1,168.9 L364.3,229.2 L407.1,301.6 L471.4,386.0 L535.7,470.5 L621.4,554.9 L685.7,627.3" stroke="#9f8051" stroke-width="3.2" opacity=".72"/>
+  <path d="M364.3,24.1 L385.7,96.5 L407.1,168.9 L364.3,229.2 L407.1,301.6 L471.4,386.0 L535.7,470.5 L621.4,554.9 L685.7,627.3" stroke="#fffdf7" stroke-width="1.5" stroke-dasharray="2 11" opacity=".92"/>
+  <path d="M42.9,229.2 L171.4,229.2 L342.9,229.2 L471.4,241.3 L600.0,265.4 L707.1,301.6 L792.9,325.7 L900.0,337.8" stroke="#eadfca" stroke-width="12" opacity=".9"/>
+  <path d="M42.9,229.2 L171.4,229.2 L342.9,229.2 L471.4,241.3 L600.0,265.4 L707.1,301.6 L792.9,325.7 L900.0,337.8" stroke="#9f8051" stroke-width="3.2" opacity=".72"/>
+  <path d="M42.9,229.2 L171.4,229.2 L342.9,229.2 L471.4,241.3 L600.0,265.4 L707.1,301.6 L792.9,325.7 L900.0,337.8" stroke="#fffdf7" stroke-width="1.5" stroke-dasharray="2 11" opacity=".92"/>
+  <path d="M407.1,12.1 L471.4,60.3 L535.7,120.6 L642.9,193.0 L728.6,253.3 L814.3,313.7 L878.6,367.9 L942.9,410.2 L1028.6,470.5" stroke="#eadfca" stroke-width="12" opacity=".9"/>
+  <path d="M407.1,12.1 L471.4,60.3 L535.7,120.6 L642.9,193.0 L728.6,253.3 L814.3,313.7 L878.6,367.9 L942.9,410.2 L1028.6,470.5" stroke="#9f8051" stroke-width="3.2" opacity=".72"/>
+  <path d="M407.1,12.1 L471.4,60.3 L535.7,120.6 L642.9,193.0 L728.6,253.3 L814.3,313.7 L878.6,367.9 L942.9,410.2 L1028.6,470.5" stroke="#fffdf7" stroke-width="1.5" stroke-dasharray="2 11" opacity=".92"/>
+  <path d="M278.6,392.1 L407.1,392.1 L557.1,398.1 L685.7,398.1 L814.3,398.1 L942.9,398.1 L1092.9,398.1 L1200.0,398.1" stroke="#eadfca" stroke-width="12" opacity=".9"/>
+  <path d="M278.6,392.1 L407.1,392.1 L557.1,398.1 L685.7,398.1 L814.3,398.1 L942.9,398.1 L1092.9,398.1 L1200.0,398.1" stroke="#9f8051" stroke-width="3.2" opacity=".72"/>
+  <path d="M278.6,392.1 L407.1,392.1 L557.1,398.1 L685.7,398.1 L814.3,398.1 L942.9,398.1 L1092.9,398.1 L1200.0,398.1" stroke="#fffdf7" stroke-width="1.5" stroke-dasharray="2 11" opacity=".92"/>
+  <path d="M857.1,416.2 L942.9,416.2 L1028.6,410.2 L1114.3,404.1 L1200.0,404.1" stroke="#eadfca" stroke-width="12" opacity=".9"/>
+  <path d="M857.1,416.2 L942.9,416.2 L1028.6,410.2 L1114.3,404.1 L1200.0,404.1" stroke="#9f8051" stroke-width="3.2" opacity=".72"/>
+  <path d="M857.1,416.2 L942.9,416.2 L1028.6,410.2 L1114.3,404.1 L1200.0,404.1" stroke="#fffdf7" stroke-width="1.5" stroke-dasharray="2 11" opacity=".92"/>
+  <path d="M428.6,518.7 L578.6,518.7 L728.6,518.7 L878.6,518.7 L1028.6,518.7" stroke="#eadfca" stroke-width="12" opacity=".9"/>
+  <path d="M428.6,518.7 L578.6,518.7 L728.6,518.7 L878.6,518.7 L1028.6,518.7" stroke="#9f8051" stroke-width="3.2" opacity=".72"/>
+  <path d="M428.6,518.7 L578.6,518.7 L728.6,518.7 L878.6,518.7 L1028.6,518.7" stroke="#fffdf7" stroke-width="1.5" stroke-dasharray="2 11" opacity=".92"/>
+  <path d="M814.3,349.8 L814.3,410.2 L792.9,470.5 L792.9,530.8 L792.9,603.2 L792.9,663.5 L792.9,723.8" stroke="#eadfca" stroke-width="12" opacity=".9"/>
+  <path d="M814.3,349.8 L814.3,410.2 L792.9,470.5 L792.9,530.8 L792.9,603.2 L792.9,663.5 L792.9,723.8" stroke="#9f8051" stroke-width="3.2" opacity=".72"/>
+  <path d="M814.3,349.8 L814.3,410.2 L792.9,470.5 L792.9,530.8 L792.9,603.2 L792.9,663.5 L792.9,723.8" stroke="#fffdf7" stroke-width="1.5" stroke-dasharray="2 11" opacity=".92"/>
+  </g>
+  <g>  <g transform="translate(300.0 138.7)" opacity=".88"><rect x="-18.0" y="-11" width="36" height="20" rx="5" fill="#fbfaf6" stroke="#9f8051"/><text y="4" text-anchor="middle" fill="#705a37" font-family="Georgia,serif" font-size="11" font-weight="700">118</text></g>
+  <g transform="translate(428.6 337.8)" opacity=".88"><rect x="-18.0" y="-11" width="36" height="20" rx="5" fill="#fbfaf6" stroke="#9f8051"/><text y="4" text-anchor="middle" fill="#705a37" font-family="Georgia,serif" font-size="11" font-weight="700">405</text></g>
+  <g transform="translate(578.6 259.4)" opacity=".88"><rect x="-18.0" y="-11" width="36" height="20" rx="5" fill="#fbfaf6" stroke="#9f8051"/><text y="4" text-anchor="middle" fill="#705a37" font-family="Georgia,serif" font-size="11" font-weight="700">101</text></g>
+  <g transform="translate(685.7 229.2)" opacity=".88"><rect x="-13.0" y="-11" width="26" height="20" rx="5" fill="#fbfaf6" stroke="#9f8051"/><text y="4" text-anchor="middle" fill="#705a37" font-family="Georgia,serif" font-size="11" font-weight="700">5</text></g>
+  <g transform="translate(664.3 398.1)" opacity=".88"><rect x="-13.0" y="-11" width="26" height="20" rx="5" fill="#fbfaf6" stroke="#9f8051"/><text y="4" text-anchor="middle" fill="#705a37" font-family="Georgia,serif" font-size="11" font-weight="700">10</text></g>
+  <g transform="translate(1050.0 410.2)" opacity=".88"><rect x="-13.0" y="-11" width="26" height="20" rx="5" fill="#fbfaf6" stroke="#9f8051"/><text y="4" text-anchor="middle" fill="#705a37" font-family="Georgia,serif" font-size="11" font-weight="700">60</text></g>
+  <g transform="translate(685.7 518.7)" opacity=".88"><rect x="-18.0" y="-11" width="36" height="20" rx="5" fill="#fbfaf6" stroke="#9f8051"/><text y="4" text-anchor="middle" fill="#705a37" font-family="Georgia,serif" font-size="11" font-weight="700">105</text></g>
+  <g transform="translate(792.9 603.2)" opacity=".88"><rect x="-18.0" y="-11" width="36" height="20" rx="5" fill="#fbfaf6" stroke="#9f8051"/><text y="4" text-anchor="middle" fill="#705a37" font-family="Georgia,serif" font-size="11" font-weight="700">110</text></g></g>
 
   <!-- Region labels -->
-  <g fill="#60745a" opacity=".68" font-family="Georgia, serif" font-style="italic" font-size="17">
-    <text x="244" y="118">San Fernando Valley</text>
-    <text x="688" y="245">Central Los Angeles</text>
-    <text x="1000" y="286">Eastside</text>
-    <text x="604" y="482">South Los Angeles</text>
-    <text x="788" y="612">Harbor</text>
-    <text x="94" y="454" transform="rotate(-14 94 454)">Pacific Ocean</text>
+  <g fill="#554b3a" opacity=".80" font-family="Georgia,serif" font-weight="700" letter-spacing="1.2">
+    <text x="300" y="135" font-size="19">SAN FERNANDO</text><text x="335" y="158" font-size="19">VALLEY</text>
+    <text x="945" y="170" font-size="17">SAN GABRIEL</text><text x="987" y="192" font-size="17">VALLEY</text>
+    <text x="443" y="413" font-size="16" font-style="italic" font-weight="400">The Westside</text>
+    <text x="738" y="358" font-size="17">CENTRAL LA</text>
+    <text x="695" y="548" font-size="17">SOUTH LA</text>
+    <text x="820" y="658" font-size="17">HARBOR AREA</text>
+  </g>
+  <g fill="#f8f2df" opacity=".88" font-family="Georgia,serif" font-style="italic">
+    <text x="125" y="548" font-size="22" transform="rotate(-18 125 548)">The Pacific Sea</text>
+    <text x="90" y="445" font-size="16">BEACH CITIES</text>
   </g>
 
-  <!-- Major freeways drawn like manuscript roads. Broad pale bed + ochre line + stone dots. -->
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <!-- 118 -->
-    <path d="M110 142 C235 126 365 128 535 151" stroke="#e6dcc7" stroke-width="12" opacity=".8"/>
-    <path d="M110 142 C235 126 365 128 535 151" stroke="#ad8d55" stroke-width="3.2" opacity=".72"/>
-    <path d="M110 142 C235 126 365 128 535 151" stroke="#fbfaf6" stroke-width="1.6" stroke-dasharray="2 12" opacity=".95"/>
-
-    <!-- 405 -->
-    <path d="M145 106 C180 176 235 236 296 292 C341 334 370 386 388 446 C407 509 444 567 505 630" stroke="#e6dcc7" stroke-width="13" opacity=".82"/>
-    <path d="M145 106 C180 176 235 236 296 292 C341 334 370 386 388 446 C407 509 444 567 505 630" stroke="#ad8d55" stroke-width="3.4" opacity=".75"/>
-    <path d="M145 106 C180 176 235 236 296 292 C341 334 370 386 388 446 C407 509 444 567 505 630" stroke="#fbfaf6" stroke-width="1.7" stroke-dasharray="2 12"/>
-
-    <!-- 101 -->
-    <path d="M220 218 C346 215 478 235 606 272 C690 296 756 307 827 303" stroke="#e6dcc7" stroke-width="12" opacity=".82"/>
-    <path d="M220 218 C346 215 478 235 606 272 C690 296 756 307 827 303" stroke="#ad8d55" stroke-width="3.2" opacity=".75"/>
-    <path d="M220 218 C346 215 478 235 606 272 C690 296 756 307 827 303" stroke="#fbfaf6" stroke-width="1.6" stroke-dasharray="2 12"/>
-
-    <!-- 5 -->
-    <path d="M535 86 C553 146 580 205 626 258 C680 321 771 353 886 374 C981 392 1056 419 1121 466" stroke="#e6dcc7" stroke-width="13" opacity=".82"/>
-    <path d="M535 86 C553 146 580 205 626 258 C680 321 771 353 886 374 C981 392 1056 419 1121 466" stroke="#ad8d55" stroke-width="3.4" opacity=".75"/>
-    <path d="M535 86 C553 146 580 205 626 258 C680 321 771 353 886 374 C981 392 1056 419 1121 466" stroke="#fbfaf6" stroke-width="1.7" stroke-dasharray="2 12"/>
-
-    <!-- 10 -->
-    <path d="M393 392 C536 374 681 374 821 393 C940 408 1034 410 1138 393" stroke="#e6dcc7" stroke-width="13" opacity=".84"/>
-    <path d="M393 392 C536 374 681 374 821 393 C940 408 1034 410 1138 393" stroke="#ad8d55" stroke-width="3.4" opacity=".76"/>
-    <path d="M393 392 C536 374 681 374 821 393 C940 408 1034 410 1138 393" stroke="#fbfaf6" stroke-width="1.7" stroke-dasharray="2 12"/>
-
-    <!-- 60 -->
-    <path d="M782 352 C898 344 1013 340 1150 350" stroke="#e6dcc7" stroke-width="11" opacity=".78"/>
-    <path d="M782 352 C898 344 1013 340 1150 350" stroke="#ad8d55" stroke-width="3" opacity=".7"/>
-    <path d="M782 352 C898 344 1013 340 1150 350" stroke="#fbfaf6" stroke-width="1.5" stroke-dasharray="2 12"/>
-
-    <!-- 105 -->
-    <path d="M510 514 C631 499 757 500 890 516" stroke="#e6dcc7" stroke-width="11" opacity=".8"/>
-    <path d="M510 514 C631 499 757 500 890 516" stroke="#ad8d55" stroke-width="3" opacity=".72"/>
-    <path d="M510 514 C631 499 757 500 890 516" stroke="#fbfaf6" stroke-width="1.5" stroke-dasharray="2 12"/>
-
-    <!-- 110 -->
-    <path d="M753 330 C756 400 768 470 786 535 C798 582 810 624 824 676" stroke="#e6dcc7" stroke-width="12" opacity=".82"/>
-    <path d="M753 330 C756 400 768 470 786 535 C798 582 810 624 824 676" stroke="#ad8d55" stroke-width="3.2" opacity=".74"/>
-    <path d="M753 330 C756 400 768 470 786 535 C798 582 810 624 824 676" stroke="#fbfaf6" stroke-width="1.6" stroke-dasharray="2 12"/>
-
-    <!-- 710 -->
-    <path d="M935 354 C934 425 926 495 905 565 C892 607 879 642 864 676" stroke="#e6dcc7" stroke-width="11" opacity=".78"/>
-    <path d="M935 354 C934 425 926 495 905 565 C892 607 879 642 864 676" stroke="#ad8d55" stroke-width="3" opacity=".7"/>
-    <path d="M935 354 C934 425 926 495 905 565 C892 607 879 642 864 676" stroke="#fbfaf6" stroke-width="1.5" stroke-dasharray="2 12"/>
+  <!-- A few manuscript trees and waves for atmosphere. -->
+  <g fill="#667253" opacity=".66">
+    <path d="M160 105 l8 -15 8 15 h-5 l7 13 h-7 v13 h-6 v-13 h-7 l7-13z"/>
+    <path d="M675 105 l8 -15 8 15 h-5 l7 13 h-7 v13 h-6 v-13 h-7 l7-13z"/>
+    <path d="M1110 245 l8 -15 8 15 h-5 l7 13 h-7 v13 h-6 v-13 h-7 l7-13z"/>
+    <path d="M1055 615 l8 -15 8 15 h-5 l7 13 h-7 v13 h-6 v-13 h-7 l7-13z"/>
   </g>
-
-  <!-- Small road plaques -->
-  <g font-family="Georgia, serif" font-size="12" font-weight="700" text-anchor="middle">
-    <g transform="translate(305 133)"><rect x="-18" y="-12" width="36" height="21" rx="5" fill="#fbfaf6" stroke="#ad8d55"/><text y="4" fill="#755e38">118</text></g>
-    <g transform="translate(288 307)"><rect x="-18" y="-12" width="36" height="21" rx="5" fill="#fbfaf6" stroke="#ad8d55"/><text y="4" fill="#755e38">405</text></g>
-    <g transform="translate(514 244)"><rect x="-18" y="-12" width="36" height="21" rx="5" fill="#fbfaf6" stroke="#ad8d55"/><text y="4" fill="#755e38">101</text></g>
-    <g transform="translate(646 281)"><rect x="-13" y="-12" width="26" height="21" rx="5" fill="#fbfaf6" stroke="#ad8d55"/><text y="4" fill="#755e38">5</text></g>
-    <g transform="translate(611 378)"><rect x="-14" y="-12" width="28" height="21" rx="5" fill="#fbfaf6" stroke="#ad8d55"/><text y="4" fill="#755e38">10</text></g>
-    <g transform="translate(997 341)"><rect x="-14" y="-12" width="28" height="21" rx="5" fill="#fbfaf6" stroke="#ad8d55"/><text y="4" fill="#755e38">60</text></g>
-    <g transform="translate(646 499)"><rect x="-18" y="-12" width="36" height="21" rx="5" fill="#fbfaf6" stroke="#ad8d55"/><text y="4" fill="#755e38">105</text></g>
-    <g transform="translate(783 510)"><rect x="-18" y="-12" width="36" height="21" rx="5" fill="#fbfaf6" stroke="#ad8d55"/><text y="4" fill="#755e38">110</text></g>
-    <g transform="translate(913 527)"><rect x="-18" y="-12" width="36" height="21" rx="5" fill="#fbfaf6" stroke="#ad8d55"/><text y="4" fill="#755e38">710</text></g>
-  </g>
-
-  <!-- Wave marks -->
-  <g stroke="#87a6a0" fill="none" stroke-width="2.2" opacity=".58">
-    <path d="M80 320q34 18 68 0M67 346q38 20 76 0M115 523q37 19 74 0M101 549q42 21 84 0"/>
+  <g stroke="#e3eee8" fill="none" stroke-width="2.6" opacity=".67">
+    <path d="M75 535 q30 16 60 0 M96 560 q34 18 68 0 M245 645 q30 16 60 0 M275 670 q34 18 68 0 M420 710 q31 16 62 0"/>
   </g>
 
   <!-- Compass rose -->
-  <g transform="translate(1066 533)" opacity=".62" stroke="#9e513a" fill="none" stroke-width="2.4">
-    <circle cx="55" cy="55" r="39"/>
-    <path d="M55 0v110M0 55h110M22 22l66 66M88 22L22 88"/>
-    <path d="M55 4l9 36-9-10-9 10z" fill="#9e513a"/>
+  <g transform="translate(1070 505)" opacity=".72" stroke="#704936" fill="none" stroke-width="2.2">
+    <circle cx="52" cy="52" r="39" fill="#f8f0d9" fill-opacity=".72"/>
+    <path d="M52 4v96M4 52h96"/>
+    <path d="M52 5 l9 34 -9 -10 -9 10z" fill="#9d673f"/>
+    <text x="52" y="-7" text-anchor="middle" fill="#554535" stroke="none" font-family="Georgia,serif" font-weight="700" font-size="12">N</text>
   </g>
+
+  <rect width="1200" height="760" fill="url(#vellum-speckle)"/>
+  <rect width="1200" height="760" fill="url(#edge-wash)"/>
 </svg>
