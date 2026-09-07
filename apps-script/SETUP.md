@@ -92,3 +92,6 @@ No scheduled cleanup job is required. Expired rows remain in the private Sheet a
 - Verification emails, submitter names, consent responses, timestamps, approval status, and moderator notes are not returned by the public feed.
 - The Google Sheet should remain private.
 
+## Privacy retention
+
+As a default moderation practice, delete or anonymize private submitter names and verification emails within 90 days after an event ends. Public event details may remain if they are useful as a historical record.

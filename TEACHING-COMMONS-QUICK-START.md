@@ -31,3 +31,9 @@ Nothing publishes until you set `Approved` to `Yes`.
 ## If the Teaching Commons is already set up
 
 Keep the existing Form, Sheet, and `/exec` deployment URL. Replace the Apps Script code with the current `resources-apps-script/Code.gs`, run `repairTeachingCommons()`, then run `diagnoseTeachingCommons()`. If the diagnostic shows a publishable resource count greater than zero, update the existing Web app deployment to a new version rather than creating a separate deployment.
+
+## Privacy retention
+
+Keep submitter name, verification email, and permission/consent information while a resource is publicly listed. After the listing is removed, delete or anonymize private contact information within **90 days**, unless a legitimate rights or moderation need requires longer retention.
+
+On an existing installation, `repairTeachingCommons()` reapplies the privacy-safe Form settings, repairs moderator columns, and preserves existing responses.

@@ -19,3 +19,11 @@
 12. Copy the returned `feedUrl`, `joinUrl`, and `changeUrl` into the `LACCD_ENGLISH_FACULTY` block in the website `config.js`.
 
 Do not publish the private Google Sheet. The public web app returns only approved, explicitly public profile fields.
+
+## Verify update/remove requests
+
+Never change or remove a public profile solely because a change-request form was submitted. Compare the request with the original private verification email. If the address does not match, or the change is substantial, confirm with the original address before acting.
+
+## Privacy retention
+
+Retain private verification information while a profile is active. After removal, delete or anonymize private verification/contact information within 90 days unless a legitimate administrative need requires longer retention.

@@ -34,3 +34,13 @@ To remove a profile, change Approved to No or blank. Faculty can also use the pu
 - Moderator notes, timestamps, consent records, and change requests are never returned by the public feed.
 - No photo is required.
 - Adjunct and full-time faculty are presented together in the same directory.
+
+## Change-request verification
+
+Do not update or remove a profile solely because someone submitted the change form. Compare the request with the **original private verification email** in the profile response sheet. If the address does not match, or the requested change is substantial, confirm with the original address before acting.
+
+## Privacy retention
+
+Keep private verification information while the profile is active. After a profile is removed, delete or anonymize the private verification/contact information within **90 days**, unless a legitimate administrative need requires longer retention.
+
+Re-running `setupFacultyCommons()` on an existing installation does not create duplicates; it also reapplies privacy-safe settings to both Faculty Commons Forms.

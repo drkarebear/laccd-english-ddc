@@ -35,3 +35,7 @@ Nothing publishes automatically. The public feed returns only rows with `Approve
 ## Why links instead of uploads
 
 The Teaching Commons is a directory, not a file host. Linking to intentionally public resources keeps ownership and revision control with the original creator, avoids collecting student data or document metadata, and reduces copyright and privacy risk.
+
+## Privacy retention
+
+Retain submitter name, verification email, and permission/consent information while a resource is listed. After removal, delete or anonymize private contact information within 90 days unless a legitimate rights or moderation need requires longer retention.

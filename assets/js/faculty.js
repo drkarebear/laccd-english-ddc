@@ -1,6 +1,18 @@
 (function () {
   'use strict';
 
+  function isAllowedAppsScriptFeed(value) {
+    try {
+      const url = new URL(String(value || ''));
+      return url.protocol === 'https:' &&
+        url.hostname === 'script.google.com' &&
+        /^\/macros\/s\/[^/]+\/exec$/.test(url.pathname);
+    } catch (error) {
+      return false;
+    }
+  }
+
+
   const cfg = window.LACCD_ENGLISH_FACULTY || {};
   const list = document.querySelector('[data-faculty-list]');
   const count = document.querySelector('[data-faculty-count]');
@@ -26,7 +38,7 @@
     }
   };
 
-  if (!cfg.feedUrl) {
+  if (!isAllowedAppsScriptFeed(cfg.feedUrl)) {
     renderUnconfigured();
     return;
   }

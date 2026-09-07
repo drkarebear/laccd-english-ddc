@@ -3,20 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="referrer" content="no-referrer">
 <title>LACCD English District Discipline Committee</title>
 <meta name="description" content="A welcoming districtwide commons for LACCD English faculty: people, teaching ideas, events, district answers, and shared work.">
 <link rel="icon" type="image/png" href="Englishfavicon.png">
 
-<!--
-  Typography is intentionally layered:
-  Atkinson Hyperlegible = highly readable body/interface text
-  Fraunces = warm literary headings
-  IM FELL English = old-book marginal notes and small flourishes
-  UnifrakturCook = rare medieval initials/labels only
-  The site remains readable through the fallback stacks if web fonts do not load.
--->
+<!-- Typography uses local/system font stacks only; no remote font request is required. -->
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:opsz,wght@9..144,400..900&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=UnifrakturCook:wght@700&display=swap');
 :root {
   --vellum: #fbfaf6;
   --paper: #ffffff;
@@ -24,19 +18,19 @@
   --muted: #58656d;
   --blue: #174c72;
   --blue-dark: #10364f;
-  --green: #60745a;
+  --green: #5f7359;
   --green-soft: #edf2e9;
   --rust: #9e513a;
   --rust-soft: #f8eee9;
   --gold: #aa813d;
   --line: #d9d6cc;
   --focus: #005fcc;
-  --body: "Atkinson Hyperlegible", "Aptos", "Segoe UI", Arial, sans-serif;
-  --literary: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  --oldbook: "IM FELL English", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  --oldbook-sc: "IM FELL English SC", "Iowan Old Style", Georgia, serif;
-  --medieval: "UnifrakturCook", "Old English Text MT", Georgia, serif;
-  --welcome-initial: "IM Fell English SC", Georgia, serif;
+  --body: "Aptos", "Segoe UI", Arial, sans-serif;
+  --literary: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --oldbook: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --oldbook-sc: "Iowan Old Style", Georgia, serif;
+  --medieval: "Old English Text MT", Georgia, serif;
+  --welcome-initial: "Iowan Old Style", Georgia, serif;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -139,11 +133,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
 .map-section { padding-block: 1rem 5rem; }
 .map-shell { position: relative; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #fbfaf6; box-shadow: 0 12px 34px rgb(32 42 48 / .07); }
 .map-stage { position: relative; min-height: clamp(520px, 63.333vw, 760px); background: #f5edda url("assets/map/la-old-map.svg") center / 100% 100% no-repeat; }
-.google-map { position: absolute; inset: 0; z-index: 1; display: none; }
-.google-map.is-ready { display: block; }
 .story-map { position: absolute; inset: 0; z-index: 2; }
-.google-map.is-ready + .story-map { pointer-events: none; }
-.google-map.is-ready + .story-map .castle-point { display: none; }
 .map-frame { position: absolute; inset: 16px; z-index: 3; pointer-events: none; border: 1px solid rgb(170 129 61 / .32); border-radius: 12px; box-shadow: inset 0 0 0 5px rgb(251 250 246 / .55); }
 .map-frame::before,.map-frame::after { content: "❦"; position: absolute; color: var(--gold); font-family: var(--oldbook); font-size: 1.3rem; opacity: .72; }
 .map-frame::before { top: 6px; left: 10px; }
@@ -327,7 +317,6 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
 
     <div class="map-shell">
       <div class="map-stage" id="map-stage">
-        <div id="google-map" class="google-map" aria-label="Interactive map showing the nine LACCD colleges"></div>
         <div class="story-map" id="story-map" aria-label="Illustrated map showing the nine LACCD colleges"></div>
         <div class="map-frame" aria-hidden="true"></div>
         <div class="map-popover" id="map-popover" hidden>
@@ -360,7 +349,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
       </div>
     </div>
 
-    <div class="events-list" data-events-list data-limit="3" aria-live="polite">
+    <div class="events-list" data-events-list data-limit="3">
       <div class="event-empty">
         <h3>Loading upcoming events...</h3>
         <p>The bird is checking the noticeboard.</p>
@@ -419,6 +408,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
       <h2 id="about-site-heading">About This Site</h2>
       <p><strong>Maintained by Karen Crozer, Ph.D., on a volunteer basis.</strong> This is an independent faculty-created resource. It is not an official LACCD website and is not sponsored, endorsed, or maintained by the Los Angeles Community College District or its colleges. References to LACCD, its colleges, and the English DDC are provided for informational and collegial purposes.</p>
       <p><strong>Accessibility matters here.</strong> This site is designed with accessibility as a core priority and aims to follow WCAG 2.2 AA guidance, including keyboard access, readable text, strong contrast, responsive reflow, descriptive links, and reduced-motion support. If you encounter an accessibility barrier, please <a href="mailto:crozerkj@laccd.edu">email Karen Crozer about the accessibility issue</a> so it can be corrected.</p>
+          <p><a href="privacy.html">Read the site privacy and data practices</a>.</p>
     </section>
   </div>
 </footer>
@@ -443,9 +433,6 @@ const popover = document.getElementById("map-popover");
 const popoverContent = document.getElementById("map-popover-content");
 const repDirectory = document.getElementById("representative-directory");
 const latMin = 33.73, latMax = 34.36, lngMin = -118.66, lngMax = -118.10;
-let googleMap = null;
-let googleMarkers = new Map();
-let activeInfoWindow = null;
 let lastMapTrigger = null;
 
 function googleMapsUrl(college) {
@@ -525,22 +512,12 @@ function renderDirectory() {
 function focusCollege(id) {
   const college = colleges.find(item => item.id === id);
   if (!college) return;
-  if (googleMap && googleMarkers.has(id)) {
-    const marker = googleMarkers.get(id);
-    googleMap.panTo(marker.getPosition());
-    googleMap.setZoom(12);
-    if (activeInfoWindow) activeInfoWindow.close();
-    activeInfoWindow = new google.maps.InfoWindow({ content: `<div style="max-width:280px">${collegeDetailsHtml(college)}</div>` });
-    activeInfoWindow.open(googleMap, marker);
-    document.getElementById("google-map").scrollIntoView({ behavior: "smooth", block: "center" });
-  } else {
-    const buttons = [...document.querySelectorAll(".castle-point")];
-    const index = colleges.findIndex(item => item.id === id);
-    const mapButton = buttons[index];
-    if (mapButton) {
-      mapButton.scrollIntoView({ behavior: "smooth", block: "center" });
-      showStoryPopover(college, mapButton);
-    }
+  const buttons = [...document.querySelectorAll(".castle-point")];
+  const index = colleges.findIndex(item => item.id === id);
+  const mapButton = buttons[index];
+  if (mapButton) {
+    mapButton.scrollIntoView({ behavior: "smooth", block: "center" });
+    showStoryPopover(college, mapButton);
   }
 }
 
@@ -556,66 +533,8 @@ document.addEventListener("keydown", event => {
   }
 });
 
-function initGoogleMap() {
-  const mapEl = document.getElementById("google-map");
-  googleMap = new google.maps.Map(mapEl, {
-    center: { lat: 34.06, lng: -118.36 },
-    zoom: 10,
-    gestureHandling: "cooperative",
-    mapTypeControl: false,
-    streetViewControl: false,
-    fullscreenControl: true,
-    styles: [
-      { elementType: "geometry", stylers: [{ color: "#f7f3e9" }] },
-      { elementType: "labels.text.fill", stylers: [{ color: "#4c5961" }] },
-      { elementType: "labels.text.stroke", stylers: [{ color: "#fbfaf6" }] },
-      { featureType: "administrative", elementType: "geometry.stroke", stylers: [{ color: "#d4cbbb" }] },
-      { featureType: "landscape", elementType: "geometry", stylers: [{ color: "#f8f5ed" }] },
-      { featureType: "poi", stylers: [{ visibility: "off" }] },
-      { featureType: "road", elementType: "geometry", stylers: [{ color: "#ded7c8" }] },
-      { featureType: "road", elementType: "geometry.stroke", stylers: [{ color: "#c9bfad" }] },
-      { featureType: "road.highway", elementType: "geometry", stylers: [{ color: "#d5c9b4" }] },
-      { featureType: "transit", stylers: [{ visibility: "off" }] },
-      { featureType: "water", elementType: "geometry", stylers: [{ color: "#e4efed" }] }
-    ]
-  });
-
-  const bounds = new google.maps.LatLngBounds();
-  colleges.forEach(college => {
-    const marker = new google.maps.Marker({
-      position: { lat: college.lat, lng: college.lng },
-      map: googleMap,
-      title: college.name,
-      icon: { url: "assets/map/castle-marker.svg", scaledSize: new google.maps.Size(52, 61) },
-      label: { text: college.short, color: "#10364f", fontSize: "11px", fontWeight: "700", className: "google-castle-label" }
-    });
-    marker.addListener("click", () => {
-      if (activeInfoWindow) activeInfoWindow.close();
-      activeInfoWindow = new google.maps.InfoWindow({ content: `<div style="max-width:280px">${collegeDetailsHtml(college)}</div>` });
-      activeInfoWindow.open(googleMap, marker);
-    });
-    googleMarkers.set(college.id, marker);
-    bounds.extend(marker.getPosition());
-  });
-  googleMap.fitBounds(bounds, 60);
-  mapEl.classList.add("is-ready");
-}
-
-function loadGoogleMapsIfConfigured() {
-  const key = (window.LACCD_GOOGLE_MAPS_API_KEY || "").trim();
-  if (!key) return;
-  window.initLaccdEnglishMap = initGoogleMap;
-  const script = document.createElement("script");
-  script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(key)}&callback=initLaccdEnglishMap`;
-  script.async = true;
-  script.defer = true;
-  script.onerror = () => console.warn("Google Maps did not load. The built-in college map remains available.");
-  document.head.appendChild(script);
-}
-
 renderStoryMap();
 renderDirectory();
-loadGoogleMapsIfConfigured();
 </script>
 
 </body>

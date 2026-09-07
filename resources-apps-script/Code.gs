@@ -15,6 +15,8 @@
  *   permission/consent responses, or moderator notes.
  */
 
+const PUBLIC_CALLBACK = 'LACCDEnglishResourcesReceive';
+
 const RESOURCE_CONFIG = {
   formTitle: 'Share an LACCD English Teaching Resource',
   sheetTitle: 'LACCD English DDC Teaching Commons',
@@ -125,6 +127,8 @@ function setupTeachingCommons() {
     .setDescription(RESOURCE_CONFIG.formDescription)
     .setConfirmationMessage(RESOURCE_CONFIG.confirmationMessage)
     .setCollectEmail(false)
+    .setPublishingSummary(false)
+    .setAllowResponseEdits(false)
     .setLimitOneResponsePerUser(false)
     .setProgressBar(true)
     .setShowLinkToRespondAgain(true);
@@ -268,6 +272,9 @@ function repairTeachingCommons() {
 
   const ss = SpreadsheetApp.openById(sheetId);
   const form = FormApp.openById(formId);
+  form.setCollectEmail(false);
+  form.setPublishingSummary(false);
+  form.setAllowResponseEdits(false);
   const responseSheet = resolveResponseSheet_(ss);
 
   addModeratorColumns_(responseSheet);
@@ -394,7 +401,7 @@ function getPublicResources_() {
 function publicResponse_(payload, callback) {
   const json = JSON.stringify(payload);
 
-  if (callback && /^[A-Za-z_$][0-9A-Za-z_$.]*$/.test(callback)) {
+  if (callback === PUBLIC_CALLBACK) {
     return ContentService
       .createTextOutput(callback + '(' + json + ');')
       .setMimeType(ContentService.MimeType.JAVASCRIPT);
@@ -668,14 +675,14 @@ function cleanText_(value) {
 }
 
 /**
- * Accepts http/https URLs. If someone entered a normal domain without a
- * scheme, the feed adds https://. Other schemes are rejected.
+ * Accepts HTTPS URLs only. If someone entered a normal domain without a
+ * scheme, the feed adds https://. HTTP and other schemes are rejected.
  */
 function safeHttpUrl_(value) {
   let url = cleanText_(value);
   if (!url) return '';
 
-  if (!/^https?:\/\//i.test(url)) {
+  if (!/^https:\/\//i.test(url)) {
     if (/^[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:[/:?#].*)?$/i.test(url)) {
       url = 'https://' + url;
     } else {
@@ -683,7 +690,7 @@ function safeHttpUrl_(value) {
     }
   }
 
-  return /^https?:\/\/[^\s]+$/i.test(url) ? url : '';
+  return /^https:\/\/[^\s]+$/i.test(url) ? url : '';
 }
 
 function splitTags_(value) {

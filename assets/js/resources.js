@@ -1,5 +1,17 @@
 (function(){
   'use strict';
+
+  function isAllowedAppsScriptFeed(value) {
+    try {
+      const url = new URL(String(value || ''));
+      return url.protocol === 'https:' &&
+        url.hostname === 'script.google.com' &&
+        /^\/macros\/s\/[^/]+\/exec$/.test(url.pathname);
+    } catch (error) {
+      return false;
+    }
+  }
+
   const cfg=window.LACCD_ENGLISH_RESOURCES||{};
   const eventCfg=window.LACCD_ENGLISH_EVENTS||{};
   const list=document.querySelector('[data-resource-list]');
@@ -23,7 +35,7 @@
     }catch(error){renderError();}
   };
 
-  if(!cfg.feedUrl){renderUnconfigured();return;}
+  if(!isAllowedAppsScriptFeed(cfg.feedUrl)){renderUnconfigured();return;}
   const script=document.createElement('script');
   const separator=cfg.feedUrl.includes('?')?'&':'?';
   script.src=cfg.feedUrl+separator+'action=resources&callback=LACCDEnglishResourcesReceive&_='+Date.now();

@@ -1,6 +1,18 @@
 (function () {
   'use strict';
 
+  function isAllowedAppsScriptFeed(value) {
+    try {
+      const url = new URL(String(value || ''));
+      return url.protocol === 'https:' &&
+        url.hostname === 'script.google.com' &&
+        /^\/macros\/s\/[^/]+\/exec$/.test(url.pathname);
+    } catch (error) {
+      return false;
+    }
+  }
+
+
   const TZ = 'America/Los_Angeles';
   const cfg = window.LACCD_ENGLISH_EVENTS || {};
   const lists = Array.from(document.querySelectorAll('[data-events-list]'));
@@ -42,7 +54,7 @@
     }
   };
 
-  if (!cfg.feedUrl) {
+  if (!isAllowedAppsScriptFeed(cfg.feedUrl)) {
     lists.forEach(list => renderUnconfigured(list));
     return;
   }

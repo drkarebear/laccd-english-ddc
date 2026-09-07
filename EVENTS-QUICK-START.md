@@ -27,3 +27,11 @@ window.LACCD_ENGLISH_EVENTS = {
 - After its end date, it stops appearing automatically.
 
 The private Sheet keeps the historical record. You do not have to delete old events from the spreadsheet.
+
+## Privacy retention
+
+- Keep submitter name and verification email only as long as needed for moderation and follow-up.
+- As a default practice, delete or anonymize those private fields within **90 days after the event ends**.
+- Public event details may remain as a historical record if they are still useful, but they do not require retaining the submitter's private contact information.
+
+Re-running `setupEventSystem()` on an existing installation does not create duplicates; it also reapplies the privacy-safe Form settings before returning the existing setup information.

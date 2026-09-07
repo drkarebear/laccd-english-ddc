@@ -11,6 +11,8 @@
  * Verification emails and moderator notes are never included in the public feed.
  */
 
+const PUBLIC_CALLBACK = 'LACCDEnglishEventsReceive';
+
 const EVENT_CONFIG = {
   timeZone: 'America/Los_Angeles',
   formTitle: 'Share an LACCD English Event',
@@ -90,6 +92,7 @@ function setupEventSystem() {
   const existingSheetId = props.getProperty('EVENT_SHEET_ID');
 
   if (existingFormId && existingSheetId) {
+    hardenEventFormPrivacy_();
     const existing = getSetupInfo_();
     Logger.log(JSON.stringify(existing, null, 2));
     return existing;
@@ -102,6 +105,8 @@ function setupEventSystem() {
   form.setDescription(EVENT_CONFIG.formDescription);
   form.setConfirmationMessage(EVENT_CONFIG.confirmationMessage);
   form.setCollectEmail(false);
+  form.setPublishingSummary(false);
+  form.setAllowResponseEdits(false);
   form.setLimitOneResponsePerUser(false);
   form.setProgressBar(true);
   form.setShowLinkToRespondAgain(true);
@@ -228,6 +233,15 @@ function setupEventSystem() {
   return info;
 }
 
+function hardenEventFormPrivacy_() {
+  const formId = PropertiesService.getScriptProperties().getProperty('EVENT_FORM_ID');
+  if (!formId) return;
+  const form = FormApp.openById(formId);
+  form.setCollectEmail(false);
+  form.setPublishingSummary(false);
+  form.setAllowResponseEdits(false);
+}
+
 function getSetupInfo() {
   const info = getSetupInfo_();
   Logger.log(JSON.stringify(info, null, 2));
@@ -350,7 +364,7 @@ function getPublicEvents_() {
 
 function publicResponse_(payload, callback) {
   const json = JSON.stringify(payload);
-  if (callback && /^[A-Za-z_$][0-9A-Za-z_$.]*$/.test(callback)) {
+  if (callback === PUBLIC_CALLBACK) {
     return ContentService.createTextOutput(callback + '(' + json + ');')
       .setMimeType(ContentService.MimeType.JAVASCRIPT);
   }

@@ -12,6 +12,8 @@
  * and moderator notes are never returned by the public feed.
  */
 
+const PUBLIC_CALLBACK = 'LACCDEnglishFacultyReceive';
+
 const FACULTY_CONFIG = {
   timeZone: 'America/Los_Angeles',
   formTitle: 'Join the LACCD English Faculty Commons',
@@ -95,6 +97,7 @@ function setupFacultyCommons() {
   const existingSheetId = props.getProperty('FACULTY_SHEET_ID');
 
   if (existingFormId && existingSheetId) {
+    hardenFacultyFormPrivacy_();
     const existing = getSetupInfo_();
     Logger.log(JSON.stringify(existing, null, 2));
     return existing;
@@ -107,6 +110,8 @@ function setupFacultyCommons() {
   form.setDescription(FACULTY_CONFIG.formDescription);
   form.setConfirmationMessage(FACULTY_CONFIG.confirmationMessage);
   form.setCollectEmail(false);
+  form.setPublishingSummary(false);
+  form.setAllowResponseEdits(false);
   form.setLimitOneResponsePerUser(false);
   form.setProgressBar(true);
   form.setShowLinkToRespondAgain(false);
@@ -229,6 +234,8 @@ function setupFacultyCommons() {
     'Use this form to request a change to, or removal of, your public Faculty Commons profile. Requests are reviewed before the public directory changes.');
   changeForm.setConfirmationMessage(FACULTY_CONFIG.changeConfirmationMessage);
   changeForm.setCollectEmail(false);
+  changeForm.setPublishingSummary(false);
+  changeForm.setAllowResponseEdits(false);
   changeForm.setLimitOneResponsePerUser(false);
   changeForm.setProgressBar(true);
   changeForm.setShowLinkToRespondAgain(false);
@@ -243,7 +250,7 @@ function setupFacultyCommons() {
   changeForm.addListItem().setTitle(C.college).setChoiceValues(FACULTY_CONFIG.colleges).setRequired(true);
   changeForm.addTextItem()
     .setTitle(C.verificationEmail)
-    .setHelpText('Used to verify the request. This is not published.')
+    .setHelpText('Use the same verification email associated with your original profile when possible. This is not published. Requests are reviewed against the original private record before any profile change or removal.')
     .setValidation(emailValidation)
     .setRequired(true);
   changeForm.addMultipleChoiceItem()
@@ -279,6 +286,18 @@ function setupFacultyCommons() {
   const info = getSetupInfo_();
   Logger.log(JSON.stringify(info, null, 2));
   return info;
+}
+
+function hardenFacultyFormPrivacy_() {
+  const props = PropertiesService.getScriptProperties();
+  const joinId = props.getProperty('FACULTY_FORM_ID');
+  const changeId = props.getProperty('FACULTY_CHANGE_FORM_ID');
+  [joinId, changeId].filter(Boolean).forEach(function(id) {
+    const form = FormApp.openById(id);
+    form.setCollectEmail(false);
+    form.setPublishingSummary(false);
+    form.setAllowResponseEdits(false);
+  });
 }
 
 function getSetupInfo() {
@@ -386,7 +405,7 @@ function getPublicProfiles_() {
 
 function publicResponse_(payload, callback) {
   const json = JSON.stringify(payload);
-  if (callback && /^[A-Za-z_$][0-9A-Za-z_$.]*$/.test(callback)) {
+  if (callback === PUBLIC_CALLBACK) {
     return ContentService.createTextOutput(callback + '(' + json + ');')
       .setMimeType(ContentService.MimeType.JAVASCRIPT);
   }
@@ -447,10 +466,11 @@ function createSetupSheet_(ss, form, changeForm, responseSheet, changeSheet) {
     ['Change request tab', changeSheet.getName()],
     ['How to publish a profile', 'In the profile response tab, set Approved to Yes. Nothing is returned publicly until you do this.'],
     ['How to hide a profile', 'Set Approved to No or blank. The profile will disappear from the public feed.'],
+    ['Change-request verification', 'Do not change or remove a profile solely because a change form was submitted. Compare the request with the original private verification email. If it does not match, or if the requested change is substantial, confirm with the original address before acting.'],
     ['Email privacy', 'Verification emails are private. The public feed includes an email only when the faculty member explicitly selected Yes to display it publicly.'],
     ['Public-data rule', 'The feed returns only the approved public profile fields. It never returns timestamps, consent text, moderator notes, change requests, or private verification emails.'],
     ['Next step', 'Deploy this Apps Script as a Web app. Execute as Me. Allow Anyone to access it. Then run getSetupInfo() and copy feedUrl, joinUrl, and changeUrl into the site config.js file.'],
-    ['Annual maintenance', 'Later, review profiles periodically so the directory does not become stale. Faculty can use the update/remove form at any time.']
+    ['Retention and annual maintenance', 'Review profiles periodically so the directory does not become stale. Keep private verification information only while the profile is active and for up to 90 days after a removal is completed, then delete or anonymize it unless a legitimate administrative need requires longer retention. Faculty can use the update/remove form at any time.']
   ];
 
   setup.getRange(1, 1, rows.length, 2).setValues(rows);
