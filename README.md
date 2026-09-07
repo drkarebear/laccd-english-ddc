@@ -53,3 +53,18 @@ The public feed does not return the submitter name, verification email, timestam
 ## Marginalia sprite orientations
 
 Both orientations are included under `assets/marginalia/`. Files ending in `-flipped.png` are horizontal mirrors of the originals. The current layouts generally use the flipped versions when an animal sits to the right of text so the creature faces inward toward the content. Both versions remain available for later pages and responsive layouts.
+
+
+## Faculty Commons
+
+This build adds `faculty.html`, an opt-in public faculty directory with accessible search and filters. The directory is powered by a separate Google Apps Script project in `faculty-apps-script/`.
+
+The privacy model is deliberate:
+
+- profiles do not publish until `Approved = Yes` in the private Sheet
+- verification emails are not returned by the public feed unless the faculty member explicitly opts to display that email
+- timestamps, consent records, moderator notes, and update/remove requests remain private
+- no photo is required
+- adjunct and full-time faculty appear together rather than in separate directory sections
+
+See `FACULTY-COMMONS-QUICK-START.md` for setup.
