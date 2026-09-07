@@ -39,6 +39,6 @@ window.LACCD_ENGLISH_FACULTY = {
   Web app, and paste the generated public URLs here.
 */
 window.LACCD_ENGLISH_RESOURCES = {
-  feedUrl: "",
-  submitUrl: ""
+  feedUrl: "https://script.google.com/macros/s/AKfycbyVzapjcljnhFswtQiH_M8J1mpcU7-pcu2rmo_jklqyx7avC2KY_8OEqsmgAw6SW8w0Xg/exec",
+  submitUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc_yJNdA733eMfsUshHtS3ATtTWFbKLX5TGs8Kc-UE_TB434A/viewform"
 };
