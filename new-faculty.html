@@ -163,7 +163,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
 .rep-card .rep-role { margin: .1rem 0 .35rem; color: var(--muted); font-size: .92rem; }
 .rep-card .rep-address { margin: 0 0 .75rem; color: var(--muted); font-size: .88rem; line-height: 1.45; }
 .rep-card .rep-actions { display: flex; flex-wrap: wrap; gap: .55rem .8rem; align-items: center; }
-.rep-card button { padding: 0; border: 0; background: none; color: var(--blue); font: inherit; font-weight: 700; text-decoration: underline; text-decoration-thickness: .11em; text-underline-offset: .18em; cursor: pointer; }
+.rep-card button { min-height: 44px; display: inline-flex; align-items: center; padding: .35rem .2rem; border: 0; background: none; color: var(--blue); font: inherit; font-weight: 700; text-decoration: underline; text-decoration-thickness: .11em; text-underline-offset: .18em; cursor: pointer; }
 .rep-card button:hover { color: var(--blue-dark); }
 .rep-card .no-email { color: var(--muted); font-size: .9rem; }
 .map-joke { margin-top: .9rem; color: var(--rust); font-family: var(--oldbook); font-style: italic; }
@@ -190,7 +190,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
   .feature-row { grid-template-columns: 1fr; }
   .feature-row img { width: 125px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .castle-point img { transition: none; } .castle-point:hover img,.castle-point:focus-visible img { transform: none; } }
 
 /* Decorative type is never used for navigation, buttons, instructions, or long passages. */
 .oldbook { font-family: var(--oldbook); }
@@ -290,7 +290,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
       <li><a href="#first">Start with these five things</a></li>
       <li><a href="#systems">Know the systems</a></li>
       <li><a href="#timeline">Your first-semester timeline</a></li>
-      <li><a href="#who">Who owns what?</a></li>
+      <li><a href="#who">Who handles what?</a></li>
       <li><a href="#decoder">Decode the acronyms</a></li>
       <li><a href="#adjunct">Adjunct things worth knowing</a></li>
       <li><a href="#college">Your college</a></li>
@@ -305,10 +305,10 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <p class="section-lead">If you were handed a class and very little else, these are the things that matter first. The rest can wait.</p>
     <div class="priority-grid">
       <article class="priority-card"><span class="priority-num">1</span><h3>Find your chair and department contact</h3><p>Your chair or department office is usually the fastest route to local answers: room access, textbooks, copying, absence procedures, course materials, and who does what on your campus.</p><p><a href="index.html#the-nine">Find your English DDC contact among The 9</a></p></article>
-      <article class="priority-card"><span class="priority-num">2</span><h3>Make sure your LACCD login works</h3><p>Your LACCD credentials open the doors to PeopleSoft/SIS, Office 365 email, Canvas and other employee tools. If the login itself fails, start with your college IT office.</p><p><a href="https://www.laccd.edu/students/sis-faqs">Open the LACCD SIS login help page</a></p></article>
-      <article class="priority-card"><span class="priority-num">3</span><h3>Confirm the class in SIS and Canvas</h3><p>PeopleSoft/SIS is the official student-record system. Canvas is the teaching space. Make sure the section, roster, dates, modality, meeting pattern and Canvas shell are the ones you expected.</p><p><a href="https://mycollege.laccd.edu/">Open MyCollege / PeopleSoft SIS</a></p></article>
-      <article class="priority-card"><span class="priority-num">4</span><h3>Get the current course outline</h3><p>The Course Outline of Record (COR) is the approved course: catalog description, objectives/outcomes, content, methods and other required elements. Ask your department for the current COR; LACCD uses eLumen for curriculum management.</p><p><a href="https://www.laccd.edu/offices/epie/curriculum-info">See LACCD curriculum support and eLumen</a></p></article>
-      <article class="priority-card"><span class="priority-num">5</span><h3>Ask the boring logistical questions now</h3><p>Parking. ID. Keys. Classroom technology. Copying/printing. Mailbox. Campus emergency number. What to do if you are absent. None of this is self-evident, and much of it is college-specific.</p></article>
+      <article class="priority-card"><span class="priority-num">2</span><h3>Make sure your LACCD login works</h3><p>Your LACCD credentials open the doors to PeopleSoft (SIS), Office 365 email, Canvas, and other employee tools. If the login itself fails, start with your college IT office.</p><p><a href="https://www.laccd.edu/students/sis-faqs">Open the LACCD SIS login help page</a></p></article>
+      <article class="priority-card"><span class="priority-num">3</span><h3>Confirm the class in SIS and Canvas</h3><p>PeopleSoft (SIS) is the official student records system. Canvas is the teaching space. Make sure the section, roster, dates, modality, meeting pattern, and Canvas shell are the ones you expected.</p><p><a href="https://mycollege.laccd.edu/">Open MyCollege (PeopleSoft SIS)</a></p></article>
+      <article class="priority-card"><span class="priority-num">4</span><h3>Get the current course outline</h3><p>The Course Outline of Record (COR) is the approved course: catalog description, objectives and outcomes, content, methods, and other required elements. Ask your department for the current COR; LACCD uses eLumen for curriculum management.</p><p><a href="https://www.laccd.edu/offices/epie/curriculum-info">See LACCD curriculum support and eLumen</a></p></article>
+      <article class="priority-card"><span class="priority-num">5</span><h3>Ask the boring logistical questions now</h3><p>Parking. ID. Keys. Classroom technology. Copying and printing. Mailbox. Campus emergency number. What to do if you are absent. None of this is self-evident, and much of it is college-specific.</p></article>
     </div>
     <div class="callout green"><h3>If you only remember one thing</h3><p><strong>Districtwide systems and college procedures are not the same thing.</strong> Your SIS login may follow you across LACCD; your parking permit, copy code, room key, local Canvas support, payroll contact, FLEX process, and absence procedure may not.</p></div>
   </section>
@@ -317,10 +317,10 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <p class="eyebrow">Four doors you will open a lot</p>
     <h2 id="systems-title">Know the systems</h2>
     <div class="help-grid">
-      <article class="help-card"><h3>PeopleSoft / SIS</h3><p><strong>Think: official records.</strong> Your class assignment, roster, add authorizations, census/attendance-related roster work, and grade rosters live here. It is the system of record for LACCD student administration.</p><p><a href="https://mycollege.laccd.edu/">Open MyCollege / SIS</a></p></article>
+      <article class="help-card"><h3>PeopleSoft (SIS)</h3><p><strong>Think: official records.</strong> Your class assignment, roster, add authorizations, census work, attendance-related roster work, and grade rosters live here. It is the system of record for LACCD student administration.</p><p><a href="https://mycollege.laccd.edu/">Open MyCollege (SIS)</a></p></article>
       <article class="help-card"><h3>Canvas</h3><p><strong>Think: teaching.</strong> Course pages, assignments, announcements, grades students see, and online course activity. District faculty accessibility resources also live around the Canvas ecosystem.</p><p><a href="https://www.laccd.edu/offices/diversity/accessibility/faculty-resources">Open LACCD faculty accessibility resources</a></p></article>
-      <article class="help-card"><h3>Office 365 / LACCD email</h3><p><strong>Think: official communication.</strong> Check this account regularly. District and college notices, DSPS accommodation notifications, HR messages, and department communication may land there.</p><p><a href="https://www.laccd.edu/students/sis-faqs">Use LACCD's Office 365 / portal help</a></p></article>
-      <article class="help-card"><h3>Vision Resource Center (VRC)</h3><p><strong>Think: professional learning and FLEX.</strong> Colleges use the VRC for training and professional-development activity. Your exact FLEX obligation depends on assignment and current rules, so verify it with your college.</p><p><a href="https://visionresourcecenter.cccco.edu/">Open the Vision Resource Center</a></p></article>
+      <article class="help-card"><h3>Office 365 (LACCD email)</h3><p><strong>Think: official communication.</strong> Check this account regularly. District and college notices, DSPS accommodation notifications, HR messages, and department communication may land there.</p><p><a href="https://www.laccd.edu/students/sis-faqs">Use LACCD's Office 365 and portal help</a></p></article>
+      <article class="help-card"><h3>Vision Resource Center (VRC)</h3><p><strong>Think: professional learning and FLEX.</strong> Colleges use the VRC for training and professional development activity. Your exact FLEX obligation depends on assignment and current rules, so verify it with your college.</p><p><a href="https://visionresourcecenter.cccco.edu/">Open the Vision Resource Center</a></p></article>
     </div>
     <div class="callout"><h3>Why do I have two places with grades?</h3><p>Canvas is the classroom gradebook you manage during the term. <strong>SIS is the official record.</strong> At the end of the course, do not assume Canvas has submitted final grades for you.</p></div>
   </section>
@@ -331,17 +331,17 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
 
     <h3>Before the first class</h3>
     <ul class="checklist">
-      <li>Confirm the official section number, dates, modality, meeting days/times, room or online format, and enrollment in SIS.</li>
+      <li>Confirm the official section number, dates, modality, meeting days and times, room or online format, and enrollment in SIS.</li>
       <li>Confirm you can access the correct Canvas shell and that students will be able to find what they need when the course opens.</li>
       <li>Get the current COR and any department syllabus template or required course-specific language.</li>
-      <li>Confirm the textbook/OER/ZTC plan and whether anything must be ordered or placed on reserve.</li>
-      <li>Find your college's process for parking, employee ID, keys/card access, copying, classroom technology and urgent IT support.</li>
+      <li>Confirm the course materials plan, including whether the course uses OER or ZTC materials and whether anything must be ordered or placed on reserve.</li>
+      <li>Find your college's process for parking, employee ID, keys or card access, copying, classroom technology, and urgent IT support.</li>
       <li>Ask who to contact if illness or an emergency prevents you from teaching. Do not independently hire or arrange a substitute.</li>
     </ul>
 
     <h3>First class and first week</h3>
     <ul class="checklist">
-      <li>Keep attendance/participation records from the beginning. For standard census courses, early attendance matters for the official roster process.</li>
+      <li>Keep attendance and participation records from the beginning. For standard census courses, early attendance matters for the official roster process.</li>
       <li>Know how add authorizations work in SIS before promising a seat to a student.</li>
       <li>Check that students who believe they added the course actually appear on the official roster.</li>
       <li>Read your LACCD email. Accommodation notices and other time-sensitive messages may arrive there.</li>
@@ -350,45 +350,45 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
 
     <h3>Before census</h3>
     <ul class="checklist">
-      <li><strong>Do not guess the deadline.</strong> Census and other important dates depend on the class. Check the section's Important Class Dates / roster information in SIS.</li>
-      <li>Complete the required census/roster process and deal with no-shows or nonparticipation according to current college/district procedure.</li>
+      <li><strong>Do not guess the deadline.</strong> Census and other important dates depend on the class. Check the section's Important Class Dates and roster information in SIS.</li>
+      <li>Complete the required census and roster process and deal with no-shows or nonparticipation according to current college or district procedure.</li>
       <li>Keep documentation that supports roster decisions. Enrollment and attendance reporting affect both students and state apportionment.</li>
     </ul>
 
     <h3>During the term</h3>
     <ul class="checklist">
       <li>Acknowledge and provide approved DSPS accommodations. If an accommodation is unclear, contact the student's campus DSPS office rather than asking the student to disclose a diagnosis.</li>
-      <li>Use your campus student-support ecosystem: tutoring, library, basic needs, counseling, DSPS, EOPS, Veterans, Dream/undocumented-student support, and other programs. You do not have to personally solve every problem a student brings you.</li>
+      <li>Use your campus student support ecosystem: tutoring, library, basic needs, counseling, DSPS, EOPS, Veterans, support for Dreamer and undocumented students, and other programs. You do not have to personally solve every problem a student brings you.</li>
       <li>Keep your own grade and participation records, especially for decisions that may later need explanation.</li>
-      <li>Complete required professional-development/FLEX activity and reporting for your assignment; ask your local professional-development office how your college handles it.</li>
+      <li>Complete any required FLEX or other professional development activities and reporting for your assignment; ask your local professional development office how your college handles them.</li>
     </ul>
 
     <h3>End of the course</h3>
     <ul class="checklist">
-      <li>Submit official final grades in SIS by the deadline supplied for your section/college.</li>
+      <li>Submit official final grades in SIS by the deadline supplied for your section or college.</li>
       <li>Do not rely on the Canvas gradebook as the official submission.</li>
-      <li>Keep the records required by your college and current contract/policy in case a grade question or evaluation arises.</li>
-      <li>If you hope to teach again, stay in contact with your department and learn how adjunct seniority/reemployment works under the current Faculty Guild agreement.</li>
+      <li>Keep the records required by your college and current contract or policy in case a grade question or evaluation arises.</li>
+      <li>If you hope to teach again, stay in contact with your department and learn how adjunct seniority and reemployment work under the current Faculty Guild agreement.</li>
     </ul>
   </section>
 
   <section id="who" class="guide-section" aria-labelledby="who-title">
     <p class="eyebrow">Who do I ask?</p>
-    <h2 id="who-title">Who owns what?</h2>
+    <h2 id="who-title">Who handles what?</h2>
     <p class="section-lead">This is the mental map that makes LACCD less mysterious.</p>
     <table class="ownership">
       <caption>Common questions and the best place to start</caption>
       <thead><tr><th scope="col">If the question is about…</th><th scope="col">Start here</th><th scope="col">Why</th></tr></thead>
       <tbody>
-        <tr><td>Your class, course materials, local procedures, room, textbook, absence</td><td><strong>Department chair / department office</strong></td><td>These are often discipline- or college-specific.</td></tr>
-        <tr><td>Login, Wi-Fi, classroom computer, account access</td><td><strong>Your college IT</strong></td><td>LACCD's sign-on is districtwide, but faculty/staff tech support is routed through college IT.</td></tr>
-        <tr><td>Roster, add authorization, census, official grades</td><td><strong>SIS + local Admissions & Records / Academic Affairs</strong></td><td>SIS is the official student-record system; local offices administer many deadlines and exceptions.</td></tr>
-        <tr><td>Canvas shell or online-teaching support</td><td><strong>College Distance Education / online-learning support</strong></td><td>Canvas is districtwide, but campus support and certification practices can differ.</td></tr>
-        <tr><td>Paycheck, assignment record, personnel paperwork</td><td><strong>Campus HR / Payroll</strong></td><td>LACCD HR explicitly directs college employees to their campus HR/pay contacts for many problems.</td></tr>
+        <tr><td>Your class, course materials, local procedures, room, textbook, absence</td><td><strong>Department chair or department office</strong></td><td>These are often discipline- or college-specific.</td></tr>
+        <tr><td>Login, Wi-Fi, classroom computer, account access</td><td><strong>Your college IT</strong></td><td>LACCD's sign-on is districtwide, but faculty and staff tech support is routed through college IT.</td></tr>
+        <tr><td>Roster, add authorization, census, official grades</td><td><strong>SIS first; then local Admissions and Records or Academic Affairs</strong></td><td>SIS is the official student records system; local offices administer many deadlines and exceptions.</td></tr>
+        <tr><td>Canvas shell or online teaching support</td><td><strong>College Distance Education or online learning support</strong></td><td>Canvas is districtwide, but campus support and certification practices can differ.</td></tr>
+        <tr><td>Paycheck, assignment record, personnel paperwork</td><td><strong>Campus HR or Payroll</strong></td><td>LACCD HR explicitly directs college employees to their campus HR or payroll contacts for many problems.</td></tr>
         <tr><td>Health benefits</td><td><strong>LACCD Health Benefits Unit</strong></td><td>The District maintains a dedicated benefits unit with adjunct information.</td></tr>
-        <tr><td>Working conditions, adjunct rights, seniority, grievance</td><td><strong>AFT Local 1521 / campus Guild chapter</strong></td><td>The Faculty Guild is the bargaining representative for LACCD faculty.</td></tr>
-        <tr><td>Academic/professional policy, curriculum, faculty governance</td><td><strong>Local Academic Senate</strong></td><td>Academic senates address the faculty's academic and professional “10+1” areas.</td></tr>
-        <tr><td>English issues across all nine colleges</td><td><strong>English DDC</strong></td><td>District Discipline Committees connect discipline faculty across the colleges and contribute to district curriculum/equivalency work.</td></tr>
+        <tr><td>Working conditions, adjunct rights, seniority, grievance</td><td><strong>AFT Local 1521 or campus Guild chapter</strong></td><td>The Faculty Guild is the bargaining representative for LACCD faculty.</td></tr>
+        <tr><td>Academic and professional policy, curriculum, or faculty governance</td><td><strong>Local Academic Senate</strong></td><td>Academic senates address the faculty's academic and professional “10+1” areas.</td></tr>
+        <tr><td>English issues across all nine colleges</td><td><strong>English DDC</strong></td><td>District Discipline Committees connect discipline faculty across the colleges and contribute to district curriculum and equivalency work.</td></tr>
         <tr><td>Student disability accommodation</td><td><strong>Campus DSPS</strong></td><td>DSPS determines approved student accommodations; faculty implement them.</td></tr>
       </tbody>
     </table>
@@ -399,23 +399,23 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <h2 id="decoder-title">Decode the things people say as if you were born knowing them</h2>
     <dl class="decoder">
       <div><dt>LACCD</dt><dd>Los Angeles Community College District: the district connecting all nine colleges.</dd></div>
-      <div><dt>SIS / PeopleSoft</dt><dd>The Student Information System. Official rosters, enrollment and grade records live here.</dd></div>
+      <div><dt>SIS (PeopleSoft)</dt><dd>The Student Information System. Official rosters, enrollment and grade records live here.</dd></div>
       <div><dt>SSO</dt><dd>Single sign-on: your district credentials used to reach multiple LACCD systems.</dd></div>
-      <div><dt>SAP</dt><dd>The district's enterprise system for employee/human-capital and other administrative data. You may hear HR refer to something being “in SAP.”</dd></div>
+      <div><dt>SAP</dt><dd>The district's enterprise system for employee, human capital, and other administrative data. You may hear HR refer to something being “in SAP.”</dd></div>
       <div><dt>ESC</dt><dd>Educational Services Center: the LACCD district office at 770 Wilshire Boulevard.</dd></div>
       <div><dt>COR</dt><dd>Course Outline of Record: the officially approved academic blueprint for a course.</dd></div>
       <div><dt>eLumen</dt><dd>LACCD's curriculum management system.</dd></div>
       <div><dt>SLO</dt><dd>Student Learning Outcome. Course outcomes are part of assessment and program improvement work.</dd></div>
       <div><dt>VRC</dt><dd>Vision Resource Center: professional learning and, at many colleges, FLEX tracking.</dd></div>
-      <div><dt>FLEX</dt><dd>Professional-development activity tied to the flexible academic calendar. Adjunct obligations depend on teaching load/current rules; verify locally.</dd></div>
+      <div><dt>FLEX</dt><dd>Professional development activity tied to the flexible academic calendar. Adjunct obligations depend on teaching load and current rules; verify locally.</dd></div>
       <div><dt>DSPS</dt><dd>Disabled Student Programs and Services: the campus office that determines and coordinates approved student accommodations.</dd></div>
-      <div><dt>OER / ZTC</dt><dd>Open Educational Resources / Zero Textbook Cost.</dd></div>
+      <div><dt>OER and ZTC</dt><dd>Open Educational Resources and Zero Textbook Cost.</dd></div>
       <div><dt>DDC</dt><dd>District Discipline Committee: faculty from the nine colleges discussing discipline-level district matters.</dd></div>
       <div><dt>DAS</dt><dd>District Academic Senate: districtwide faculty voice on academic and professional matters.</dd></div>
       <div><dt>DCC</dt><dd>District Curriculum Committee.</dd></div>
-      <div><dt>CCN</dt><dd>Common Course Numbering. California is changing many high-enrollment course numbers/titles in phases; ENGL C1000 is one result.</dd></div>
-      <div><dt>DE</dt><dd>Usually <strong>Distance Education</strong> in faculty conversations. “DE certification” normally means authorization/training to teach online. For dual enrollment, it is clearer to say <strong>dual enrollment</strong>.</dd></div>
-      <div><dt>AFT 1521 / Faculty Guild</dt><dd>Los Angeles College Faculty Guild, the union representing LACCD faculty.</dd></div>
+      <div><dt>CCN</dt><dd>Common Course Numbering. California is changing many high-enrollment course numbers and titles in phases; ENGL C1000 is one result.</dd></div>
+      <div><dt>DE</dt><dd>Usually <strong>Distance Education</strong> in faculty conversations. “DE certification” normally means authorization or training to teach online. For dual enrollment, it is clearer to say <strong>dual enrollment</strong>.</dd></div>
+      <div><dt>AFT 1521 (Faculty Guild)</dt><dd>Los Angeles College Faculty Guild, the union representing LACCD faculty.</dd></div>
     </dl>
   </section>
 
@@ -424,12 +424,12 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <h2 id="adjunct-title">Adjunct things worth knowing early</h2>
     <div class="callout green"><h3>Belonging is not the same as unlimited unpaid labor</h3><p>You are welcome at department, college and district spaces. You also get to ask whether an activity is <strong>paid, carries FLEX credit, has a stipend, or is purely voluntary</strong>. Participation should not be a secret test of whether you “care enough.”</p></div>
     <ul class="checklist">
-      <li><strong>You are covered by the faculty collective-bargaining agreement.</strong> The contract covers matters such as assignments, pay, evaluations, working conditions, leaves, distance education and adjunct seniority/reemployment.</li>
+      <li><strong>You are covered by the faculty collective bargaining agreement.</strong> The contract covers matters such as assignments, pay, evaluations, working conditions, leaves, distance education, and adjunct seniority and reemployment.</li>
       <li><strong>Check current contract information rather than an old PDF.</strong> As of this guide's September 2026 review, the public District and Guild pages still point to the July 2023 to June 2026 agreement while successor bargaining is underway. Use the Guild's current bargaining page or ask your campus chapter for the latest status.</li>
       <li><strong>Adjunct health benefits exist, but eligibility rules matter.</strong> LACCD's Health Benefits Unit has a specific adjunct pathway. Do not assume “part-time means no benefits”; check your current load and eligibility directly with the Benefits Unit.</li>
-      <li><strong>Learn seniority/reemployment before you need it.</strong> The posted agreement contains detailed adjunct seniority provisions. Ask the Guild or your chair how your discipline list, qualifying semesters and assignment history are being recorded under the current agreement.</li>
-      <li><strong>Evaluation is normal.</strong> Adjunct faculty are part of the faculty evaluation system. Ask your chair when you should expect evaluation and what materials/process your college uses.</li>
-      <li><strong>Teaching at more than one LACCD college is normal.</strong> Some district systems follow you; local processes do not. Keep a tiny campus-specific note for each college: chair, HR/payroll, IT, parking/keys, DE support, FLEX contact and absence procedure.</li>
+      <li><strong>Learn seniority and reemployment before you need it.</strong> The posted agreement contains detailed adjunct seniority provisions. Ask the Guild or your chair how your discipline list, qualifying semesters, and assignment history are being recorded under the current agreement.</li>
+      <li><strong>Evaluation is normal.</strong> Adjunct faculty are part of the faculty evaluation system. Ask your chair when you should expect evaluation and what materials and process your college uses.</li>
+      <li><strong>Teaching at more than one LACCD college is normal.</strong> Some district systems follow you; local processes do not. Keep a tiny campus-specific note for each college: chair, HR or payroll, IT, parking or keys, DE support, FLEX contact, and absence procedure.</li>
     </ul>
     <p class="marginal-note">Freeway flying is already enough logistics. The bureaucracy does not also get to be a personality test.</p>
   </section>
@@ -437,7 +437,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
   <section id="college" class="guide-section" aria-labelledby="college-title">
     <p class="eyebrow">Nine colleges, nine local ecosystems</p>
     <h2 id="college-title">Find your college</h2>
-    <p class="section-lead">Use your college site for local HR/payroll, IT, parking, maps, professional development, DSPS and campus-specific faculty procedures. Then come back to the Commons for the districtwide English people.</p>
+    <p class="section-lead">Use your college site for local HR or payroll, IT, parking, maps, professional development, DSPS, and campus-specific faculty procedures. Then come back to the Commons for the districtwide English people.</p>
     <div class="campus-grid">
       <a href="https://www.lacc.edu/">Los Angeles City College</a>
       <a href="https://www.elac.edu/">East Los Angeles College</a>
@@ -451,10 +451,10 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     </div>
     <h3>Make yourself a six-line campus cheat sheet</h3>
     <ul class="checklist">
-      <li><strong>Chair / department contact:</strong> who answers ordinary teaching questions?</li>
-      <li><strong>HR / payroll:</strong> who fixes an assignment or paycheck problem?</li>
-      <li><strong>IT / online learning:</strong> who fixes login, room tech or Canvas problems?</li>
-      <li><strong>Access:</strong> where do you get parking, ID, keys/card access and printing?</li>
+      <li><strong>Chair or department contact:</strong> who answers ordinary teaching questions?</li>
+      <li><strong>HR or payroll:</strong> who fixes an assignment or paycheck problem?</li>
+      <li><strong>IT or online learning:</strong> who fixes login, room tech or Canvas problems?</li>
+      <li><strong>Access:</strong> where do you get parking, ID, keys or card access, and printing?</li>
       <li><strong>Professional development:</strong> who explains your FLEX obligation and reporting?</li>
       <li><strong>Absence:</strong> who must you contact if you cannot teach?</li>
     </ul>
@@ -464,21 +464,21 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <p class="eyebrow">The humane troubleshooting tree</p>
     <h2 id="help-title">When something goes sideways</h2>
     <div class="help-grid">
-      <article class="help-card"><h3>I cannot log in</h3><p>Start with your college IT/help desk. LACCD's SSO page also tells faculty/staff with sign-in problems to contact College IT.</p></article>
-      <article class="help-card"><h3>My class is missing or wrong in Canvas</h3><p>First confirm the assignment in SIS. Then contact your college's Canvas/Distance Education support or IT. A Canvas problem may begin upstream with the official assignment.</p></article>
-      <article class="help-card"><h3>My paycheck or assignment looks wrong</h3><p>Start with campus HR/Payroll. If the issue is about contractual rights or is not getting resolved, contact your AFT 1521 campus chapter.</p></article>
+      <article class="help-card"><h3>I cannot log in</h3><p>Start with your college IT help desk. LACCD's SSO page also tells faculty and staff with sign-in problems to contact College IT.</p></article>
+      <article class="help-card"><h3>My class is missing or wrong in Canvas</h3><p>First confirm the assignment in SIS. Then contact your college's Canvas or Distance Education support or IT. A Canvas problem may begin upstream with the official assignment.</p></article>
+      <article class="help-card"><h3>My paycheck or assignment looks wrong</h3><p>Start with campus HR or payroll. If the issue is about contractual rights or is not getting resolved, contact your AFT 1521 campus chapter.</p></article>
       <article class="help-card"><h3>A student gives me an accommodation letter</h3><p>Follow the approved accommodation. If you are uncertain how to implement it, contact campus DSPS. Do not ask the student to prove or explain the diagnosis to you.</p></article>
-      <article class="help-card"><h3>I do not know the census/drop deadline</h3><p>Look at the official dates for your exact section in SIS. Short-term and other sections can have different deadlines from the full-semester calendar.</p></article>
-      <article class="help-card"><h3>I am going to miss class</h3><p>Contact your chair/department using your college's absence procedure. Do not independently arrange a substitute unless the college directs you to do so.</p></article>
-      <article class="help-card"><h3>I need the official course requirements</h3><p>Ask for the current COR. For curriculum-system questions, LACCD's EPIE office identifies eLumen as the District curriculum management system.</p></article>
-      <article class="help-card"><h3>I do not know who the right person is</h3><p>Ask your chair, your English DDC representative, or another English colleague. “Who owns this?” is a completely legitimate LACCD question.</p></article>
+      <article class="help-card"><h3>I do not know the census or drop deadline</h3><p>Look at the official dates for your exact section in SIS. Short-term and other sections can have different deadlines from the full-semester calendar.</p></article>
+      <article class="help-card"><h3>I am going to miss class</h3><p>Contact your chair or department using your college's absence procedure. Do not independently arrange a substitute unless the college directs you to do so.</p></article>
+      <article class="help-card"><h3>I need the official course requirements</h3><p>Ask for the current COR. For questions about the curriculum system, LACCD's EPIE office identifies eLumen as the District curriculum management system.</p></article>
+      <article class="help-card"><h3>I do not know who the right person is</h3><p>Ask your chair, your English DDC representative, or another English colleague. “Who handles this?” is a completely legitimate LACCD question.</p></article>
     </div>
 
     <h3>Questions you are absolutely allowed to ask</h3>
     <ul class="question-list">
       <li>“Could you point me to the current COR for this course?”</li>
       <li>“Where do I find the important dates for my exact section?”</li>
-      <li>“What is our campus procedure for parking, keys/card access, printing and classroom technology?”</li>
+      <li>“What is our campus procedure for parking, keys or card access, printing, and classroom technology?”</li>
       <li>“Who handles Canvas support here?”</li>
       <li>“What is my FLEX obligation for this assignment, and where do I report it?”</li>
       <li>“If I am sick and cannot teach, who do I contact and what is the substitute process?”</li>
@@ -491,18 +491,18 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <p class="eyebrow">Bookmark the source, not the rumor</p>
     <h2 id="official-title">Official and primary links worth keeping</h2>
     <ul class="link-list">
-      <li><a href="https://www.laccd.edu/offices/hr/new-employees">LACCD New Employees</a>: onboarding forms, employee resources, calendars, parking/ID and links into HR.</li>
-      <li><a href="https://www.laccd.edu/offices/hr">LACCD Human Resources</a>: District HR plus campus HR/pay contacts.</li>
-      <li><a href="https://mycollege.laccd.edu/">MyCollege / PeopleSoft SIS</a>: official faculty/student information system.</li>
+      <li><a href="https://www.laccd.edu/offices/hr/new-employees">LACCD New Employees</a>: onboarding forms, employee resources, calendars, parking and ID, and links into HR.</li>
+      <li><a href="https://www.laccd.edu/offices/hr">LACCD Human Resources</a>: District HR plus campus HR or payroll contacts.</li>
+      <li><a href="https://mycollege.laccd.edu/">MyCollege (PeopleSoft SIS)</a>: official faculty and student information system.</li>
       <li><a href="https://www.laccd.edu/students/sis-faqs">LACCD SIS FAQs and login help</a>: portal, Office 365 and PeopleSoft guidance.</li>
-      <li><a href="https://www.laccd.edu/offices/diversity/accessibility/faculty-resources">LACCD Faculty Accessibility Resources</a>: accessible Canvas/content guidance and support.</li>
+      <li><a href="https://www.laccd.edu/offices/diversity/accessibility/faculty-resources">LACCD Faculty Accessibility Resources</a>: accessible Canvas and content guidance and support.</li>
       <li><a href="https://www.laccd.edu/offices/hr/ada">LACCD ADA Accommodations</a>: employee ADA coordinators plus links to each campus DSPS program.</li>
       <li><a href="https://www.laccd.edu/offices/health-benefits">LACCD Health Benefits Unit</a>: includes adjunct employee information.</li>
       <li><a href="https://www.laccd.edu/offices/epie/curriculum-info">LACCD Curriculum Support</a>: eLumen and curriculum resources.</li>
       <li><a href="https://www.laccd.edu/offices/epie/common-course-numbering">LACCD Common Course Numbering</a>: current CCN crosswalks and rollout information.</li>
-      <li><a href="https://www.laccd.edu/governance/das">District Academic Senate</a>: districtwide faculty academic/professional governance.</li>
+      <li><a href="https://www.laccd.edu/governance/das">District Academic Senate</a>: districtwide faculty governance on academic and professional matters.</li>
       <li><a href="https://www.laccd.edu/governance/das/ddc">LACCD District Discipline Committees</a>: official DDC role and district information.</li>
-      <li><a href="https://www.aft-1521.org/">AFT Local 1521 / Los Angeles College Faculty Guild</a>: faculty union, chapter contacts, current bargaining and member resources.</li>
+      <li><a href="https://www.aft-1521.org/">AFT Local 1521 (Los Angeles College Faculty Guild)</a>: faculty union, chapter contacts, current bargaining and member resources.</li>
       <li><a href="https://www.aft-1521.org/collective-bargaining/">AFT 1521 Collective Bargaining & MOUs</a>: check here for the latest posted agreement and updates.</li>
     </ul>
     <p class="source-note"><strong>Why this page links outward so much:</strong> LACCD procedures, contacts, deadlines, contracts and systems can change. This guide explains the map; the linked District, college and Guild pages remain the source for current rules.</p>

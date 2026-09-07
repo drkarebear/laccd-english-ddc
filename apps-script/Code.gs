@@ -20,7 +20,7 @@ const EVENT_CONFIG = {
     'Adjunct and full-time faculty are equally welcome to submit. You do not need to be a DDC representative.\n\n' +
     'This form is for information intended for public posting. Your verification email is used only to confirm the submission and is not published by the event feed.',
   confirmationMessage:
-    'Thank you. Your event was sent for review. Approved events will appear on the LACCD English DDC faculty commons. The bird has been informed.',
+    'Thank you. Your event was sent for review. Approved events will appear on the LACCD English DDC Around the District page. The bird has been informed.',
   colleges: [
     'Districtwide / multiple LACCD colleges',
     'East Los Angeles College',
@@ -205,7 +205,7 @@ function setupEventSystem() {
 
   form.addCheckboxItem()
     .setTitle(FIELD.consent)
-    .setChoiceValues(['I confirm that the event information above is intended for public posting on the LACCD English faculty commons.'])
+    .setChoiceValues(['I confirm that the event information above is intended for public posting on the LACCD English DDC Around the District page.'])
     .setRequired(true);
 
   form.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId());

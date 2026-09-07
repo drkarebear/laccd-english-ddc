@@ -15,7 +15,7 @@
 .event-accessibility { padding-left: .7rem; border-left: 3px solid var(--gold, #aa813d); }
 .event-actions { display: flex; flex-wrap: wrap; gap: .55rem .9rem; align-items: center; margin-top: .9rem; }
 .event-action-link,.event-action-button { color: var(--blue, #174c72); font: inherit; font-weight: 750; text-decoration: underline; text-decoration-thickness: .11em; text-underline-offset: .18em; }
-.event-action-button { padding: 0; border: 0; background: transparent; cursor: pointer; }
+.event-action-button { min-height: 44px; display: inline-flex; align-items: center; padding: .35rem .2rem; border: 0; background: transparent; cursor: pointer; }
 .event-action-link:hover,.event-action-button:hover { color: var(--blue-dark, #10364f); }
 .event-empty { padding: 1.35rem; background: white; border: 1px dashed #c9c5ba; border-radius: 14px; }
 .event-empty h3 { margin: 0 0 .35rem; }
@@ -25,7 +25,7 @@
 .event-bird-note { margin: .2rem 0 0; color: var(--rust, #9e513a); font-family: var(--oldbook, Georgia, serif); font-size: .96rem; font-style: italic; }
 .event-filters { display: grid; grid-template-columns: 1.2fr 1fr 1fr auto; gap: .8rem; align-items: end; margin: 0 0 1.3rem; padding: 1rem; background: #fff; border: 1px solid var(--line, #d9d6cc); border-radius: 14px; }
 .event-filter-field label { display: block; margin-bottom: .25rem; color: var(--ink, #202a30); font-weight: 800; }
-.event-filter-field input,.event-filter-field select { width: 100%; min-height: 46px; padding: .65rem .7rem; color: var(--ink, #202a30); background: #fff; border: 1px solid #bfc6c9; border-radius: 8px; font: inherit; }
+.event-filter-field input,.event-filter-field select { width: 100%; min-height: 46px; padding: .65rem .7rem; color: var(--ink, #202a30); background: #fff; border: 1px solid #77848a; border-radius: 8px; font: inherit; }
 .event-filter-field input:focus-visible,.event-filter-field select:focus-visible { outline: 3px solid var(--focus, #005fcc); outline-offset: 2px; }
 .event-filter-reset { min-height: 46px; padding: .65rem .85rem; color: var(--blue, #174c72); background: #fff; border: 1px solid var(--blue, #174c72); border-radius: 8px; font: inherit; font-weight: 800; cursor: pointer; }
 .event-filter-reset:hover { background: var(--green-soft, #edf2e9); }

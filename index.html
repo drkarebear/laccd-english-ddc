@@ -172,7 +172,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
 .rep-card .rep-role { margin: .1rem 0 .35rem; color: var(--muted); font-size: .92rem; }
 .rep-card .rep-address { margin: 0 0 .75rem; color: var(--muted); font-size: .88rem; line-height: 1.45; }
 .rep-card .rep-actions { display: flex; flex-wrap: wrap; gap: .55rem .8rem; align-items: center; }
-.rep-card button { padding: 0; border: 0; background: none; color: var(--blue); font: inherit; font-weight: 700; text-decoration: underline; text-decoration-thickness: .11em; text-underline-offset: .18em; cursor: pointer; }
+.rep-card button { min-height: 44px; display: inline-flex; align-items: center; padding: .35rem .2rem; border: 0; background: none; color: var(--blue); font: inherit; font-weight: 700; text-decoration: underline; text-decoration-thickness: .11em; text-underline-offset: .18em; cursor: pointer; }
 .rep-card button:hover { color: var(--blue-dark); }
 .rep-card .no-email { color: var(--muted); font-size: .9rem; }
 .map-joke { margin-top: .9rem; color: var(--rust); font-family: var(--oldbook); font-style: italic; }
@@ -199,7 +199,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
   .feature-row { grid-template-columns: 1fr; }
   .feature-row img { width: 125px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .castle-point img { transition: none; } .castle-point:hover img,.castle-point:focus-visible img { transform: none; } }
 
 /* Decorative type is never used for navigation, buttons, instructions, or long passages. */
 .oldbook { font-family: var(--oldbook); }
@@ -262,7 +262,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
         <img class="card-art" src="assets/marginalia/scholar-mouse-flipped.png" alt="" aria-hidden="true">
         <h3>I'm New Here</h3>
         <p>Meet the people, decode the acronyms, and find the handful of things you actually need first.</p>
-        <a href="new-faculty.html">Start the new-faculty guide</a>
+        <a href="new-faculty.html">Start the guide for new faculty</a>
         <p class="card-note">Yes, you can ask that question. Someone else is also pretending they already know.</p>
       </article>
 
@@ -302,7 +302,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
         <img class="card-art" src="assets/marginalia/scribe-dog-flipped.png" alt="" aria-hidden="true">
         <h3>I Made Something</h3>
         <p>Share a teaching resource, event, opportunity, project, or useful link with colleagues across the district.</p>
-        <a href="resources.html#share">Share with the district</a>
+        <a href="resources.html#share">Share with colleagues across the district</a>
         <p class="card-note">Modesty has been temporarily suspended. Proper attribution still applies.</p>
       </article>
     </div>
@@ -324,7 +324,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <div class="section-intro">
       <p class="eyebrow">Explore the district</p>
       <h2 id="map-title">The Nine Colleges of LACCD English</h2>
-      <p>Each castle marks a college community and the chair who represents it in our districtwide English conversation. The map is geographically grounded in the campuses’ actual latitude and longitude, while the surrounding regions and roads are simplified in an old-map style.</p>
+      <p>Each castle marks a college community and the chair who represents it in our districtwide English conversation. The map is geographically grounded in the campuses’ actual latitude and longitude, while the surrounding regions and roads are simplified in the style of an old map.</p>
     </div>
 
     <div class="map-shell">

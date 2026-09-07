@@ -11,6 +11,23 @@
 9. Put them in `config.js` under `window.LACCD_ENGLISH_RESOURCES`.
 10. Open `resources.html` and confirm the approved test resource appears.
 
+## Existing installation
+
+If the Form and moderation Sheet already exist, do **not** run `setupTeachingCommons()` again. After replacing the Apps Script code, run `repairTeachingCommons()`, then `diagnoseTeachingCommons()`. The diagnostic reports counts only and does not log private submitter information.
+
+## Moderator checklist
+
+Before setting `Approved` to `Yes`, check that:
+
+- the public link opens without requiring a private class login or exposing student information
+- the submitter created the resource, has permission to share it, or is intentionally linking to a resource that is already public
+- attribution is clear when needed
+- the title and description tell another faculty member what the resource is and why it may be useful
+- accessibility claims are cautious and specific; do not label something fully accessible unless that has been verified
+- the resource is appropriate for a public, districtwide faculty directory
+
+Use `Featured = Yes` sparingly for resources you want to surface more prominently.
+
 ## Moderation rule
 
 Nothing publishes automatically. The public feed returns only rows with `Approved = Yes`. It does not return verification emails, private submitter names, permission responses, consent records, or moderator notes.

@@ -1,6 +1,6 @@
-# LACCD English DDC faculty commons
+# LACCD English DDC website
 
-This prototype includes the eight manuscript marginalia animals in both original and horizontally flipped orientations, the `Englishfavicon.png` favicon, the belonging-focused homepage, and a new "Nine Colleges" castle map.
+This site includes the eight manuscript marginalia animals in both original and horizontally flipped orientations, the `Englishfavicon.png` favicon, the belonging-focused homepage, and a new "Nine Colleges" castle map.
 
 ## The map works in two modes
 
@@ -24,7 +24,9 @@ Navigation note: the district college map is labeled **The 9** in the primary na
 
 This independent faculty-created resource is maintained by Karen Crozer, Ph.D., on a volunteer basis. It is not an official LACCD website and is not sponsored, endorsed, or maintained by the Los Angeles Community College District or its colleges.
 
-Accessibility is a core design priority. The site aims to follow WCAG 2.2 AA guidance, including keyboard access, readable text, strong contrast, responsive reflow, descriptive links, and reduced-motion support.
+Accessibility is a core design priority. The site aims to follow WCAG 2.2 AA guidance, including keyboard access, readable text, strong contrast, responsive reflow, descriptive links, and reduced-motion support. Decorative marginalia images use empty `alt` attributes so assistive technology can skip them; meaningful interactive controls retain text or accessible names. Filter-field borders use stronger non-text contrast, and reduced-motion preferences remove both smooth scrolling and the decorative castle-marker movement.
+
+Source-level checks support maintenance, but they do not replace final manual keyboard, zoom/reflow, and representative screen-reader testing in the deployed site.
 
 ## Around the District events
 
