@@ -18,7 +18,7 @@ Do not commit an unrestricted key.
 The interactive map is optional. All nine colleges, DDC representatives, email links, and Google Maps links are also available in a standard HTML directory below the map. The map uses cooperative scrolling so it is less likely to trap page scrolling.
 
 
-Navigation note: the district college map is labeled **The 9** in the primary navigation.
+Navigation note: the primary navigation uses task-oriented labels: **Start Here**, **Nine Colleges**, **Find Faculty**, **Teaching Resources**, and **Events**. The public pages retain the names **Faculty Commons** and **Teaching Commons**.
 
 ## Site status and accessibility
 
