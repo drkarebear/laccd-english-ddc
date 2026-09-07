@@ -322,7 +322,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     <div class="section-intro">
       <p class="eyebrow">Explore the district</p>
       <h2 id="map-title">The Nine Colleges of LACCD English</h2>
-      <p>Each castle marks a college community and the chair who represents it in our districtwide English conversation. The map is geographically grounded in the campuses’ actual latitude and longitude, while the surrounding regions and roads are simplified in the style of an old map.</p>
+      <p>Each castle marks a college community and its English DDC representative in our districtwide conversation. The map is geographically grounded in the campuses’ actual latitude and longitude, while the surrounding regions and roads are simplified in the style of an old map.</p>
     </div>
 
     <div class="map-shell">
@@ -339,7 +339,8 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
     </div>
 
     <div class="rep-intro">
-      <p><strong>Who represents your college?</strong> These colleagues are points of connection, not gatekeepers. You do not have to be a DDC representative to attend, contribute, ask a question, or share something useful.</p>
+      <p><strong>Who represents your college?</strong> These colleagues are points of connection, not gatekeepers. Representative names are listed by role; direct email addresses are not published here unless a faculty member has chosen to share one through the opt-in Faculty Commons. You do not have to be a DDC representative to attend, contribute, ask a question, or share something useful.</p>
+      <p><a href="new-faculty.html">Not sure who to contact? Start with the I'm New Here guide.</a> <a href="https://www.laccd.edu/governance/das/ddc" target="_blank" rel="noopener noreferrer">Read LACCD's official overview of District Discipline Committees.</a></p>
     </div>
 
     <div class="rep-grid" id="representative-directory" aria-label="English DDC representatives by college"></div>
@@ -368,7 +369,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
 
     <div class="events-heading-actions event-more">
       <a class="button secondary" href="events.html">See All Upcoming Events</a>
-      <a class="button primary" data-event-submit-link data-hide-when-unconfigured="true" href="#" hidden>Share an Event</a>
+      <a class="button primary" data-event-submit-link data-hide-when-unconfigured="true" href="https://docs.google.com/forms/d/e/1FAIpQLSdhQcGBi2odYj0Aj0pFjjPSua_aeKBdZKRg2Zn6iF6j57-1Ug/viewform" target="_blank" rel="noopener noreferrer">Share an Event</a>
     </div>
   </section>
 
@@ -395,7 +396,7 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
         <span class="medieval-label" aria-hidden="true">Nota Bene</span>
         <h3>You are allowed to ask.</h3>
         <p>Don't know who handles something? Don't recognize an acronym? Need the form everyone else apparently received telepathically? Ask. Nobody should have to learn a nine-college district through folklore.</p>
-        <a href="faculty.html">Find someone in the Faculty Commons</a>
+        <a href="new-faculty.html">Start with the I'm New Here guide</a>
         <p class="marginal-note">The snail has the form. Unfortunately, he is the snail.</p>
       </div>
       <img src="assets/marginalia/messenger-snail-flipped.png" alt="" aria-hidden="true">
@@ -426,15 +427,15 @@ footer { margin-top: 5rem; background: white; border-top: 1px solid var(--line);
 <script src="assets/js/events.js"></script>
 <script>
 const colleges = [
-  { id: "elac", short: "ELAC", name: "East Los Angeles College", rep: "Patricia Godinez", email: "GODINEP@ELAC.EDU", address: "1301 Avenida Cesar Chavez, Monterey Park, CA 91754", lat: 34.0327, lng: -118.1483 },
-  { id: "lacc", short: "LACC", name: "Los Angeles City College", rep: "Jeffrey M. Nishimura", email: "NISHIMJM@LACITYCOLLEGE.EDU", address: "855 N. Vermont Avenue, Los Angeles, CA 90029", lat: 34.0889, lng: -118.2921 },
-  { id: "lahc", short: "LAHC", name: "Los Angeles Harbor College", rep: "Hale E. Savard", email: "SAVARDHE@LAHC.EDU", address: "1111 Figueroa Place, Wilmington, CA 90744", lat: 33.7828, lng: -118.2636 },
-  { id: "lamc", short: "LAMC", name: "Los Angeles Mission College", rep: "Karen Crozer, Ph.D.", email: "crozerkj@laccd.edu", address: "13356 Eldridge Avenue, Sylmar, CA 91342", lat: 34.3146, lng: -118.4320 },
-  { id: "pierce", short: "Pierce", name: "Los Angeles Pierce College", rep: "Christopher W. Corning, Ed.D.", email: "CORNINC@PIERCECOLLEGE.EDU", address: "6201 Winnetka Avenue, Woodland Hills, CA 91371", lat: 34.1842, lng: -118.5785 },
-  { id: "lasc", short: "LASC", name: "Los Angeles Southwest College", rep: "Stephanie Arms", email: "ARMSS@LASC.EDU", address: "1600 West Imperial Highway, Los Angeles, CA 90047", lat: 33.9281, lng: -118.3090 },
-  { id: "lattc", short: "LATTC", name: "Los Angeles Trade-Technical College", rep: "Lisa M. Moreno", email: "MORENOLM@LATTC.EDU", address: "400 West Washington Boulevard, Los Angeles, CA 90015", lat: 34.0284, lng: -118.2694 },
-  { id: "lavc", short: "LAVC", name: "Los Angeles Valley College", rep: "Holly K. Batty", email: "BATTYHK@LAVC.EDU", address: "5800 Fulton Avenue, Valley Glen, CA 91401", lat: 34.1780, lng: -118.4486 },
-  { id: "wlac", short: "WLAC", name: "West Los Angeles College", rep: "Clare T. Norris-Bell", email: "NORRISCT@WLAC.EDU", address: "9000 Overland Avenue, Culver City, CA 90230", lat: 34.0058, lng: -118.3877 }
+  { id: "elac", short: "ELAC", name: "East Los Angeles College", rep: "Patricia Godinez", website: "https://www.elac.edu/", address: "1301 Avenida Cesar Chavez, Monterey Park, CA 91754", lat: 34.0327, lng: -118.1483 },
+  { id: "lacc", short: "LACC", name: "Los Angeles City College", rep: "Jeffrey M. Nishimura", website: "https://www.lacc.edu/", address: "855 N. Vermont Avenue, Los Angeles, CA 90029", lat: 34.0889, lng: -118.2921 },
+  { id: "lahc", short: "LAHC", name: "Los Angeles Harbor College", rep: "Hale E. Savard", website: "https://www.lahc.edu/", address: "1111 Figueroa Place, Wilmington, CA 90744", lat: 33.7828, lng: -118.2636 },
+  { id: "lamc", short: "LAMC", name: "Los Angeles Mission College", rep: "Karen Crozer, Ph.D.", website: "https://www.lamission.edu/", address: "13356 Eldridge Avenue, Sylmar, CA 91342", lat: 34.3146, lng: -118.4320 },
+  { id: "pierce", short: "Pierce", name: "Los Angeles Pierce College", rep: "Christopher W. Corning, Ed.D.", website: "https://www.lapc.edu/", address: "6201 Winnetka Avenue, Woodland Hills, CA 91371", lat: 34.1842, lng: -118.5785 },
+  { id: "lasc", short: "LASC", name: "Los Angeles Southwest College", rep: "Stephanie Arms", website: "https://www.lasc.edu/", address: "1600 West Imperial Highway, Los Angeles, CA 90047", lat: 33.9281, lng: -118.3090 },
+  { id: "lattc", short: "LATTC", name: "Los Angeles Trade-Technical College", rep: "Lisa M. Moreno", website: "https://www.lattc.edu/", address: "400 West Washington Boulevard, Los Angeles, CA 90015", lat: 34.0284, lng: -118.2694 },
+  { id: "lavc", short: "LAVC", name: "Los Angeles Valley College", rep: "Holly K. Batty", website: "https://www.lavc.edu/", address: "5800 Fulton Avenue, Valley Glen, CA 91401", lat: 34.1780, lng: -118.4486 },
+  { id: "wlac", short: "WLAC", name: "West Los Angeles College", rep: "Clare T. Norris-Bell", website: "https://www.wlac.edu/", address: "9000 Overland Avenue, Culver City, CA 90230", lat: 34.0058, lng: -118.3877 }
 ];
 
 const storyMap = document.getElementById("story-map");
@@ -458,15 +459,12 @@ function mapPosition(college) {
 }
 
 function collegeDetailsHtml(college) {
-  const email = college.email
-    ? `<p><a href="mailto:${college.email}">Email ${college.rep}</a></p>`
-    : "";
   return `
     <h3>${college.name}</h3>
-    <p><strong>English chair and DDC representative:</strong> ${college.rep}</p>
+    <p><strong>English DDC representative:</strong> ${college.rep}</p>
     <p>${college.address}</p>
-    ${email}
-    <p><a href="${googleMapsUrl(college)}" target="_blank" rel="noopener">Open ${college.name} in Google Maps</a></p>`;
+    <p><a href="${college.website}" target="_blank" rel="noopener noreferrer">Open the ${college.name} website</a></p>
+    <p><a href="${googleMapsUrl(college)}" target="_blank" rel="noopener noreferrer">Open ${college.name} in Google Maps</a></p>`;
 }
 
 function showStoryPopover(college, button) {
@@ -504,20 +502,17 @@ function renderStoryMap() {
 
 function renderDirectory() {
   repDirectory.innerHTML = colleges.map(college => {
-    const emailLine = college.email
-      ? `<a href="mailto:${college.email}">Email ${college.rep}</a>`
-      : `<span class="no-email">Contact link coming soon</span>`;
     return `
       <article class="rep-card" id="rep-${college.id}">
         <p class="college-short">${college.short}</p>
         <h3>${college.name}</h3>
         <p class="rep-name">${college.rep}</p>
-        <p class="rep-role">English chair and DDC representative</p>
+        <p class="rep-role">English DDC representative</p>
         <p class="rep-address">${college.address}</p>
         <div class="rep-actions">
-          ${emailLine}
+          <a href="${college.website}" target="_blank" rel="noopener noreferrer">Open college website</a>
           <button type="button" data-show-college="${college.id}">Show on map</button>
-          <a href="${googleMapsUrl(college)}" target="_blank" rel="noopener">Open campus in Google Maps</a>
+          <a href="${googleMapsUrl(college)}" target="_blank" rel="noopener noreferrer">Open campus in Google Maps</a>
         </div>
       </article>`;
   }).join("");

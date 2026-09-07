@@ -15,7 +15,7 @@ Do not commit an unrestricted key.
 
 ## Accessibility
 
-The interactive map is optional. All nine colleges, DDC representatives, email links, and Google Maps links are also available in a standard HTML directory below the map. The map uses cooperative scrolling so it is less likely to trap page scrolling.
+The interactive map is optional. All nine colleges, DDC representative names, official college-site links, and Google Maps links are also available in a standard HTML directory below the map. Direct representative email addresses are not hardcoded into the map/directory; public email display is handled through the opt-in Faculty Commons. The map uses cooperative scrolling so it is less likely to trap page scrolling.
 
 
 Navigation note: the primary navigation uses task-oriented labels: **Start Here**, **Nine Colleges**, **Find Faculty**, **Teaching Resources**, and **Events**. The public pages retain the names **Faculty Commons** and **Teaching Commons**.

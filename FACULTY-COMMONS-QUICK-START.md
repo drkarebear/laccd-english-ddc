@@ -30,7 +30,7 @@ To remove a profile, change Approved to No or blank. Faculty can also use the pu
 ## Privacy design
 
 - The directory is public and opt-in.
-- Verification email stays private unless the faculty member explicitly selects Yes to display it.
+- Verification email stays private unless the faculty member explicitly selects Yes to display it. The form warns that a publicly displayed address may be copied, indexed, or scraped.
 - Moderator notes, timestamps, consent records, and change requests are never returned by the public feed.
 - No photo is required.
 - Adjunct and full-time faculty are presented together in the same directory.

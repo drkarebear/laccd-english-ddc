@@ -54,8 +54,10 @@
 
   function configureLinks(links, url) {
     links.forEach(link => {
-      if (url) {
-        link.href = url;
+      const fallback = String(link.getAttribute('href') || '').trim();
+      const usableFallback = fallback && fallback !== '#';
+      if (url) link.href = url;
+      if (url || usableFallback) {
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         link.removeAttribute('aria-disabled');

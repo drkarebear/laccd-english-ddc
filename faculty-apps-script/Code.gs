@@ -140,7 +140,7 @@ function setupFacultyCommons() {
 
   form.addMultipleChoiceItem()
     .setTitle(F.displayEmail)
-    .setHelpText('Choosing Yes means this email address can appear on a public web page. No is the privacy-first default.')
+    .setHelpText('Choosing Yes means this email address can appear on a public web page and may be copied, indexed, or scraped. No is the privacy-first default.')
     .setChoiceValues(['No', 'Yes'])
     .setRequired(true);
 
@@ -213,7 +213,7 @@ function setupFacultyCommons() {
 
   form.addCheckboxItem()
     .setTitle(F.consent)
-    .setChoiceValues(['I understand that the profile information I chose to share may appear on a public website after review. My verification email stays private unless I selected Yes to display it.'])
+    .setChoiceValues(['I understand that the profile information I chose to share may appear on a public website after review. My verification email stays private unless I selected Yes to display it; a publicly displayed email may be copied, indexed, or scraped.'])
     .setRequired(true);
 
   form.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId());

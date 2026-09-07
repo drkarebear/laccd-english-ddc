@@ -8,9 +8,15 @@
   const filterForm = document.querySelector('[data-event-filters]');
 
   submitLinks.forEach(link => {
-    if (cfg.submitUrl) {
-      link.href = cfg.submitUrl;
+    const fallback = String(link.getAttribute('href') || '').trim();
+    const usableFallback = fallback && fallback !== '#';
+    if (cfg.submitUrl) link.href = cfg.submitUrl;
+    if (cfg.submitUrl || usableFallback) {
       link.hidden = false;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.removeAttribute('aria-disabled');
+      link.classList.remove('is-disabled');
     } else if (link.dataset.hideWhenUnconfigured === 'true') {
       link.hidden = true;
     } else {
@@ -119,6 +125,8 @@
       if (cfg.submitUrl) {
         const link = el('a', 'button secondary', 'Share an Event');
         link.href = cfg.submitUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
         box.append(link);
       }
       list.append(box);
