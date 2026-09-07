@@ -5,6 +5,7 @@
   const cfg = window.LACCD_ENGLISH_EVENTS || {};
   const lists = Array.from(document.querySelectorAll('[data-events-list]'));
   const submitLinks = Array.from(document.querySelectorAll('[data-event-submit-link]'));
+  const filterForm = document.querySelector('[data-event-filters]');
 
   submitLinks.forEach(link => {
     if (cfg.submitUrl) {
@@ -28,6 +29,7 @@
       allEvents = Array.isArray(payload) ? payload : (payload && Array.isArray(payload.events) ? payload.events : []);
       allEvents = allEvents.slice().sort((a, b) => new Date(a.start) - new Date(b.start));
       populateFilters(allEvents);
+      updateFilterVisibility();
       renderAll();
     } catch (error) {
       renderError();
@@ -43,6 +45,7 @@
   const separator = cfg.feedUrl.includes('?') ? '&' : '?';
   script.src = cfg.feedUrl + separator + 'action=events&callback=LACCDEnglishEventsReceive&_=' + Date.now();
   script.async = true;
+  script.referrerPolicy = 'no-referrer';
   script.onerror = renderError;
   document.head.appendChild(script);
 
@@ -60,6 +63,15 @@
       });
       renderAll();
     });
+  }
+
+  function updateFilterVisibility() {
+    if (!filterForm) return;
+    // Keep the interface simple until there are enough events to make filtering useful.
+    filterForm.hidden = allEvents.length <= 5;
+    if (filterForm.hidden) {
+      filterForm.querySelectorAll('[data-event-filter]').forEach(control => { control.value = ''; });
+    }
   }
 
   function renderAll() {
@@ -130,7 +142,8 @@
     const content = el('div', 'event-content');
     const metaTop = el('p', 'event-kicker', [event.college, event.type].filter(Boolean).join(' · '));
     const title = el('h3', '', event.title || 'Untitled event');
-    const when = el('p', 'event-when', formatWhen(event));
+    const when = el('time', 'event-when', formatWhen(event));
+    when.dateTime = event.start || '';
     const description = el('p', 'event-description', event.description || '');
 
     content.append(metaTop, title, when);
@@ -168,17 +181,19 @@
       const details = el('a', 'event-action-link', 'View details for ' + (event.title || 'this event'));
       details.href = event.url;
       details.target = '_blank';
-      details.rel = 'noopener';
+      details.rel = 'noopener noreferrer';
       actions.append(details);
     }
 
-    const google = el('a', 'event-action-link', 'Add ' + (event.title || 'this event') + ' to Google Calendar');
+    const google = el('a', 'event-action-link', 'Add to Google Calendar');
+    google.setAttribute('aria-label', 'Add ' + (event.title || 'this event') + ' to Google Calendar');
     google.href = googleCalendarUrl(event);
     google.target = '_blank';
-    google.rel = 'noopener';
+    google.rel = 'noopener noreferrer';
     actions.append(google);
 
-    const ics = el('button', 'event-action-button', 'Download ' + (event.title || 'this event') + ' as a calendar file (.ics)');
+    const ics = el('button', 'event-action-button', 'Download .ics');
+    ics.setAttribute('aria-label', 'Download ' + (event.title || 'this event') + ' as a calendar file (.ics)');
     ics.type = 'button';
     ics.addEventListener('click', function () { downloadIcs(event); });
     actions.append(ics);

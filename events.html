@@ -74,7 +74,7 @@ footer{margin-top:4rem;background:#fff;border-top:1px solid var(--line)}.footer-
       <p class="marginal-note">The bird has news. Submit yours before he starts making things up.</p>
     </div>
     <div aria-hidden="true">
-      <img class="bird" src="assets/marginalia/storyteller-bird.png" alt="">
+      <img class="bird" src="assets/marginalia/storyteller-bird-flipped.png" alt="">
     </div>
   </section>
 
@@ -87,7 +87,7 @@ footer{margin-top:4rem;background:#fff;border-top:1px solid var(--line)}.footer-
       <a class="button primary" data-event-submit-link href="#share-event">Share an Event</a>
     </div>
 
-    <form class="event-filters" aria-label="Filter upcoming events" onsubmit="return false;">
+    <form class="event-filters" data-event-filters hidden aria-label="Filter upcoming events" onsubmit="return false;">
       <div class="event-filter-field">
         <label for="event-search">Search</label>
         <input id="event-search" data-event-filter type="search" placeholder="Title, topic, location...">
@@ -108,6 +108,7 @@ footer{margin-top:4rem;background:#fff;border-top:1px solid var(--line)}.footer-
     </form>
 
     <p class="event-count" data-event-count aria-live="polite">Loading events...</p>
+    <p class="events-source-note">This is a faculty-maintained community noticeboard. For the latest details, use the host or registration link on the event card.</p>
 
     <div class="events-list" data-events-list aria-live="polite">
       <div class="event-empty">
@@ -121,6 +122,7 @@ footer{margin-top:4rem;background:#fff;border-top:1px solid var(--line)}.footer-
     <p class="eyebrow">Add to the noticeboard</p>
     <h2 id="share-title">Have something happening?</h2>
     <p>If English faculty, writers, readers, or students across the district might reasonably be interested, send it our way. Adjunct and full-time faculty are equally welcome to submit. You do not need to run an event through a DDC representative first.</p>
+    <p><strong>Submissions are reviewed before posting.</strong> Event information you submit is intended for public display. Your verification email stays in the private moderation Sheet and is not included in the public event feed.</p>
     <p><a class="button primary" data-event-submit-link href="#">Open the Share an Event form</a></p>
     <p class="marginal-note">One form. Nine colleges. Considerably fewer reply-all emails.</p>
   </section>

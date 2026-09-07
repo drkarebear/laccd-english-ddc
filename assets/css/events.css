@@ -42,3 +42,7 @@
   .event-day { font-size: 1.65rem; }
   .event-filters { grid-template-columns: 1fr; }
 }
+
+/* Progressive complexity and provenance note. */
+.event-filters[hidden] { display: none !important; }
+.events-source-note { margin: -.2rem 0 1.1rem; max-width: 74ch; color: var(--muted, #58656d); font-size: .94rem; }

@@ -1,6 +1,6 @@
 # LACCD English DDC faculty commons
 
-This prototype includes the eight manuscript marginalia animals, the `Englishfavicon.png` favicon, the belonging-focused homepage, and a new "Nine Colleges" castle map.
+This prototype includes the eight manuscript marginalia animals in both original and horizontally flipped orientations, the `Englishfavicon.png` favicon, the belonging-focused homepage, and a new "Nine Colleges" castle map.
 
 ## The map works in two modes
 
@@ -37,7 +37,7 @@ Files:
 - `assets/css/events.css` contains the shared event-card and filter styles.
 - `apps-script/Code.gs` creates the Google Form, private response Sheet, moderation columns, and public read-only event feed.
 - `apps-script/SETUP.md` has the setup steps.
-- `config.js` has blank `feedUrl` and `submitUrl` fields to fill in after the Google Apps Script is deployed.
+- `config.js` is connected to the deployed public event feed and the public Share an Event form.
 
 The homepage shows the next three approved events. `events.html` shows all upcoming approved events and includes college, event-type, and keyword filters.
 
@@ -47,4 +47,9 @@ Past events do not need to be deleted. The feed automatically stops returning th
 
 Nothing submitted through the Google Form publishes automatically. Karen reviews each row and sets `Approved` to `Yes` before it appears publicly.
 
-The public feed does not return the submitter name, verification email, timestamp, consent response, approval status, featured flag, or moderator notes. The response Sheet should remain private.
+The public feed does not return the submitter name, verification email, timestamp, consent response, approval status, or moderator notes. The public `featured` flag may be returned because it controls public display behavior. The response Sheet should remain private.
+
+
+## Marginalia sprite orientations
+
+Both orientations are included under `assets/marginalia/`. Files ending in `-flipped.png` are horizontal mirrors of the originals. The current layouts generally use the flipped versions when an animal sits to the right of text so the creature faces inward toward the content. Both versions remain available for later pages and responsive layouts.
