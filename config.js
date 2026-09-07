@@ -27,7 +27,7 @@ window.LACCD_ENGLISH_EVENTS = {
   Web app, and paste the generated URLs here.
 */
 window.LACCD_ENGLISH_FACULTY = {
-  feedUrl: "",
-  joinUrl: "",
-  changeUrl: ""
+  feedUrl: "https://script.google.com/macros/s/AKfycbztxPwVv8T3Bwv446gg1iPf-UzyfaR2I9UBbQe4yV3cuEZpSNWy5duS79SziMYWGY8r/exec",
+  joinUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfJLQ60SXBYFy4ReTYfv4rw3xNxEfjidYpjxnAVvXPzmrjLFw/viewform",
+  changeUrl: "https://docs.google.com/forms/d/e/1FAIpQLSduwCyS8PTp7TCNzJ62k41cJZnWwkR24qaTd9kxavohaYPslw/viewform"
 };
