@@ -31,3 +31,14 @@ window.LACCD_ENGLISH_FACULTY = {
   joinUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfJLQ60SXBYFy4ReTYfv4rw3xNxEfjidYpjxnAVvXPzmrjLFw/viewform",
   changeUrl: "https://docs.google.com/forms/d/e/1FAIpQLSduwCyS8PTp7TCNzJ62k41cJZnWwkR24qaTd9kxavohaYPslw/viewform"
 };
+
+
+/*
+  Teaching Commons.
+  Run resources-apps-script/setupTeachingCommons(), deploy that project as a
+  Web app, and paste the generated public URLs here.
+*/
+window.LACCD_ENGLISH_RESOURCES = {
+  feedUrl: "",
+  submitUrl: ""
+};

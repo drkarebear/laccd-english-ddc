@@ -68,3 +68,18 @@ The privacy model is deliberate:
 - adjunct and full-time faculty appear together rather than in separate directory sections
 
 See `FACULTY-COMMONS-QUICK-START.md` for setup.
+
+
+## Teaching Commons
+
+This build adds `resources.html`, a moderated public directory of reusable teaching resources shared by LACCD English faculty. The directory links to intentionally public resources instead of hosting uploads.
+
+Files:
+
+- `resources.html` is the public Teaching Commons page.
+- `assets/js/resources.js` loads approved resources and provides accessible search/filtering.
+- `assets/css/resources.css` styles the directory and share panel.
+- `resources-apps-script/Code.gs` creates the Google Form, private moderation Sheet, and public read-only resource feed.
+- `resources-apps-script/SETUP.md` contains deployment instructions.
+
+The resource system follows the same privacy-first pattern as Events and Faculty Commons. Nothing publishes automatically, and the public feed omits verification emails, private submitter names, permission/consent responses, and moderator notes.
